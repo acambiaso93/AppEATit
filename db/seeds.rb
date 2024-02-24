@@ -1,9 +1,18 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Ingredient.destroy_all
+
+# Array of ingredient types
+ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spice']
+
+# Helper method to generate a random boolean value for stock
+def random_stock
+  [true, false].sample
+end
+# Seed data for ingredients
+10.times do
+  Ingredient.create(
+    name: Faker::Food.ingredient,
+    stock: random_stock,
+    ingredient_type: ingredient_types.sample,
+  )
+end
+puts "Seed data for ingredients created successfully!"

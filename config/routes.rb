@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get "dashboard", to: "dashboards#show"
 
   resources :recipes
+
+  resources :ingredients, only: [:show]
 end

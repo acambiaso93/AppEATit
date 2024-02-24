@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "dashboard", to: "dashboards#show"
   resources :user_ingredients, only: [ :create, :update, :destroy ]
+
+  resources :recipes
 end

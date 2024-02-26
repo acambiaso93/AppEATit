@@ -1,1 +1,8 @@
-
+<%= form_with url: dashboard_path, method: :get do |form| %>
+  <%= f.text_field :query,
+    class: "fom-control",
+    placeholder: "Type ingredient here..."
+    value: params[:query]
+  %>
+  <%= f.submit: "Search" %>
+<% end %>

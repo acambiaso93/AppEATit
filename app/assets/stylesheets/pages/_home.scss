@@ -4,6 +4,16 @@ body {
   height: 100%;
  }
 
+ a {
+  text-decoration: none;
+  color: black;
+ }
+
+.page-container {
+  background-color: black;
+  height: 100%;
+}
+
  .container-landing-page {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
@@ -58,7 +68,7 @@ body {
  }
 
  .card {
-   // grid-area: card;
+   grid-area: card;
    background-color: $pastel-pink;
    border-radius: 20px;
 

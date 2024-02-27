@@ -1,3 +1,4 @@
+
 <div class="dashboard-container">
   <div class="cookbook">
       <%= link_to "Cookbook", dashboard_path %>
@@ -26,4 +27,14 @@
   </div>
   <div class="cards"></div>
   <div class="footer"></div>
+
+  <div class="tabs">
+    <%# data-action %>
+    <%= link_to "Fridge", dashboard_path %>
+    <%= link_to "Explore", recipes_path %>
+  </div>
+
+<div class="kitchen d-none">
+  <%= render "kitchen" %>
+
 </div>

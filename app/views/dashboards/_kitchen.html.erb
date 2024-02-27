@@ -1,12 +1,13 @@
-<div class="ingredient-search">
-  <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
-    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>
-    <%= form.submit "Add Ingredient" %>
-  <% end %>
-</div>
-
-<div class="fridge">
-  <ul>
+<div class="dashboard-container">
+  <div class="cookbook">
+      <%= link_to "Cookbook", dashboard_path %>
+  </div>
+  <div class="explore">
+      <%= link_to "Explore", recipes_path %>
+  </div>
+  <div class="dashboard-refridgerator"></div>
+  <div class="dashboard-fridge">
+    <ul>
     <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
       <div class="ingredient">
         <%= ui.ingredient.name %>
@@ -16,4 +17,12 @@
       </div>
     <% end %>
   </ul>
-</div>
+  </div>
+  <div class="search">
+      <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
+    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>
+    <%= form.submit "Add Ingredient" %>
+  <% end %>
+  </div>
+  <div class="cards"></div>
+  <div class="footer"></div>

@@ -9,8 +9,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "dashboard", to: "dashboards#show"
-  resources :user_ingredients, only: [ :create, :update, :destroy ]
+
+  resource :dashboard, only: [:show], path: '/dashboard' do
+    post :add_ingredient, on: :member
+  end
+
+  resources :user_ingredients, only: :destroy
 
   resources :recipes
 

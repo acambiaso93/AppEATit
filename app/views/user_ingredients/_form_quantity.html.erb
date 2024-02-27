@@ -1,0 +1,5 @@
+<%= form_for ui do |form| %>
+          <%= form.label :quantity %>
+          <%= form.number_field :quantity, min: 1 %>
+          <%= form.submit "Update Quantity" %></li>
+      <% end %>

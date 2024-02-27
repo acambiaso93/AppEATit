@@ -7,8 +7,8 @@ class DashboardsController < ApplicationController
   end
 
   def add_ingredient
-    @user = current_user
-    @user_ingredient = @user.user_ingredients.new(user_ingredient_params)
+    @user_ingredient = UserIngredient.new(user_ingredient_params)
+    @user_ingredient.user = current_user
 
     if @user_ingredient.save
       redirect_to dashboard_path, notice: "Ingredient added successfully."

@@ -8,13 +8,12 @@ def random_stock
   [true, false].sample
 end
 # Seed data for ingredients
-10.times do
-  Ingredient.create(
-    name: Faker::Food.ingredient,
-    stock: random_stock,
-    ingredient_type: ingredient_types.sample,
-  )
-end
+  Ingredient.create(name: "Chicken", stock: random_stock, ingredient_type: "meat")
+  Ingredient.create(name: "Flour", stock: random_stock, ingredient_type: "grain")
+  Ingredient.create(name: "Butter", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Pepper", stock: random_stock, ingredient_type: "spice")
+  Ingredient.create(name: "Milk", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Nutmeg", stock: random_stock, ingredient_type: "spice")
 
 user = User.create(
   email: "max@max.com",
@@ -77,5 +76,13 @@ user = User.create(
 ].each do |item|
   Recipe.create(item)
 end
+
+
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "Chicken"), recipe: Recipe.find_by(name: "Chicken Alfredo"), quantity: 2)
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "Flour"), recipe: Recipe.find_by(name: "Chicken Alfredo"), quantity: 2)
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "Butter"), recipe: Recipe.find_by(name: "Chicken Alfredo"), quantity: 2)
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "Pepper"), recipe: Recipe.find_by(name: "Chicken Alfredo"), quantity: 2)
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "Nutmeg"), recipe: Recipe.find_by(name: "Chicken Alfredo"), quantity: 2)
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "Milk"), recipe: Recipe.find_by(name: "Chicken Alfredo"), quantity: 2)
 
 puts "Seed data for ingredients created successfully!"

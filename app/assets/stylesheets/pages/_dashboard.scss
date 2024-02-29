@@ -99,15 +99,15 @@
  .cards {
   border-radius: 20px;
   grid-area: Cards; }
-  
+
  .recipe-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2px 2px;
 }
 
-.recipe-card {
+.recipe-explore {
   background-color: white;
   border-radius: 20px;
-  height: 200px;
+  height: 300px;
 }

@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 body {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   height: 100%;
  }
 
@@ -8,11 +8,6 @@ body {
   text-decoration: none;
   color: black;
  }
-
-.page-container {
-  background-color: black;
-  height: 100%;
-}
 
  .container-landing-page {
    display: grid;
@@ -22,10 +17,10 @@ body {
    gap: 2px 2px;
    grid-auto-flow: row;
    grid-template-areas:
-     "caption caption refrigerator"
-     "card . fridge"
-     ". . fridge"
-     "footer footer footer";
+    "caption caption refrigerator"
+    "cardone cardtwo fridge"
+    "cardthree cardfour fridge"
+   "footer footer footer";
    height: 100vh;
    margin-left: 1px;
    margin-right: 1px;
@@ -52,14 +47,32 @@ body {
    }
  }
 
- .fridge {
-   grid-area: fridge;
-   background-color: white;
-   border-radius: 20px;
- }
+//  .fridge {
+//    grid-area: fridge;
+//    background-color: white;
+//    border-radius: 20px;
+//  }
+
+.fridge {
+  grid-area: fridge;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden; /* Ensure the handle does not overflow */
+}
+
+.handle-fridge {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 20%;
+  height: 5px;
+  background-color: black;
+}
 
  .refrigerator {
    grid-area: refrigerator;
+   position: relative;
    background-color: white;
    border-radius: 20px;
    border-top-left-radius: 0;
@@ -67,22 +80,72 @@ body {
    padding: 40px;
  }
 
- .card {
-   grid-area: card;
-   background-color: $pastel-pink;
-   border-radius: 20px;
-
+ .handle-redrigerator {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 20%;
+  height: 5px;
+  background-color: black;
  }
 
  .footer {
-   grid-area: footer;
-   background-color: white;
-   border-top-left-radius: 20px;
-   border-top-right-radius: 20px;
-   transition: background-color 0.3s ease;
+  grid-area: footer;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: background-color 0.3s ease;
 
 
-   &:hover {
-     background-color: $pastel-blue;
-   }
+  &:hover {
+    background-color: $pastel-blue;
   }
+ }
+
+
+ .card-one {
+  grid-area: cardone;
+  background-color: white;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+
+
+  &:hover {
+    background-color: $pastel-blue;
+  }
+}
+
+.card-two {
+  grid-area: cardtwo;
+  background-color: white;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+
+
+  &:hover {
+    background-color: $pastel-pink;
+  }
+}
+
+.card-three {
+  grid-area: cardthree;
+  background-color: white;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+
+
+  &:hover {
+    background-color: $pastel-blue;
+  }}
+
+.card-four {
+  grid-area: cardfour;
+  background-color: white;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+
+
+  &:hover {
+    background-color: $pastel-pink;
+  }
+}

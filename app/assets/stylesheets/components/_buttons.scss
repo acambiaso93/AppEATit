@@ -6,3 +6,18 @@
   font-size: 21px;
   color: black;
 }
+
+.button-wide {
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 21px;
+  color: black;
+  width: 100%;
+  background-color: white;
+
+  &:hover {
+    background-color: $pastel-green-hover;
+  }
+}

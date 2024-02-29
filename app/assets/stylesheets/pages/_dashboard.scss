@@ -68,6 +68,12 @@
   padding: 20px;
   font-size: 26px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+
+
+  &:hover {
+    background-color: $pastel-pink;
+  }
 }
 
 .search {
@@ -76,10 +82,6 @@
   grid-area: Search;
   padding: 20px;
 }
-
-.cards {
-  border-radius: 20px;
-  grid-area: Cards; }
 
 .footer-dash {
   background-color: white;
@@ -93,3 +95,19 @@
     background-color: $pastel-blue;
   }
  }
+
+ .cards {
+  border-radius: 20px;
+  grid-area: Cards; }
+  
+ .recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px 2px;
+}
+
+.recipe-card {
+  background-color: white;
+  border-radius: 20px;
+  height: 200px;
+}

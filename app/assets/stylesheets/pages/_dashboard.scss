@@ -15,6 +15,26 @@
   margin-bottom: 0px;
 }
 
+.kitchen {
+  grid-area: Cookbook;
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transition: background-color 0.3s ease;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 30px;
+  text-decoration: none;
+
+
+   &:hover {
+     background-color: $pastel-green;
+     cursor: pointer;
+   }
+}
+
 .cookbook {
   grid-area: Cookbook;
   background-color: white;
@@ -31,6 +51,7 @@
 
    &:hover {
      background-color: $pastel-green;
+     cursor: pointer;
    }}
 
 .explore {
@@ -49,6 +70,7 @@
 
    &:hover {
      background-color: $pastel-green;
+     cursor: pointer;
    }
 }
 

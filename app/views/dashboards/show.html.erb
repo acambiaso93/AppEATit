@@ -1,7 +1,14 @@
-<div class="kitchen">
-  <%= render "kitchen" %>
-</div>
+<div data-controller="container">
 
-<div class="explore d-none">
-  <%= render "explore" %>
+  <div id="kitchen-container" data-container-target="kitchen">
+    <%= render "kitchen" %>
+  </div>
+
+  <div id="cookbook-container" data-container-target="cookbook" class="d-none">
+    <%= render "cookbook" %>
+  </div>
+
+  <div id="explore-container" data-container-target="explore" class="d-none">
+    <%= render "explore" %>
+  </div>
 </div>

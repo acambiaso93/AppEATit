@@ -83,6 +83,23 @@
   grid-area: Dashboard-refridgerator;
 }
 
+.profile {
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  grid-area: Dashboard-refridgerator;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 30px;
+  text-decoration: none;
+  &:hover {
+    background-color: $pastel-green;
+    cursor: pointer;
+  }
+}
+
 .dashboard-fridge {
   grid-area: Dashboard-fridge;
   background-color: white;

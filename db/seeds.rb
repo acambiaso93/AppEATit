@@ -1,4 +1,6 @@
 Ingredient.destroy_all
+Recipe.destroy_all
+User.destroy_all
 
 # Array of ingredient types
 ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spice', 'vegan', 'nuts', 'fish']
@@ -41,7 +43,11 @@ end
 
 user = User.create(
   email: "max@max.com",
-  password: "123456"
+  password: "123456",
+  diet: "vegetarian",
+  description: "Went grocery shopping on an empty stomach so please help me out!!!",
+  location: "Berlin",
+  profile_picture_url: "https://imgs.search.brave.com/QEgQVIF6OAEUxX0hPkZgF42ViGx71BMhkYXmuNzUSEo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzY5LzAwLzkw/LzM2MF9GXzY5MDA5/MDA1X3Jyd3lzMEt5/VTBPc05rTEdvNzRN/VGp1QmZqeGdBTDRz/LmpwZw"
 )
 
 [

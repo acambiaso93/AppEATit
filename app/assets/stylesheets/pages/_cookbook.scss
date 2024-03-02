@@ -1,4 +1,31 @@
-#add-recipe > .dashboard-fridge {
+.cookbook-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
+  gap: 2px 2px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Kitchen Cookbook Explore Dashboard-refridgerator"
+    "Search Search Add-recipe-container Add-recipe-container"
+    "Cards Cards Add-recipe-container Add-recipe-container"
+    "Footer Footer Footer Footer";
+  height: 100vh;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.add-recipe-container {
+  grid-area: Add-recipe-container;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#add-recipe {
   display: flex;
   align-items: center;
   justify-content: center;

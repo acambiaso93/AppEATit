@@ -1,4 +1,4 @@
-<div class="dashboard-container">
+<div class="cookbook-container">
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
@@ -9,19 +9,21 @@
       <a>Explore</a>
   </div>
 
-  <div class="dashboard-refridgerator"></div>
 
+  <div class="dashboard-refridgerator"></div>
   <div class="profile" data-action="click->container#revealProfile">
     Profile
   </div>
-  <div class="dashboard-fridge">
 
-
-  <div id="add-recipe" class="dashboard-fridge">
-      <%= link_to 'New Recipe', new_recipe_path, class: "button-main" %>
+  <div id="add-recipe" class="dashboard-fridge d-none">
+    <%= link_to 'New Recipe', new_recipe_path, class: "button-main" %>
   </div>
 
-  <div class="cards">
+  <div id="recipe-form" class="add-recipe-container">
+    <%= render "recipes/form", recipe: @recipe %>
   </div>
+
+  <div class="cards"></div>
   <div class="footer"></div>
+
 </div>

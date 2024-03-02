@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :recipes
 
   resources :ingredients, only: [:show]
+
+  resources :profile
 end

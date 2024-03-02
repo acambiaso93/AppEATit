@@ -1,14 +1,16 @@
 <div data-controller="container">
+<div>
 
-  <div id="kitchen-container" data-container-target="kitchen" class="d-none">
+  <div id="kitchen-container" data-container-target="kitchen"   >
     <%= render "kitchen" %>
-  </div>
-
-  <div id="cookbook-container" data-container-target="cookbook">
-    <%= render "cookbook" %>
   </div>
 
   <div id="explore-container" data-container-target="explore" class="d-none">
     <%= render "explore" %>
   </div>
+
+  <div id="cookbook-container" data-container-target="cookbook" class="d-none">
+    <%= render "cookbook" %>
+  </div>
+</div>
 </div>

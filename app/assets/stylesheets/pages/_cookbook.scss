@@ -1,4 +1,4 @@
-.dashboard-fridge {
+#add-recipe > .dashboard-fridge {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,6 +6,10 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+
+  &:hover {
+    background-color: white;
+  }
 }
 
 .dashboard-fridge::before {
@@ -13,9 +17,5 @@
 }
 
 #add-recipe > .button-main:hover {
-  transform: scale(1.2); transition: all .4s ease;
-}
-
-#add-recipe > .dashboard-fridge:hover {
- 
+  transform: scale(1.1); transition: all .4s ease;
 }

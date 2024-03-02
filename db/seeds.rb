@@ -1,7 +1,7 @@
 Ingredient.destroy_all
 
 # Array of ingredient types
-ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spice']
+ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spice', 'vegan', 'nuts', 'fish']
 
 # Helper method to generate a random boolean value for stock
 def random_stock
@@ -14,6 +14,30 @@ end
   Ingredient.create(name: "Pepper", stock: random_stock, ingredient_type: "spice")
   Ingredient.create(name: "Milk", stock: random_stock, ingredient_type: "dairy")
   Ingredient.create(name: "Nutmeg", stock: random_stock, ingredient_type: "spice")
+  Ingredient.create(name: "Beef", stock: random_stock, ingredient_type: "meat")
+  Ingredient.create(name: "Parmigiano", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Tofu", stock: random_stock, ingredient_type: "vegan")
+  Ingredient.create(name: "Soy Milk", stock: random_stock, ingredient_type: "vegan")
+  Ingredient.create(name: "Mozzarella", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Chilli", stock: random_stock, ingredient_type: "spice")
+  Ingredient.create(name: "Pork", stock: random_stock, ingredient_type: "meat")
+  Ingredient.create(name: "Rice", stock: random_stock, ingredient_type: "grain")
+  Ingredient.create(name: "Cream", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Cumin", stock: random_stock, ingredient_type: "spice")
+  Ingredient.create(name: "Cheddar", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Curry", stock: random_stock, ingredient_type: "spice")
+  Ingredient.create(name: "Prawns", stock: random_stock, ingredient_type: "fish")
+  Ingredient.create(name: "CousCous", stock: random_stock, ingredient_type: "grain")
+  Ingredient.create(name: "Feta", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Garlic", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Onion", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Cheese", stock: random_stock, ingredient_type: "dairy")
+  Ingredient.create(name: "Lettuce", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Tomatoes", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Peppers", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Mushrooms", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Potatoes", stock: random_stock, ingredient_type: "vegetable")
+  Ingredient.create(name: "Corn", stock: random_stock, ingredient_type: "vegetable")
 
 user = User.create(
   email: "max@max.com",
@@ -49,7 +73,10 @@ user = User.create(
   },
   {
     name: "Vegetable Stir Fry",
-    instructions: "Chop vegetables. Heat oil. Add vegetables and stir fry.",
+    instructions: "Boil the noodles: Cook the Fettuccine al dente, according to package instructions.
+    Cook the chicken: Season the chicken, then pan-fry in oil and butter, for 6 minutes a side, or until an internal temperature reaches 165 degrees F. Transfer to a cutting board and let rest for a few minutes, then cut into 1/2-inch thick slices. Tent with foil, while you prepare the sauce.
+    Make the Alfredo sauce: Using the same pan you used to cook the chicken, the cream, butter, and seasonings are incorporated and simmered on medium-low heat until thickened, then the Parmesan is added in until melted and smooth.
+    Assemble: Drain the pasta, reserving some of the liquid to loosen the sauce (only if necessary.) Toss immediately with the Alfredo sauce. Divide the pasta among serving bowls and top with a few slices of cooked chicken. Garnish with parsley, more Parmesan, and black pepper if desired.",
     category: "Chinese",
     difficulty: 1,
     servings: 2,

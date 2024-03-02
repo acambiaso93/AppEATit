@@ -3,10 +3,15 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @user_ingredients = current_user.user_ingredients.includes(:ingredient) if user_signed_in?
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+      @recipe = Recipe.includes(recipe_ingredients: :ingredient).find(params[:id])
+      @ingredients = @recipe.ingredients
+      @user = current_user
+      @user_ingredients = @user.user_ingredients.includes(:ingredient)
+      @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
   end
 
   def new
@@ -34,6 +39,17 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe), notice: 'Recipe was made more yummmy.'
     else
       render :edit
+    end
+  end
+
+  def add_ingredient
+    @user_ingredient = UserIngredient.new(user_ingredient_params)
+    @user_ingredient.user = current_user
+
+    if @user_ingredient.save
+      redirect_to dashboard_path, notice: "Ingredient added successfully."
+    else
+      redirect_to dashboard_path, alert: "Failed to add ingredient."
     end
   end
 

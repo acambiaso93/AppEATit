@@ -2,25 +2,26 @@
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
+  <div class="cookbook" data-action="click->container#revealCookbook">
+      <a>Cookbook</a>
+  </div>
   <div class="explore" data-action="click->container#revealExplore">
       <a>Explore</a>
   </div>
+
+  <div class="dashboard-refridgerator"></div>
+
   <div class="profile" data-action="click->container#revealProfile">
     Profile
   </div>
   <div class="dashboard-fridge">
 
+
+  <div id="add-recipe" class="dashboard-fridge">
+      <%= link_to 'New Recipe', new_recipe_path, class: "button-main" %>
   </div>
-  <div class="search">
-      <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
-    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>
-    <%= form.submit "Add Ingredient" %>
-  <% end %>
-  </div>
+
   <div class="cards">
-    <div id="add-recipe">
-      <%= link_to 'New Recipe', new_recipe_path %>
-    </div>
   </div>
   <div class="footer"></div>
 </div>

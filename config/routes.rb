@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   end
 
   resources :ingredients, only: [:show]
+
+  resources :profile
 end

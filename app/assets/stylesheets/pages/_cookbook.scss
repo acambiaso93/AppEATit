@@ -1,0 +1,21 @@
+#add-recipe > .dashboard-fridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("lemon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.dashboard-fridge::before {
+  background-color: rgba(0,0,0,0.25);
+}
+
+#add-recipe > .button-main:hover {
+  transform: scale(1.1); transition: all .4s ease;
+}

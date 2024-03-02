@@ -8,7 +8,9 @@
   <div class="explore" data-action="click->container#revealExplore">
       Explore
   </div>
-  <div class="dashboard-refridgerator"></div>
+  <div class="profile" data-action="click->container#revealProfile">
+    Profile
+  </div>
   <div class="dashboard-fridge">
     <ul>
     <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>

@@ -1,22 +1,13 @@
 <div class="dashboard-container">
-  <div class="cookbook" data-action="click->container#revealCookbook">
-      <a>Cookbook</a>
+  <div class="kitchen" data-action="click->container#revealKitchen">
+      <a>Kitchen</a>
   </div>
   <div class="explore" data-action="click->container#revealExplore">
-      Explore
+      <a>Explore</a>
   </div>
   <div class="dashboard-refridgerator"></div>
   <div class="dashboard-fridge">
-    <ul>
-    <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
-      <div class="ingredient">
-        <%= ui.ingredient.name %>
-        <%= link_to user_ingredient_path(ui), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-solid fa-xmark"></i>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
+
   </div>
   <div class="search">
       <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
@@ -24,6 +15,10 @@
     <%= form.submit "Add Ingredient" %>
   <% end %>
   </div>
-  <div class="cards"></div>
+  <div class="cards">
+    <div id="add-recipe">
+      <%= link_to 'New Recipe', new_recipe_path %>
+    </div>
+  </div>
   <div class="footer"></div>
 </div>

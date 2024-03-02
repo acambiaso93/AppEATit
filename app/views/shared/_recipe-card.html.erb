@@ -1,0 +1,15 @@
+<div class="recipe-card">
+  <h1>Hello</h1>
+  <img src="<%= recipe.image %>" alt="<%= recipe.name %>" class="recipe-image">
+  <div class="recipe-details">
+    <h2 class="recipe-name"><%= recipe.name %></h2>
+    <p class="recipe-category">Category: <%= recipe.category %></p>
+    <p class="recipe-difficulty">Difficulty: <%= recipe.difficulty %></p>
+    <p class="recipe-servings">Servings: <%= recipe.servings %></p>
+    <p class="recipe-prep-time">Prep Time: <%= recipe.prep_time %> mins</p>
+    <p class="recipe-cook-time">Cook Time: <%= recipe.cook_time %> mins</p>
+    <p class="recipe-total-time">Total Time: <%= recipe.total_time %> mins</p>
+    <p class="recipe-instructions"><%= recipe.instructions %></p>
+    <a href="<%= recipe.video %>" target="_blank" class="recipe-video">Watch Recipe Video</a>
+  </div>
+</div>

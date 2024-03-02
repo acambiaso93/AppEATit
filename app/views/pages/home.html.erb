@@ -3,7 +3,7 @@
     <span>Discover the best recipes that
     your<br>fridge has to offer.</span>
   </div>
-  <div class="fridge"></div>
+  <div class="fridge"><div class="handle-fridge"></div></div>
   <div class="refrigerator">
     <div id="login">
       <% if user_signed_in? %>
@@ -13,8 +13,13 @@
         <%= link_to "Login", new_user_session_path, class: "button-main" %>
         <%= link_to "Register", new_user_registration_path, class: "button-main" %>
       <% end  %>
+
+      <div class="handle-redrigerator"></div>
     </div>
   </div>
-  <div class="card"></div>
+  <div class="card card-one"></div>
+  <div class="card card-two"></div>
+  <div class="card card-three"></div>
+  <div class="card card-four"></div>
   <div class="footer"></div>
 </div>

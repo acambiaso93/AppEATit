@@ -1,15 +1,3 @@
-.ingredient-search {
-  background-color: white;
-  border-radius: 20px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  transition: background-color 0.3s ease;
-  font-size: 36px;
-  font-weight: bold;
-  padding: 40px;
-  padding-top: 30px;
-}
-
 .dashboard-container {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
@@ -102,6 +90,12 @@
   padding: 20px;
   font-size: 26px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
+
+
+  &:hover {
+    background-color: $pastel-pink;
+  }
 }
 
 .search {
@@ -111,11 +105,7 @@
   padding: 20px;
 }
 
-.cards {
-  border-radius: 20px;
-  grid-area: Cards; }
-
-.footer {
+.footer-dash {
   background-color: white;
   grid-area: Footer;
   border-top-left-radius: 20px;
@@ -127,3 +117,19 @@
     background-color: $pastel-blue;
   }
  }
+
+ .cards {
+  border-radius: 20px;
+  grid-area: Cards; }
+
+ .recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px 2px;
+}
+
+.recipe-explore {
+  background-color: white;
+  border-radius: 20px;
+  height: 300px;
+}

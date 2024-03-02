@@ -1,14 +1,4 @@
-<h1><%= @recipe.name %></h1>
-
-<p><%= @recipe.instructions %></p>
-<p><%= @recipe.prep_time %></p>
-<p><%= @recipe.cook_time %></p>
-<p><%= @recipe.total_time %></p>
-<p><%= @recipe.difficulty %></p>
-<p><%= @recipe.servings %></p>
-<p><%= @recipe.image %></p>
-<p><%= @recipe.video %></p>
-<p><%= @recipe.created_at %></p>
+<%= render partial: 'shared/recipe-card', locals: {recipe: @recipe} %>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to "Delete", recipe_path(@recipe), data: {turbo_method: :delete, confirm: 'Are you sure?'}  %>

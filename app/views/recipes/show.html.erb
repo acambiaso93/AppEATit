@@ -1,4 +1,26 @@
-<%= render partial: 'shared/recipe-card', locals: {recipe: @recipe} %>
+<div class="dashboard-container">
+  <div class="kitchen">
+    <span>Kitchen</span>
+  </div>
+  <div class="cookbook">
+      <%= link_to "Cookbook", dashboard_path %>
+  </div>
+  <div class="explore">
+      <%= link_to "Explore", recipes_path %>
+  </div>
+  <div class="dashboard-refridgerator"></div>
+  <div class="dashboard-fridge">
+
+  </div>
+  <div class="search"></div>
+  <div class="cards">
+
+<%= render "recipe-show", locals: {recipe: @recipe} %>
+
+ </div>
+  <div class="footer"></div>
+</div>
+
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to "Delete", recipe_path(@recipe), data: {turbo_method: :delete, confirm: 'Are you sure?'}  %>

@@ -9,10 +9,24 @@
       <%= link_to "Explore", recipes_path %>
   </div>
   <div class="dashboard-refridgerator"></div>
-  <div class="dashboard-fridge">
-
+ <div class="dashboard-fridge">
+  <ul>
+    <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
+      <div class="ingredient <%= user_has_ingredient_class(ui.ingredient_id) %>">
+        <%= ui.ingredient.name %>
+        <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+          <i class="fa-solid fa-xmark <%= user_has_ingredient_class(ui.ingredient_id) %>"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </ul>
+</div>
+  <div class="search">
+      <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
+    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>
+    <%= form.submit "Add Ingredient" %>
+  <% end %>
   </div>
-  <div class="search"></div>
   <div class="cards">
 
 <%= render "recipe-show", locals: {recipe: @recipe} %>

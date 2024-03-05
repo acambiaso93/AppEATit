@@ -1,6 +1,7 @@
 <div class="recipe-show">
-  <span><%= @recipe.name %></span>
-  <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="recipe-image">
+  <div class="show-grid">
+   <div class="left">
+      <span><%= @recipe.name %></span>
   <div class="recipe-details">
     <p class="recipe-category">Category: <%= @recipe.category %></p>
     <p class="recipe-difficulty">Difficulty: <%= @recipe.difficulty %></p>
@@ -8,5 +9,21 @@
     <p class="recipe-cook-time">Cooking Time: <%= @recipe.cooking_time %> mins</p>
     <p class="recipe-instructions"><%= @recipe.instructions %></p>
     <a href="<%= @recipe.video %>" target="_blank" class="recipe-video">Watch Recipe Video</a>
+   </div>
+   </div>
+   <div class="right-column">
+        <p class="recipe-ingredients">
+  Ingredients:<br>
+  <% @ingredients.uniq(&:id).each do |ingredient| %>
+    <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
+      <span class="user-has-ingredient"><%= ingredient.name %></span><br>
+    <% else %>
+      <%= ingredient.name %><br>
+    <% end %>
+  <% end %>
+</p>
+   </div>
   </div>
+       <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="recipe-image">
+
 </div>

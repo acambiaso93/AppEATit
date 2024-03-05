@@ -1,0 +1,6 @@
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-card">
+      <img src="<%= recipe.image %>" alt="<%= recipe.name %>">
+      <div class="recipe-name"><%= recipe.name %></div>
+    </div>
+  <% end %>

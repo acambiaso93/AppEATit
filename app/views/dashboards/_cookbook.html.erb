@@ -1,4 +1,4 @@
-<div class="cookbook-container" data-controller="flip">
+<div class="cookbook-container" data-controller="flip" data-flip-target="container">
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
@@ -23,7 +23,9 @@
       <%= render "recipes/form", recipe: @recipe %>
     </div>
 
-  <div class="cards"></div>
+  <div class="cards">
+      <%= render partial: "recipes/my_recipes", library: {recipe: @recipe} %>
+  </div>
 
   <div class="footer"></div>
 

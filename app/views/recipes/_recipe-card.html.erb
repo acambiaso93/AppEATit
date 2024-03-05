@@ -1,6 +1,10 @@
   <% @recipes.each do |recipe| %>
     <div class="recipe-card">
-      <img src="<%= recipe.image %>" alt="<%= recipe.name %>">
+      <% if recipe.image.nil? %>
+        <%= cl_image_tag recipe.photo.key, width: 400%>
+      <% else %>
+        <%= image_tag recipe.image, width: 400 %>
+      <% end %>
       <div class="recipe-name"><%= recipe.name %></div>
     </div>
   <% end %>

@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   resources :user_ingredients, only: :destroy
 
-  resources :recipes
+  resources :recipes do
+    post 'add_ingredient', on: :member
+  end
 
   resources :ingredients, only: [:show]
 

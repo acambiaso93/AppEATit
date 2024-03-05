@@ -1,4 +1,4 @@
-<div class="cookbook-container">
+<div class="cookbook-container" data-controller="flip">
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
@@ -9,21 +9,22 @@
       <a>Explore</a>
   </div>
 
-
   <div class="dashboard-refridgerator"></div>
   <div class="profile" data-action="click->container#revealProfile">
     Profile
   </div>
 
-  <div id="add-recipe" class="dashboard-fridge d-none">
-    <%= link_to 'New Recipe', new_recipe_path, class: "button-main" %>
-  </div>
 
-  <div id="recipe-form" class="add-recipe-container">
-    <%= render "recipes/form", recipe: @recipe %>
-  </div>
+    <div id="new-recipe" data-flip-target="newRecipe">
+      <div class="button-main" data-action="click->flip#revealPage">New Recipe</div>
+    </div>
+
+    <div class="page d-none" data-flip-target="page">
+      <%= render "recipes/form", recipe: @recipe %>
+    </div>
 
   <div class="cards"></div>
+
   <div class="footer"></div>
 
 </div>

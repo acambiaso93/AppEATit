@@ -1,16 +1,32 @@
-<div>
-  <%= simple_form_for[recipe], url: dashboard_path, html: { method: :post } do |f| %>
-    <%= f.input :name %>
-    <%= f.input :instructions %>
-    <%= f.input :prep_time %>
-    <%= f.input :cook_time %>
-    <%= f.input :total_time %>
-    <%= f.input :difficulty %>
-    <%= f.input :servings %>
-    <%= f.input :image %>
-    <%= f.input :video %>
-    <%= f.input :created_at %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.button :submit, class: "button-main" %>
-  <% end %>
-</div>
+<%= simple_form_for recipe do |f| %>
+  <div id="recipe-form">
+    <div class="page-one">
+      <%= f.input_field :name, placeholder: "Thai Red Curry Noodle Soup", class: "title-input" %>
+      <div class="upload-box-file mt-4">
+        <%= f.input :photo, as: :file, label: false %>
+      </div>
+      <div class="d-flex mt-4">
+        <i class="fa-solid fa-utensils"></i>
+        <%= f.input :servings, label: false, class: "form-servings" %>
+      </div>
+
+      <%= f.input :difficulty, collection: ["easy", "moderate", "hard"] %>
+      <%= f.input :cooking_time, class: "title-input" %>
+    </div>
+
+    <div class="page-two">
+      <%= f.input_field :instructions, placeholder: "Type your instructions...", class: "recipe-input" %>
+      <div class="d-flex mt-4">
+        <%= f.input_field :category, placeholder: "Category", class: "title-input" %>
+      </div>
+      <div class="d-flex mt-4">
+        <%= f.input :video, as: :file %>
+      </div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <div class="d-flex mt-3 justify-content-between align-items-center">
+        <%= f.button :submit, class: "button-main", data: { action: 'click->flip#revealRecipe' } %>
+        <i class="fa-solid fa-xmark" data-action="click->flip#revealRecipe"></i>
+      </div>
+    </div>
+  </div>
+<% end %>

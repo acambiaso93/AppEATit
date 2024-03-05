@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @user_ingredients = @user.user_ingredients.includes(:ingredient)
     @ingredients = Ingredient.all
-    @recipe = Reci
+    @recipe = Recipe.new
   end
 
   def add_ingredient

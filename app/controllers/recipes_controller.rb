@@ -15,11 +15,12 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
-      render :new
+      redirect_to dashboard_path, notice: "Error"
     end
   end
 
@@ -47,7 +48,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(
-      :name, :instructions, :prep_time, :cook_time, :total_time, :difficulty, :servings, :image, :video
+      :name, :instructions, :cooking_time, :category, :difficulty, :servings, :image, :video, :user_id, :photo
     )
   end
 end

@@ -5,8 +5,8 @@
   grid-auto-flow: row;
   grid-template-areas:
     "Kitchen Cookbook Explore Dashboard-refridgerator"
-    "Search Search Add-recipe-container Add-recipe-container"
-    "Cards Cards Add-recipe-container Add-recipe-container"
+    "Search Search Page Page"
+    "Cards Cards Page Page"
     "Footer Footer Footer Footer";
   height: 100vh;
   margin-left: 1px;
@@ -15,34 +15,34 @@
   margin-bottom: 0px;
 }
 
-.add-recipe-container {
-  grid-area: Add-recipe-container;
+.page {
+  position: relative;
+  grid-area: Page;
   background-color: white;
   border-radius: 20px;
-  padding: 20px;
   font-size: 26px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
-#add-recipe {
+#new-recipe {
+  grid-area: Page;
+  grid-column: 4 / 6;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: url("lemon.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-
-  &:hover {
-    background-color: white;
-  }
+  background-color: white;
+  border-radius: 20px;
+  font-size: 26px;
+  font-weight: bold;
 }
 
-.dashboard-fridge::before {
-  background-color: rgba(0,0,0,0.25);
-}
-
-#add-recipe > .button-main:hover {
-  transform: scale(1.1); transition: all .4s ease;
+#new-recipe > .button-main:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
 }

@@ -1,0 +1,63 @@
+#recipe-form {
+  grid-area: Page;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2.6fr 0.2fr;
+  gap: 2px 2px;
+  grid-auto-flow: row;
+  grid-template-areas: "Page-one Page-two";
+  i {
+    margin-right: 10px;
+  }
+}
+
+.page-one {
+  grid-area: Page-one;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.page-two {
+  grid-area: Page-two;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.title-input {
+  font-family: $body-font;
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-size: large;
+  flex-grow: 1;
+}
+
+.upload-box-file {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  border-radius: 30px;
+  border: 2px solid black;
+  text-decoration: none;
+  font-size: 21px;
+  color: black;
+}
+
+.form-servings {
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  width: 50px;
+}
+
+.recipe-input {
+  font-family: $body-font;
+  border-radius: 30px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-size: large;
+  flex-grow: 1;
+}

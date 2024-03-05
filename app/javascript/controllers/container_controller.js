@@ -13,7 +13,7 @@ export default class extends Controller {
     }
     this.kitchenTarget.classList.add("d-none")
     this.exploreTarget.classList.add("d-none")
-
+    this.profileTarget.classList.add("d-none")
     this.cookbookTarget.classList.remove("d-none")
   }
 
@@ -23,7 +23,7 @@ export default class extends Controller {
     }
     this.kitchenTarget.classList.add("d-none")
     this.cookbookTarget.classList.add("d-none")
-
+    this.profileTarget.classList.add("d-none")
     this.exploreTarget.classList.remove("d-none")
   }
 
@@ -33,8 +33,20 @@ export default class extends Controller {
     }
     this.exploreTarget.classList.add("d-none")
     this.cookbookTarget.classList.add("d-none")
-
+    this.profileTarget.classList.add("d-none")
     this.kitchenTarget.classList.remove("d-none")
+  }
+
+  revealProfile () {
+    if (!this.profileTarget.classList.contains("d-none")) {
+      return;
+    }
+    this.exploreTarget.classList.add("d-none")
+    this.cookbookTarget.classList.add("d-none")
+    this.kitchenTarget.classList.add("d-none")
+    this.profileTarget.classList.remove("d-none")
+
+
   }
 
 }

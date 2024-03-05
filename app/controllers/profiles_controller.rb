@@ -1,12 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @profiles = Profile.all
-  end
 
   def show
-    @profile = profile.find(params[:id])
+    @profile = current_user.profile
   end
 
   def new
@@ -24,7 +21,8 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
+    @user = current_user
   end
 
   def update

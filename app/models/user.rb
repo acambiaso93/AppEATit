@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_create :create_profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,5 +9,12 @@ class User < ApplicationRecord
   has_many :ingredients, through: :user_ingredients
   has_many :recipes, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_one :bookcook
+  has_one :cookbook
+  has_one :profile
+
+  private
+
+  def create_profile
+    build_profile.save
+  end
 end

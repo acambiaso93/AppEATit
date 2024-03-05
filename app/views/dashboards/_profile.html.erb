@@ -1,0 +1,21 @@
+<div class="dashboard-container">
+  <div class="kitchen">
+    <span>Kitchen</span>
+  </div>
+  <div class="cookbook">
+      <%= link_to "Cookbook", dashboard_path %>
+  </div>
+  <div class="explore">
+      <%= link_to "Explore", recipes_path %>
+  </div>
+  <div class="profile" data-action="click->container#revealProfile">
+    Profile
+  </div>
+  <div class="dashboard-fridge">
+
+    <%= link_to 'Edit', edit_profile_path(@profile) %>
+    <%= link_to "Delete", profile_path(@profile), data: {turbo_method: :delete, confirm: 'Are you sure?'}  %>
+  </div>
+  <%= link_to 'Back', dashboard_path %>
+  <div class="footer"></div>
+</div>

@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!
   def show
     @user = current_user
+    @profile = @user.profile
     @user_ingredients = @user.user_ingredients.includes(:ingredient)
     @ingredients = Ingredient.all
     @recipe = Recipe.new

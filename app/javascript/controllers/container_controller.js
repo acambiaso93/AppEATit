@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["kitchen", "cookbook", "explore"]
+  static targets = ["kitchen", "cookbook", "explore", "profile"]
 
   connect() {
     console.log(this.kitchenTarget, this.cookbookTarget, this.exploreTarget)

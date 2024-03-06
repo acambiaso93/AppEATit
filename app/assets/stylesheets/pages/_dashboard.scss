@@ -138,11 +138,18 @@
 
  .cards {
   border-radius: 20px;
-  grid-area: Cards; }
+  grid-area: Cards;
+}
 
  .recipe-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px 2px;
+}
+
+.recipe-grid-open {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 2px 2px;
 }
 

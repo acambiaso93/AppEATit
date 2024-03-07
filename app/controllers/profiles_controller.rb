@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = current_user.profile
 
     if @profile.update(profile_params)
       redirect_to profile_path(@profile), notice: 'Shining bright like a diamond.'
@@ -37,8 +37,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(
-      :name, :description, :diet, :profile_picture, :city
-    )
+    params.require(:profile).permit(user_attributes: [:user_name, :description, :diet, :profile_picture_url, :location])
   end
+
 end

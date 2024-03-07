@@ -7,6 +7,7 @@ class DashboardsController < ApplicationController
     @ingredients = Ingredient.all
     @recipe = Recipe.new
     @recipes = Recipe.all
+    @my_recipes = current_user.recipes
   end
 
   def add_ingredient

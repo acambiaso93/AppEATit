@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
   end
 
   def add_ingredient
-    @user_ingredient = UserIngredient.new(user_ingredient_params)
+    @usertt_ingredient = UserIngredient.new(user_ingredient_params)
     @user_ingredient.user = current_user
 
     if @user_ingredient.save

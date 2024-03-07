@@ -11,18 +11,18 @@
   <div class="profile" data-action="click->container#revealProfile">
     Profile
   </div>
-  <div class="dashboard-fridge">
-    <ul>
+<div class="dashboard-fridge">
+  <ul>
     <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
       <div class="ingredient">
         <%= ui.ingredient.name %>
-        <%= link_to user_ingredient_path(ui), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-solid fa-xmark"></i>
+        <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete } do %>
+          <i class="fa-solid fa-xmark"></i>
         <% end %>
       </div>
     <% end %>
   </ul>
-  </div>
+</div>
   <div class="search">
       <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
     <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>

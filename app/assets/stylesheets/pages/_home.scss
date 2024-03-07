@@ -9,6 +9,10 @@ body {
   color: black;
  }
 
+ ul {
+  padding-left: 0px;
+ }
+
  .container-landing-page {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;

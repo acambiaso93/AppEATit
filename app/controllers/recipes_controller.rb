@@ -1,10 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @recipes = Recipe.all
-    @user_ingredients = current_user.user_ingredients.includes(:ingredient) if user_signed_in?
-  end
 
   def show
       @recipe = Recipe.includes(recipe_ingredients: :ingredient).find(params[:id])
@@ -12,10 +8,6 @@ class RecipesController < ApplicationController
       @user = current_user
       @user_ingredients = @user.user_ingredients.includes(:ingredient)
       @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
-  end
-
-  def new
-    @recipe = Recipe.new
   end
 
   def create

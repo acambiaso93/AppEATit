@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
     @user_ingredients = @user.user_ingredients.includes(:ingredient)
     @ingredients = Ingredient.all
     @recipe = Recipe.new
+    @recipes = Recipe.all
   end
 
   def add_ingredient

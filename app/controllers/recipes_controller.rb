@@ -14,10 +14,6 @@ class RecipesController < ApplicationController
       @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
   end
 
-  def new
-    @recipe = Recipe.new
-  end
-
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
@@ -40,17 +36,6 @@ class RecipesController < ApplicationController
       redirect_to recipe_path(@recipe), notice: 'Recipe was made more yummmy.'
     else
       render :edit
-    end
-  end
-
-  def add_ingredient
-    @usertt_ingredient = UserIngredient.new(user_ingredient_params)
-    @user_ingredient.user = current_user
-
-    if @user_ingredient.save
-      redirect_to dashboard_path, notice: "Ingredient added successfully."
-    else
-      redirect_to dashboard_path, alert: "Failed to add ingredient."
     end
   end
 

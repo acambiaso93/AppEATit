@@ -35,17 +35,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  def add_ingredient
-    @usertt_ingredient = UserIngredient.new(user_ingredient_params)
-    @user_ingredient.user = current_user
-
-    if @user_ingredient.save
-      redirect_to dashboard_path, notice: "Ingredient added successfully."
-    else
-      redirect_to dashboard_path, alert: "Failed to add ingredient."
-    end
-  end
-
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy

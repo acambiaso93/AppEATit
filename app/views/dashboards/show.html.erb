@@ -1,10 +1,10 @@
 <div data-controller="container">
   <div>
-    <div id="kitchen-container" data-container-target="kitchen">
+    <div id="kitchen-container" data-container-target="kitchen" class="d-none">
       <%= render "kitchen" %>
     </div>
 
-    <div id="cookbook-container" data-container-target="cookbook" class="d-none">
+    <div id="cookbook-container" data-container-target="cookbook">
       <%= render "cookbook" %>
     </div>
 
@@ -12,7 +12,7 @@
       <%= render "explore" %>
     </div>
 
-    <div id="profile-container" data-container-target="profile">
+    <div id="profile-container" data-container-target="profile" class="d-none">
       <%= render "profile" %>
     </div>
   </div>

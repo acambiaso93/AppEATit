@@ -4,6 +4,6 @@ class UserIngredientsController < ApplicationController
   def destroy
     @user_ingredient = UserIngredient.find(params[:id])
     @user_ingredient.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path, status: :see_other
   end
 end

@@ -13,6 +13,7 @@
    </div>
    <div class="right-column">
         <p class="recipe-ingredients">
+ <p class="recipe-ingredients">
   Ingredients:<br>
   <% @ingredients.uniq(&:id).each do |ingredient| %>
     <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
@@ -21,6 +22,7 @@
       <%= ingredient.name %><br>
     <% end %>
   <% end %>
+</p>
 </p>
    </div>
   </div>

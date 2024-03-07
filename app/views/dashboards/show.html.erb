@@ -1,6 +1,6 @@
 <div data-controller="container">
   <div>
-    <div id="kitchen-container" data-container-target="kitchen" class="d-none">
+    <div id="kitchen-container" data-container-target="kitchen">
       <%= render "kitchen" %>
     </div>
 
@@ -12,7 +12,7 @@
       <%= render "explore" %>
     </div>
 
-    <div id="profile-container" data-container-target="profile">
+    <div id="profile-container" data-container-target="profile" class="d-none">
       <%= render "profile" %>
     </div>
   </div>

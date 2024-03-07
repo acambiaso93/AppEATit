@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one :cookbook
   has_one :profile
+  accepts_nested_attributes_for :profile
 
   private
 

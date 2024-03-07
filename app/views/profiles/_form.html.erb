@@ -1,10 +1,23 @@
-<%= simple_form_for(@user, url: user_path(@user), method: :put) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :user_name %>
-  <%= f.input :description %>
-  <%= f.input :diet %>
-  <%= f.input :profile_picture_url %>
-  <%= f.input :location %>
 
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+
+      <div class="profile-form">
+        <%= simple_form_for(@user, url: user_path(@user), method: :put) do |f| %>
+          <div id="profile-form"></div>
+            <%= f.error_notification %>
+            <%= f.input :user_name %>
+            <%= f.input :description %>
+            <%= f.input :diet %>
+            <div class="upload-box-file justify-content-center">
+                  <%= f.input :profile_picture_url, as: :file, label: false %>
+            </div>
+            <%= f.input :location %>
+            <div class="button-small">
+              <%= f.button :submit %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

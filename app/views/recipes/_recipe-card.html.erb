@@ -1,10 +1,10 @@
-  <% @recipes.each do |recipe| %>
+<% @recipes.each do |recipe| %>
+  <%= link_to recipe_path(recipe) do %>
     <div class="recipe-card">
-      <% if recipe.image.nil? %>
-        <%= cl_image_tag recipe.photo.key, width: 400%>
-      <% else %>
+      <% if recipe.image.present? %>
         <%= image_tag recipe.image, width: 400 %>
       <% end %>
       <div class="recipe-name"><%= recipe.name %></div>
     </div>
   <% end %>
+<% end %>

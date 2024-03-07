@@ -21,6 +21,7 @@ class DashboardsController < ApplicationController
     end
   end
 
+  
   private
 
   def user_ingredient_params

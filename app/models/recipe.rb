@@ -1,12 +1,12 @@
 class Recipe < ApplicationRecord
-  belongs_to :user, dependent: :destroy
+  belongs_to :user
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
-  has_many :cookbooks, dependent: :destroy
+  has_many :cookbooks
   has_one_attached :photo
 
   validates :name, presence: true, length: { minimum: 2 }
-  validates :instructions, presence: true, length: { minimum: 100, too_short: "Describe your recipe's instructions more
+  validates :instructions, presence: true, length: { minimum: 32, too_short: "Describe your recipe's instructions more
     detailed!" }
   validates :category, presence: true
   validates :difficulty, presence: true, inclusion: { in: %(easy, moderate, hard) }

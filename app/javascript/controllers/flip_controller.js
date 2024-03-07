@@ -1,25 +1,33 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["newRecipe", "page"]
+  static targets = ["newRecipeFront", "newRecipeForm", "container", "recipesGrid"]
 
   connect() {
-    console.log(this.newRecipeTarget, this.pageTarget)
+    console.log(this.newRecipeFromTarget, this.newRecipeFrontTarget, this.containerTarget, this.recipesGridTarget)
   }
 
-  revealRecipe() {
+  revealRecipeFront() {
     this.hideElements();
-    this.newRecipeTarget.classList.remove('d-none');
+    this.newRecipeFrontTarget.classList.remove('d-none');
+    this.containerTarget.classList.add('cookbook-container-close')
+    this.recipesGridTarget.classList.add('recipe-grid');
   }
 
-  revealPage() {
+  revealRecipeForm() {
     this.hideElements();
-    this.pageTarget.classList.remove('d-none');
+    this.newRecipeFormTarget.classList.remove('d-none');
+    this.containerTarget.classList.add('cookbook-container-open');
+    this.recipesGridTarget.classList.add('recipe-grid-open');
   }
 
   hideElements() {
-    this.newRecipeTarget.classList.add('d-none');
-    this.pageTarget.classList.add('d-none');
+    this.newRecipeFrontTarget.classList.add('d-none');
+    this.newRecipeFormTarget.classList.add('d-none');
+    this.containerTarget.classList.remove('cookbook-container-open');
+    this.recipesGridTarget.classList.remove('recipe-grid-open');
+    this.containerTarget.classList.remove('cookbook-container-close');
+    this.recipesGridTarget.classList.remove('recipe-grid');
   }
 
 }

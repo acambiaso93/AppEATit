@@ -24,8 +24,8 @@
       </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <div class="d-flex mt-3 justify-content-between align-items-center">
-        <%= f.button :submit, class: "button-main", data: { action: 'click->flip#revealRecipe' } %>
-        <i class="fa-solid fa-xmark" data-action="click->flip#revealRecipe"></i>
+        <%= f.button :submit, class: "button-main", data: { action: 'click->flip#revealRecipeFront' } %>
+        <i class="fa-solid fa-xmark" data-action="click->flip#revealRecipeFront"></i>
       </div>
     </div>
   </div>

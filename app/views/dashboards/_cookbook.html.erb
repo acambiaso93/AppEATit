@@ -1,4 +1,4 @@
-<div class="cookbook-container" data-controller="flip">
+<div class="cookbook-container-close" data-controller="flip" data-flip-target="container">
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
@@ -15,15 +15,20 @@
   </div>
 
 
-    <div id="new-recipe" data-flip-target="newRecipe">
-      <div class="button-main" data-action="click->flip#revealPage">New Recipe</div>
-    </div>
+  <div class="page" id="new-recipe-front" data-flip-target="newRecipeFront">
+    <div class="button-main" data-action="click->flip#revealRecipeForm">New Recipe</div>
+  </div>
 
-    <div class="page d-none" data-flip-target="page">
+
+    <div class="page d-none" data-flip-target="newRecipeForm">
       <%= render "recipes/form", recipe: @recipe %>
     </div>
 
-  <div class="cards"></div>
+  <div class="cards">
+    <div class="recipe-grid" data-flip-target="recipesGrid">
+      <%= render partial: "recipes/my_recipes", library: {recipe: @recipe} %>
+    </div>
+  </div>
 
   <div class="footer"></div>
 

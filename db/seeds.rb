@@ -4,6 +4,8 @@ Recipe.destroy_all
 Ingredient.destroy_all
 User.destroy_all
 
+require "open-uri"
+
 # Array of ingredient types
 # ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spice', 'vegan', 'nuts', 'fish']
 
@@ -87,21 +89,17 @@ user_alex = User.create!(
   password: "alex@lewagon.com",
 )
 
-profile = Profile.create!(
+profile = Profile.new(
   user_name: "Määäx",
   description: "I wen't shopping on an empty stomach and now my fridge
-  is exploding! I need help, what can I cook???"
-  diet: "Vegetarian"
-  location: "Berlin"
+  is exploding! I need help, what can I cook???",
+  diet: "Vegetarian",
+  location: "Berlin",
   user: user
 )
-
-file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-profile = Profile.new(title: "#", body: "#")
+file = URI.open("https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw")
 profile.photo.attach(io: file, filename: "https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw", content_type: "image/png")
 profile.save
-
-
 
 [
   {

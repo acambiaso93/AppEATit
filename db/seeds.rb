@@ -4,6 +4,8 @@ Recipe.destroy_all
 Ingredient.destroy_all
 User.destroy_all
 
+require "open-uri"
+
 # Array of ingredient types
 # ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spices', 'vegan', 'nuts', 'fish']
 
@@ -88,20 +90,24 @@ Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices
 user = User.create!(
   email: "max@max.com",
   password: "123456",
-  diet: "vegetarian",
-  description: "Went grocery shopping on an empty stomach so please help me out!!!",
-  location: "Berlin",
-  profile_picture_url: "https://imgs.search.brave.com/QEgQVIF6OAEUxX0hPkZgF42ViGx71BMhkYXmuNzUSEo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzY5LzAwLzkw/LzM2MF9GXzY5MDA5/MDA1X3Jyd3lzMEt5/VTBPc05rTEdvNzRN/VGp1QmZqeGdBTDRz/LmpwZw"
-)
+  )
 
 user_alex = User.create!(
   email: "alex@lewagon.com",
   password: "alex@lewagon.com",
-  diet: "vegetarian",
-  description: "Going home and I dont know what to cook and I dont want to go to the supermarkt. Too lazy...",
-  location: "Berlin",
-  profile_picture_url: "https://www.drawing123.com/wp-content/uploads/2023/03/Drawing-Llama-step-9.jpg"
 )
+
+profile = Profile.new(
+  user_name: "Määäx",
+  description: "I wen't shopping on an empty stomach and now my fridge
+  is exploding! I need help, what can I cook???",
+  diet: "Vegetarian",
+  location: "Berlin",
+  user: user
+)
+file = URI.open("https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw")
+profile.photo.attach(io: file, filename: "https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw", content_type: "image/png")
+profile.save
 
 [
   {

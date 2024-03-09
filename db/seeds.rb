@@ -7,7 +7,7 @@ User.destroy_all
 require "open-uri"
 
 # Array of ingredient types
-# ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spices', 'vegan', 'nuts', 'fish']
+# ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spices', 'vegan', 'nuts', 'fish', 'herbs', 'alcohol']
 
 # Helper method to generate a random boolean value for stock
 def random_stock

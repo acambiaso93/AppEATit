@@ -109,7 +109,8 @@
   font-size: 26px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-
+  min-height: 200px;
+  overflow: auto;
 
   &:hover {
     background-color: $pastel-pink;
@@ -202,6 +203,16 @@
   opacity: 1;
 }
 
-.highlighted {
-  background-color: #FCCCD7;
+.matching {
+  color: green;
+  transition: background-color 0.3s ease;
+}
+
+.missing {
+  color: red;
+  transition: background-color 0.3s ease;
+}
+
+.hidden {
+  display: none;
 }

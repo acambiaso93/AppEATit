@@ -5,7 +5,7 @@ Ingredient.destroy_all
 User.destroy_all
 
 # Array of ingredient types
-# ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spice', 'vegan', 'nuts', 'fish']
+# ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spices', 'vegan', 'nuts', 'fish']
 
 # Helper method to generate a random boolean value for stock
 def random_stock
@@ -15,21 +15,21 @@ end
 Ingredient.create(name: "chicken", stock: random_stock, ingredient_type: "meat")
 Ingredient.create(name: "flour", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "butter", stock: random_stock, ingredient_type: "dairy")
-Ingredient.create(name: "pepper", stock: random_stock, ingredient_type: "spice")
+Ingredient.create(name: "pepper", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "milk", stock: random_stock, ingredient_type: "dairy")
-Ingredient.create(name: "nutmeg", stock: random_stock, ingredient_type: "spice")
+Ingredient.create(name: "nutmeg", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "beef", stock: random_stock, ingredient_type: "meat")
 Ingredient.create(name: "parmigiano", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "tofu", stock: random_stock, ingredient_type: "vegan")
 Ingredient.create(name: "soy milk", stock: random_stock, ingredient_type: "vegan")
 Ingredient.create(name: "mozzarella", stock: random_stock, ingredient_type: "dairy")
-Ingredient.create(name: "chilli", stock: random_stock, ingredient_type: "spice")
+Ingredient.create(name: "chilli", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "pork", stock: random_stock, ingredient_type: "meat")
 Ingredient.create(name: "rice", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "cream", stock: random_stock, ingredient_type: "dairy")
-Ingredient.create(name: "cumin", stock: random_stock, ingredient_type: "spice")
+Ingredient.create(name: "cumin", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "cheddar", stock: random_stock, ingredient_type: "dairy")
-Ingredient.create(name: "curry", stock: random_stock, ingredient_type: "spice")
+Ingredient.create(name: "curry", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "prawns", stock: random_stock, ingredient_type: "fish")
 Ingredient.create(name: "cousCous", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "feta", stock: random_stock, ingredient_type: "dairy")
@@ -73,6 +73,10 @@ Ingredient.create(name: "paprika", stock: random_stock, ingredient_type: "spices
 Ingredient.create(name: "garlic powder", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "cumin powder", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "coriander", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "ricotta", stock: random_stock, ingredient_type: "dairy")
+Ingredient.create(name: "lasagne", stock: random_stock, ingredient_type: "pasta")
+Ingredient.create(name: "parmesan", stock: random_stock, ingredient_type: "dairy")
+Ingredient.create(name: "spinach", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "lemon", stock: random_stock, ingredient_type: "fruit")
 Ingredient.create(name: "tortilla", stock: random_stock, ingredient_type: "bread")
 Ingredient.create(name: "celery", stock: random_stock, ingredient_type: "vegetable")
@@ -80,9 +84,6 @@ Ingredient.create(name: "thyme", stock: random_stock, ingredient_type: "herbs")
 Ingredient.create(name: "peas", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "green onions", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices")
-
-
-
 
 user = User.create!(
   email: "max@max.com",
@@ -172,9 +173,10 @@ user_alex = User.create!(
     image: "https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066",
     user_id: user_alex.id
   }
-].each do |i|
-  Recipe.create!(i)
+].each do |item|
+  Recipe.create!(item)
 end
+
 
 # Chicken Fettucine Alfredo
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
@@ -184,7 +186,18 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: 
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 
-# Spaghetii Bolognese
+#Spinach Lasagne
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "butter"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "flour"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "spinach"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "bay leaf"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "ricotta"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "lasagne"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "parmesan"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+
+# Spaghetti Bolognese
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "onion"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "garlic"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "paprika"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
@@ -231,6 +244,5 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "lemon"), recipe: R
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "paprika"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "tortilla"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
-
 
 puts "Seed data for ingredients created successfully!"

@@ -46,17 +46,16 @@ Ingredient.create(name: "carrot", stock: random_stock, ingredient_type: "vegetab
 Ingredient.create(name: "olive oil", stock: random_stock, ingredient_type: "oil")
 Ingredient.create(name: "paprika powder", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "sugar", stock: random_stock, ingredient_type: "sugar")
-Ingredient.create(name: "pepper", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "bay leaf", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "red wine", stock: random_stock, ingredient_type: "alcohol")
 Ingredient.create(name: "diced tomatoes", stock: random_stock, ingredient_type: "preserves")
-Ingredient.create(name: "breef broth", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "beef broth", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "spaghetti", stock: random_stock, ingredient_type: "pasta")
 Ingredient.create(name: "fettuccine", stock: random_stock, ingredient_type: "pasta")
 Ingredient.create(name: "white mushrooms", stock: random_stock, ingredient_type: "vegetable")
-Ingredient.create(name: "parsley", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "parsley", stock: random_stock, ingredient_type: "herbs")
 Ingredient.create(name: "black pepper", stock: random_stock, ingredient_type: "spices")
-Ingredient.create(name: "brocoli", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "broccoli", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "red bell pepper", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "yellow bell pepper", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "baby corn", stock: random_stock, ingredient_type: "vegetable")
@@ -74,8 +73,16 @@ Ingredient.create(name: "paprika", stock: random_stock, ingredient_type: "spices
 Ingredient.create(name: "garlic powder", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "cumin powder", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "coriander", stock: random_stock, ingredient_type: "spices")
-Ingredient.create(name: "lemon", stock: random_stock, ingredient_type: "vegetable")
-Ingredient.create(name: "tortilla bread", stock: random_stock, ingredient_type: "bread")
+Ingredient.create(name: "lemon", stock: random_stock, ingredient_type: "fruit")
+Ingredient.create(name: "tortilla", stock: random_stock, ingredient_type: "bread")
+Ingredient.create(name: "celery", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "thyme", stock: random_stock, ingredient_type: "herbs")
+Ingredient.create(name: "peas", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "green onions", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices")
+
+
+
 
 user = User.create!(
   email: "max@max.com",
@@ -169,11 +176,61 @@ user_alex = User.create!(
   Recipe.create!(i)
 end
 
-RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"), quantity: 2)
-RecipeIngredient.create(ingredient: Ingredient.find_by(name: "flour"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"), quantity: 2)
-RecipeIngredient.create(ingredient: Ingredient.find_by(name: "butter"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"), quantity: 2)
-RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"), quantity: 2)
-RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"), quantity: 2)
-RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"), quantity: 2)
+# Chicken Fettucine Alfredo
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "flour"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "butter"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+
+# Spaghetii Bolognese
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "onion"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "garlic"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "paprika"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "diced tomatoes"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "olive oil"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "beef"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "butter"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "onion"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "bay leaf"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "thyme"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "red wine"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "beef broth"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "spaghetii"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+
+# Vegetable Stir Fry
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "olive oil"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "carrot"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "broccoli"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "red bell pepper"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "yellow bell pepper"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "garlic"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "peas"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "corn"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "mushrooms"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "ginger"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "green onions"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "sesame seeds"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken broth"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "cornstarch"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "honey"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "sesame oil"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+
+# Beef Tacos
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "beef"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "green bell pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "yellow bell pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "green bell pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "onion"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "garlic"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "tomatoes"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "coriander"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "cumin powder"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "lemon"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "paprika"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "tortilla"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
+
 
 puts "Seed data for ingredients created successfully!"

@@ -51,6 +51,9 @@
   border-radius: 20px;
   font-size: 26px;
   font-weight: bold;
+  font-family: $body-font;
+  scroll-behavior: smooth;
+  overflow: auto;
 }
 
 #profile-button > .button-main:hover {
@@ -60,14 +63,10 @@
 }
 
 .profile-card {
-  width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  width: auto;
   padding: 20px;
-  margin: 20px auto;
   text-align: center;
-  grid-area: Profile;
-
+  grid-area: Pages;
 
   img {
     width: 100%;
@@ -77,10 +76,23 @@
 
   h2 {
     margin-top: 20px;
-    color: #333;
+    color: #1d1d1d;
+    font-family: $headers-font;
+    font-weight: bold;
   }
 
-  p {
-    color: #666;
-  }
+}
+
+.profile-attributes {
+  color: #7e7e7e;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: $body-font;
+}
+
+.profile-description {
+  margin-top: 20px;
+  color: #7e7e7e;
+  font-size: 20px;
+  font-family: $body-font;
 }

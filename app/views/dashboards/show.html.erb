@@ -1,4 +1,4 @@
-<div data-controller="container">
+<div data-controller="container highlight-ingredients">
   <div>
     <div id="kitchen-container" data-container-target="kitchen">
       <%= render "kitchen" %>
@@ -12,8 +12,10 @@
       <%= render "explore" %>
     </div>
 
-    <div id="profile-container" data-container-target="profile" class="<%= 'd-none' unless @target == "Profile" %>">
-      <%= render "profile" %>
-    </div>
+    <% if user_signed_in? && !current_user.profile.nil? %>
+      <div id="profile-container" data-container-target="profile" class="<%= 'd-none' unless @target == "Profile" %>">
+        <%= render "profile" %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -12,16 +12,12 @@
     Profile
   </div>
   <div class="dashboard-fridge">
- <ul>
-    <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
-      <div class="ingredient">
-        <%= ui.ingredient.name %>
-        <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete } do %>
-          <i class="fa-solid fa-xmark"></i>
-        <% end %>
-      </div>
-    <% end %>
+ <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
+   <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
   </ul>
+  </div>
+    <div class="search" data-target="matchingCounter">
+    <span>You have <span data-target="count"></span> matching ingredients</span>
   </div>
 
   <div class="cards">

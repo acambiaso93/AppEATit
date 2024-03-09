@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:update]
+  resources :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -28,4 +28,5 @@ Rails.application.routes.draw do
 
   get "favorite", to: "favorites#favorite"
   get "unfavorite", to: "favorites#unfavorite"
+
 end

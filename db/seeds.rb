@@ -4,8 +4,10 @@ Recipe.destroy_all
 Ingredient.destroy_all
 User.destroy_all
 
+require "open-uri"
+
 # Array of ingredient types
-# ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spices', 'vegan', 'nuts', 'fish']
+# ingredient_types = ['vegetable', 'fruit', 'meat', 'dairy', 'grain', 'spices', 'vegan', 'nuts', 'fish', 'herbs', 'alcohol']
 
 # Helper method to generate a random boolean value for stock
 def random_stock
@@ -88,20 +90,25 @@ Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices
 user = User.create!(
   email: "max@max.com",
   password: "123456",
-  diet: "vegetarian",
-  description: "Went grocery shopping on an empty stomach so please help me out!!!",
-  location: "Berlin",
-  profile_picture_url: "https://imgs.search.brave.com/QEgQVIF6OAEUxX0hPkZgF42ViGx71BMhkYXmuNzUSEo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzY5LzAwLzkw/LzM2MF9GXzY5MDA5/MDA1X3Jyd3lzMEt5/VTBPc05rTEdvNzRN/VGp1QmZqeGdBTDRz/LmpwZw"
-)
+  )
 
 user_alex = User.create!(
   email: "alex@lewagon.com",
   password: "alex@lewagon.com",
-  diet: "vegetarian",
-  description: "Going home and I dont know what to cook and I dont want to go to the supermarkt. Too lazy...",
-  location: "Berlin",
-  profile_picture_url: "https://www.drawing123.com/wp-content/uploads/2023/03/Drawing-Llama-step-9.jpg"
 )
+
+profile = Profile.new(
+  user_name: "Määäx",
+  description: "I wen't shopping on an empty stomach and now my fridge
+  is exploding! I need help, what can I cook???",
+  diet: "Vegetarian",
+  location: "Berlin",
+  user: user
+)
+file = URI.open("https://res.cloudinary.com/demurhwoo/image/upload/v1710000131/cld-sample-4.jpg")
+profile.photo.attach(io: file, filename: "image", content_type: "image/jpg")
+profile.save
+
 
 [
   {

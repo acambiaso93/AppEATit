@@ -12,9 +12,9 @@
     Profile
   </div>
   <div class="dashboard-fridge">
- <ul>
+ <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
     <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
-      <div class="ingredient">
+      <div class="ingredient" data-ingredient-name="<%= ui.ingredient.name %>">
         <%= ui.ingredient.name %>
         <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete } do %>
           <i class="fa-solid fa-xmark"></i>

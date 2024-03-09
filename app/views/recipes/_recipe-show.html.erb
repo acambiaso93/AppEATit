@@ -2,6 +2,16 @@
   <div class="show-grid">
    <div class="left">
       <span><%= @recipe.name %></span>
+      <% if @my_favorites.include?(@recipe) %>
+        <%= link_to unfavorite_path(id: @recipe), remote: true do %>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
+      <% else %>
+        <%= link_to favorite_path(id: @recipe) do %>
+        <i class="fa-regular fa-heart"></i>
+        <% end %>
+      <% end %>
+
   <div class="recipe-details">
     <p class="recipe-category">Category: <%= @recipe.category %></p>
     <p class="recipe-difficulty">Difficulty: <%= @recipe.difficulty %></p>

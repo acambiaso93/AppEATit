@@ -105,9 +105,10 @@ profile = Profile.new(
   location: "Berlin",
   user: user
 )
-file = URI.open("https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw")
-profile.photo.attach(io: file, filename: "https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/demurhwoo/image/upload/v1710000131/cld-sample-4.jpg")
+profile.photo.attach(io: file, filename: "image", content_type: "image/jpg")
 profile.save
+
 
 [
   {

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :create_profile
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,10 +13,4 @@ class User < ApplicationRecord
   has_one :profile
   accepts_nested_attributes_for :profile
 
-  private
-
-  def create_profile
-    build_profile.save
-    # Profile.create(user: self)
-  end
 end

@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["newRecipeFront", "newRecipeForm", "container", "recipesGrid"]
 
   connect() {
-    console.log(this.newRecipeFromTarget, this.newRecipeFrontTarget, this.containerTarget, this.recipesGridTarget)
+    // console.log(this.newRecipeFromTarget, this.newRecipeFrontTarget, this.containerTarget, this.recipesGridTarget)
   }
 
   revealRecipeFront() {

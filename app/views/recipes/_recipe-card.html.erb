@@ -1,6 +1,6 @@
 <% @recipes.each do |recipe| %>
   <%= link_to recipe_path(recipe) do %>
-    <div class="recipe-card">
+    <div class="recipe-card" data-recipe-ingredients="<%= recipe.ingredients.pluck(:name)%>">
       <% if recipe.image.present? %>
         <%= image_tag recipe.image, width: 400 %>
       <% end %>

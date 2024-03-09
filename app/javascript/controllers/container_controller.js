@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["kitchen", "cookbook", "explore", "profile"]
 
   connect() {
-    console.log(this.kitchenTarget, this.cookbookTarget, this.exploreTarget)
+    // console.log(this.kitchenTarget, this.cookbookTarget, this.exploreTarget)
   }
 
   revealCookbook () {

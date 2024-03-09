@@ -31,7 +31,7 @@ Ingredient.create(name: "cumin", stock: random_stock, ingredient_type: "spice")
 Ingredient.create(name: "cheddar", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "curry", stock: random_stock, ingredient_type: "spice")
 Ingredient.create(name: "prawns", stock: random_stock, ingredient_type: "fish")
-Ingredient.create(name: "cousCous", stock: random_stock, ingredient_type: "grain")
+Ingredient.create(name: "couscous", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "feta", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "garlic", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "onion", stock: random_stock, ingredient_type: "vegetable")
@@ -80,19 +80,11 @@ Ingredient.create(name: "tortilla bread", stock: random_stock, ingredient_type: 
 user = User.create!(
   email: "max@max.com",
   password: "123456",
-  diet: "vegetarian",
-  description: "Went grocery shopping on an empty stomach so please help me out!!!",
-  location: "Berlin",
-  profile_picture_url: "https://imgs.search.brave.com/QEgQVIF6OAEUxX0hPkZgF42ViGx71BMhkYXmuNzUSEo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzY5LzAwLzkw/LzM2MF9GXzY5MDA5/MDA1X3Jyd3lzMEt5/VTBPc05rTEdvNzRN/VGp1QmZqeGdBTDRz/LmpwZw"
 )
 
 user_alex = User.create!(
   email: "alex@lewagon.com",
   password: "alex@lewagon.com",
-  diet: "vegetarian",
-  description: "Going home and I dont know what to cook and I dont want to go to the supermarkt. Too lazy...",
-  location: "Berlin",
-  profile_picture_url: "https://www.drawing123.com/wp-content/uploads/2023/03/Drawing-Llama-step-9.jpg"
 )
 
 [

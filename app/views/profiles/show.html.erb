@@ -20,12 +20,9 @@
   </div>
 
   <div class="profile-card">
-    <img src="<%= @profile.user.profile_picture_url %>" alt="Profile Picture">
-    <h2><%= @profile.user.user_name %></h2>
-    <p><%= @profile.user.description %></p>
-    <p><%= @profile.user.diet %></p>
-    <p><%= @profile.user.location %></p>
+
   </div>
+
 
   <div class="pages d-none" data-profile-target="pages">
     <%= render 'profiles/form', profile: @profile %>

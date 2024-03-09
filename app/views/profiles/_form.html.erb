@@ -2,23 +2,24 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="profile-form">
-<%= simple_form_for(@profile, url: profile_path(@profile), method: :put) do |f| %>
-  <%= f.error_notification %>
-  <%= f.simple_fields_for :user do |u| %>
-    <%= u.input :user_name %>
-    <%= u.input :description %>
-    <%= u.input :diet %>
-    <%= u.input :profile_picture_url, as: :file, label: false %>
-    <%= u.input :location %>
-  <% end %>
-  <div class="d-flex mt-3 justify-content-between align-items-center">
-    <div class="button-main-hover">
-      <%= f.button :submit %>
-    </div>
-    <i class="fa-solid fa-xmark justify-content-center" data-action="click->profile#revealProfile"></i>
-  </div>
-<% end %>
+      <%= simple_form_for(current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
 
+        <%= f.simple_fields_for :user do |f| %>
+          <%= f.input :user_name %>
+          <%= f.input :description, placeholder: "min. 100 characters" %>
+          <%= f.input :diet %>
+          <%= f.input :profile_picture_url, as: :file, label: false %>
+          <%= f.input :location %>
+          <%= f.input :email, required: true, autofocus: true %>
+          <div class="d-flex mt-3 justify-content-between align-items-center">
+            <div class="button-main-hover form-actions">
+              <%= f.button :submit, "Update" %>
+            </div>
+            <i class="fa-solid fa-xmark justify-content-center" data-action="click->profile#revealProfile"></i>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>

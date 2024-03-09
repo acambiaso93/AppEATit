@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["editProfile", "pages", "container"]
 
   connect() {
-    console.log(this.editProfileTarget, this.pagesTarget)
+    // console.log(this.editProfileTarget, this.pagesTarget)
   }
 
   revealProfile() {

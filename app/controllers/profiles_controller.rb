@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_profile, only: [:show, :edit, :update]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def show
   end
@@ -30,6 +30,11 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def destroy
+    @profile.destroy
+    redirect_to root_path, notice: 'Profile was successfully deleted.'
+  end
+
   private
 
   def set_profile
@@ -37,6 +42,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(user_attributes: [:user_name, :description, :diet, :profile_picture_url, :location])
+    params.require(:profile).permit(:user_name, :description, :diet, :location, :photo, :user_id)
   end
 end

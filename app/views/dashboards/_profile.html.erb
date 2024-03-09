@@ -13,19 +13,19 @@
   </div>
 
 
-  <div id="profile-button" class="pages" data-profile-target="editProfile">
+  <div class="pages" data-profile-target="editProfile">
+    <div class="profile-card" id="profile-button">
+      <h2><%= @profile.user_name %></h2>
+      <%= cl_image_tag @profile.photo.key, width: 400%>
+      <p class="profile-description"><%= @profile.description %></p>
+      <p class="profile-attributes"><%= @profile.diet %></p>
+      <p class="profile-attributes"><%= @profile.location %></p>
     <div class="button-main mt-3" data-action="click->profile#revealPages">Edit</div>
     <%= link_to "Delete", profile_path(@profile), data: {turbo_method: :delete, confirm: 'Are you sure?'}, class: "button-main mt-3"  %>
     <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-main mt-3" %>
+    </div>
   </div>
 
-  <div class="profile-card d-none">
-    <img src="<%= @profile.user.profile_picture_url %>" alt="Profile Picture">
-    <h2><%= @profile.user.user_name %></h2>
-    <p><%= @profile.user.description %></p>
-    <p><%= @profile.user.diet %></p>
-    <p><%= @profile.user.location %></p>
-  </div>
 
   <div class="pages d-none" data-profile-target="pages">
     <%= render 'profiles/form', profile: @profile %>

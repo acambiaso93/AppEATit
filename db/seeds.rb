@@ -31,7 +31,7 @@ Ingredient.create(name: "cumin", stock: random_stock, ingredient_type: "spice")
 Ingredient.create(name: "cheddar", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "curry", stock: random_stock, ingredient_type: "spice")
 Ingredient.create(name: "prawns", stock: random_stock, ingredient_type: "fish")
-Ingredient.create(name: "couscous", stock: random_stock, ingredient_type: "grain")
+Ingredient.create(name: "cousCous", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "feta", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "garlic", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "onion", stock: random_stock, ingredient_type: "vegetable")
@@ -80,12 +80,28 @@ Ingredient.create(name: "tortilla bread", stock: random_stock, ingredient_type: 
 user = User.create!(
   email: "max@max.com",
   password: "123456",
-)
+  )
 
 user_alex = User.create!(
   email: "alex@lewagon.com",
   password: "alex@lewagon.com",
 )
+
+profile = Profile.create!(
+  user_name: "Määäx",
+  description: "I wen't shopping on an empty stomach and now my fridge
+  is exploding! I need help, what can I cook???"
+  diet: "Vegetarian"
+  location: "Berlin"
+  user: user
+)
+
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+profile = Profile.new(title: "#", body: "#")
+profile.photo.attach(io: file, filename: "https://imgs.search.brave.com/PKO6ixu-cT5-GsTYhDsqk7Qf-S4EIUiLmpr8TvsQX6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY3RmYXNzZXRz/Lm5ldC9zZm5rcThs/bXU1ZDcvM3lwQXdS/eWZaUXBIamlqa25R/RXRNby80YTVjZTI3/MjhlMWYyY2M0OTMw/ODdmOTNlMTc0ODZm/MC9UaGUtV2lsZGVz/dF9GaXNoX29pbF9m/b3JfY2F0c19IZXJv/LmpwZz93PTMwMCZo/PTIyNSZmbD1wcm9n/cmVzc2l2ZSZxPTkw/JmZtPWpwZw", content_type: "image/png")
+profile.save
+
+
 
 [
   {

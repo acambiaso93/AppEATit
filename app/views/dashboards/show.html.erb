@@ -12,8 +12,10 @@
       <%= render "explore" %>
     </div>
 
-    <div id="profile-container" data-container-target="profile" class="d-none">
-      <%= render "profile" %>
-    </div>
+    <% if user_signed_in? && !current_user.profile.nil? %>
+      <div id="profile-container" data-container-target="profile" class="d-none">
+        <%= render "profile" %>
+      </div>
+    <% end %>
   </div>
 </div>

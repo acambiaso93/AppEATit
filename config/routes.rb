@@ -19,11 +19,13 @@ Rails.application.routes.draw do
 
   resources :recipes do
     post 'add_ingredient', on: :member
+    delete :unfavorite, on: :member
   end
 
   resources :ingredients, only: [:show]
 
   resources :profiles
 
-  
+  get "favorite", to: "favorites#favorite"
+  get "unfavorite", to: "favorites#unfavorite"
 end

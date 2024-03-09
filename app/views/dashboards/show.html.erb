@@ -4,15 +4,15 @@
       <%= render "kitchen" %>
     </div>
 
-    <div id="cookbook-container" data-container-target="cookbook" class="d-none">
+    <div id="cookbook-container" data-container-target="cookbook" class="<%= 'd-none' unless @target == "Cookbook" %>">
       <%= render "cookbook" %>
     </div>
 
-    <div id="explore-container" data-container-target="explore" class="d-none">
+    <div id="explore-container" data-container-target="explore" class="<%= 'd-none' unless @target == "Explore" %>">
       <%= render "explore" %>
     </div>
 
-    <div id="profile-container" data-container-target="profile" class="d-none">
+    <div id="profile-container" data-container-target="profile" class="<%= 'd-none' unless @target == "Profile" %>">
       <%= render "profile" %>
     </div>
   </div>

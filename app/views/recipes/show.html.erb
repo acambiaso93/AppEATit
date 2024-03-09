@@ -1,16 +1,16 @@
 <div class="dashboard-container" data-controller="container">
-<div class="kitchen">
-    <a>Kitchen</a>
+  <div class="Kitchen">
+    <%= link_to "Kitchen", dashboard_path %>
   </div>
   <div class="cookbook">
-      <a>Cookbook</a>
+    <%= link_to "Cookbook", dashboard_path(target: "Cookbook") %>
   </div>
   <div class="explore">
-      Explore
+    <%= link_to "Explore", dashboard_path(target: "Explore") %>
   </div>
   <div class="dashboard-refridgerator"></div>
   <div class="profile">
-    Profile
+    <%= link_to "Profile", dashboard_path(target: "Profile") %>
   </div>
  <div class="dashboard-fridge">
   <ul>

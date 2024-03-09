@@ -8,6 +8,8 @@ class DashboardsController < ApplicationController
     @recipe = Recipe.new
     @recipes = Recipe.all
     @my_recipes = current_user.recipes
+    @my_favorites = current_user.favorite_recipes
+    @target = params[:target]
   end
 
   def add_ingredient
@@ -21,7 +23,6 @@ class DashboardsController < ApplicationController
     end
   end
 
-  
   private
 
   def user_ingredient_params

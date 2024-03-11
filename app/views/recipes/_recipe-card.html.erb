@@ -1,10 +1,20 @@
 <% @recipes.each do |recipe| %>
   <%= link_to recipe_path(recipe) do %>
     <div class="recipe-card" data-recipe-ingredients="<%= recipe.ingredients.pluck(:name)%>">
-      <% if recipe.image.present? %>
-        <%= image_tag recipe.image, width: 400 %>
-      <% end %>
+      <div class="bg-image" style="background-image: url('<%= recipe.image.nil? ? cl_image_path(recipe.photo.key) : image_path(recipe.image) %>');"></div>
       <div class="recipe-name"><%= recipe.name %></div>
+      <div class="icon-heart">
+        <% if @my_favorites.include?(recipe) %>
+          <%= link_to unfavorite_path(id: recipe), remote: true do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_path(id: recipe) do %>
+          <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+
     </div>
   <% end %>
 <% end %>

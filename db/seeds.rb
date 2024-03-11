@@ -1,5 +1,6 @@
 Profile.destroy_all
 RecipeIngredient.destroy_all
+Favorite.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
 User.destroy_all
@@ -89,12 +90,12 @@ Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices
 
 user = User.create!(
   email: "max@max.com",
-  password: "123456",
-  )
+  password: "123456"
+)
 
 user_alex = User.create!(
   email: "alex@lewagon.com",
-  password: "alex@lewagon.com",
+  password: "alex@lewagon.com"
 )
 
 profile = Profile.new(
@@ -109,6 +110,16 @@ file = URI.open("https://res.cloudinary.com/demurhwoo/image/upload/v1710000131/c
 profile.photo.attach(io: file, filename: "image", content_type: "image/jpg")
 profile.save
 
+profile_alex = Profile.new(
+  user_name: "Alex",
+  description: "Looking for something to cook and not trying to repeat myself. I have a lot of things at home.",
+  diet: "Vegetarian",
+  location: "Berlin",
+  user: user_alex
+)
+file = URI.open("https://res.cloudinary.com/demurhwoo/image/upload/v1710000131/cld-sample-4.jpg")
+profile_alex.photo.attach(io: file, filename: "image", content_type: "image/jpg")
+profile_alex.save
 
 [
   {
@@ -120,7 +131,7 @@ profile.save
     difficulty: "moderate",
     servings: 4,
     cooking_time: 40,
-    image: "https://c.rewe-static.de/34580294/2/34580294.png?impolicy=rds&im=Resize,height=600;Crop,width=1382,height=600,gravity=Center",
+    image: "https://images.ctfassets.net/uexfe9h31g3m/6QtnhruEFi8qgEyYAICkyS/6e36729731887703608f28e92f10cb49/Spaghetti_bolognese_4x3_V2_LOW_RES.jpg?w=2000&h=2000&fm=webp&fit=thumb&q=100",
     video: "https://youtu.be/ZUfLsWx2Wkw?feature=shared",
     user_id: user.id
   },
@@ -193,7 +204,7 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: 
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 
-#Spinach Lasagne
+# Spinach Lasagne
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "butter"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "flour"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Spinach Lasagne"))

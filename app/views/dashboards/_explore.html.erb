@@ -11,19 +11,22 @@
   <div class="profile" data-action="click->container#revealProfile">
     Profile
   </div>
+
   <div class="dashboard-fridge">
- <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
-   <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
-  </ul>
+    <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
+      <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
+    </ul>
   </div>
-    <div class="search" data-target="matchingCounter">
+
+  <div class="search" data-target="matchingCounter">
     <span>You have <span data-target="count"></span> matching ingredients</span>
   </div>
 
   <div class="cards">
-<div class="recipe-grid">
-<%= render partial: "recipes/recipe-card", library: {recipe: @recipe} %>
-</div>
+    <div class="recipe-grid">
+      <%= render partial: "recipes/recipe-card", library: {recipe: @recipe} %>
+    </div>
   </div>
+  
   <div class="footer"></div>
 </div>

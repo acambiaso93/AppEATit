@@ -1,4 +1,4 @@
-<% @my_recipes.each do |recipe| %>
+<% @matching_recipes.each do |recipe| %>
   <%= link_to recipe_path(recipe) do %>
     <div class="recipe-card">
       <div class="bg-image" style="background-image: url('<%= recipe.image.nil? ? cl_image_path(recipe.photo.key) : image_path(recipe.image) %>');"></div>

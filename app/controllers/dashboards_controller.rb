@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
+
   def show
     @user = current_user
     @profile = @user.profile
@@ -10,6 +11,13 @@ class DashboardsController < ApplicationController
     @my_recipes = current_user.recipes
     @my_favorites = current_user.favorite_recipes
     @target = params[:target]
+
+    min_matching_ingredients = 0.5
+    @matching_recipes = Recipe.joins(:recipe_ingredients)
+                              .where(recipe_ingredients: { ingredient_id: @user.user_ingredients.pluck(:ingredient_id) })
+                              .group('recipes.id')
+                              .having('COUNT(recipe_ingredients.ingredient_id) >= ?', min_matching_ingredients)
+                              .distinct
   end
 
   def add_ingredient

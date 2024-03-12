@@ -111,10 +111,16 @@
   transition: background-color 0.3s ease;
   min-height: 200px;
   overflow: auto;
+  position: sticky;
 
   &:hover {
     background-color: $pastel-pink;
   }
+}
+
+.counter {
+  position: absolute;
+  bottom: 2%;
 }
 
 .search {
@@ -136,5 +142,3 @@
     background-color: $pastel-blue;
   }
  }
-
-

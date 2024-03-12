@@ -47,13 +47,20 @@ export default class extends Controller {
 
     this.countTarget.textContent = matchingCount;
     this.matchingCounterTarget.classList.remove("hidden");
+
+    if (matchingCount === 0) {
+      this.countTarget.innerHTML = "You have <span style='color:red;'>0</span> matching ingredients";
+    } else if (matchingCount === 1) {
+      this.countTarget.innerHTML = "You have <span style='color:green;'>1</span> matching ingredient";
+    } else {
+      this.countTarget.innerHTML = `You have <span style='color:green;'>${matchingCount}</span> matching ingredients`;
+    }
   }
 
   removeIngredients() {
     const ingredientList = this.ingredientUserTarget;
     ingredientList.innerHTML = '<span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching,</span><br> and which ones are <br><span style="color:red">missing.</span></span>';
     this.matchingCounterTarget.classList.add("hidden");
-    this.showExplanatoryCaption();
   }
 
   showExplanatoryCaption() {

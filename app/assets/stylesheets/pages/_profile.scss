@@ -68,12 +68,6 @@
   text-align: center;
   grid-area: Pages;
 
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-  }
-
   h2 {
     margin-top: 20px;
     color: #1d1d1d;
@@ -81,6 +75,13 @@
     font-weight: bold;
   }
 
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
 }
 
 .profile-attributes {

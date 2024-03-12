@@ -1,41 +1,30 @@
 <div class="recipe-show">
   <div class="show-grid">
-   <div class="left">
-      <span><%= @recipe.name %></span>
-      <% if @my_favorites.include?(@recipe) %>
-        <%= link_to unfavorite_path(id: @recipe), remote: true do %>
-          <i class="fa-solid fa-heart"></i>
-        <% end %>
-      <% else %>
-        <%= link_to favorite_path(id: @recipe) do %>
-        <i class="fa-regular fa-heart"></i>
-        <% end %>
-      <% end %>
+    <div class="left">
+      <div class="recipe-details">
+        <div class="recipe-image" style="background-image: url('<%= @recipe.image.nil? ? cl_image_path(@recipe.photo.key) : image_path(@recipe.image) %>');"></div>
+        <p class="recipe-category">Category: <%= @recipe.category %></p>
+        <p class="recipe-difficulty">Difficulty: <%= @recipe.difficulty %></p>
+        <p class="recipe-servings">Servings: <%= @recipe.servings %></p>
+        <p class="recipe-cook-time">Cooking Time: <%= @recipe.cooking_time %> mins</p>
+        <p class="recipe-instructions"><%= @recipe.instructions %></p>
+        <a href="<%= @recipe.video %>" target="_blank" class="recipe-video">Watch Recipe Video</a>
+      </div>
+    </div>
 
-  <div class="recipe-details">
-    <p class="recipe-category">Category: <%= @recipe.category %></p>
-    <p class="recipe-difficulty">Difficulty: <%= @recipe.difficulty %></p>
-    <p class="recipe-servings">Servings: <%= @recipe.servings %></p>
-    <p class="recipe-cook-time">Cooking Time: <%= @recipe.cooking_time %> mins</p>
-    <p class="recipe-instructions"><%= @recipe.instructions %></p>
-    <a href="<%= @recipe.video %>" target="_blank" class="recipe-video">Watch Recipe Video</a>
-   </div>
-   </div>
-   <div class="right-column">
-        <p class="recipe-ingredients">
- <p class="recipe-ingredients">
-  Ingredients:<br>
-  <% @ingredients.uniq(&:id).each do |ingredient| %>
-    <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
-      <span class="user-has-ingredient"><%= ingredient.name %></span><br>
-    <% else %>
-      <%= ingredient.name %><br>
-    <% end %>
-  <% end %>
-</p>
-</p>
-   </div>
+    <div class="right-column">
+      <p class="recipe-ingredients">
+      <p class="recipe-ingredients">
+        Ingredients:<br>
+        <% @ingredients.uniq(&:id).each do |ingredient| %>
+          <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
+            <span class="user-has-ingredient"><%= ingredient.name %></span><br>
+          <% else %>
+            <%= ingredient.name %><br>
+          <% end %>
+        <% end %>
+      </p>
+      </p>
+    </div>
   </div>
-       <img src="<%= @recipe.image %>" alt="<%= @recipe.name %>" class="recipe-image">
-
 </div>

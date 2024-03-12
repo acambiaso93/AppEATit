@@ -1,0 +1,49 @@
+.recipe-show {
+  background-color: white;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.recipe-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  i {
+    font-size: 40px;
+  }
+}
+
+.recipe-image {
+  height: 600px;
+  width: 600px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.user-has-ingredient {
+  color: green;
+}
+
+.user-has-ingredient .fa-xmark {
+  color: green;
+}
+
+.show-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  }
+
+.right-column {
+  padding-left: 20px;
+}

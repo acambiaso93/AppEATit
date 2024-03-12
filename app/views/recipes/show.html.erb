@@ -1,7 +1,7 @@
 
 <div class="dashboard-container" data-controller="container highlight-ingredients">
 <div class="kitchen">
-    <a>Kitchen</a>
+    <%= link_to "Kitchen", dashboard_path %>
   </div>
   <div class="cookbook">
     <%= link_to "Cookbook", dashboard_path(target: "Cookbook") %>
@@ -23,15 +23,23 @@
   </ul>
 </div>
   <div class="search">
-      <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
-    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>
-    <%= form.submit "Add Ingredient" %>
-  <% end %>
+    <div class="recipe-title">
+      <span><%= @recipe.name %></span>
+      <div>
+        <% if @my_favorites.include?(@recipe) %>
+          <%= link_to unfavorite_path(id: @recipe), remote: true do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_path(id: @recipe) do %>
+          <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="cards">
-
-<%= render "recipe-show", locals: {recipe: @recipe} %>
-
+    <%= render "recipe-show", locals: {recipe: @recipe} %>
  </div>
   <div class="footer"></div>
 </div>

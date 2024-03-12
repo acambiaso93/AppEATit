@@ -1,6 +1,8 @@
 Profile.destroy_all
 RecipeIngredient.destroy_all
+RecipeCategory.destroy_all
 Favorite.destroy_all
+Category.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
 User.destroy_all
@@ -15,6 +17,7 @@ def random_stock
   [true, false].sample
 end
 
+# Create Ingredients
 Ingredient.create(name: "chicken", stock: random_stock, ingredient_type: "meat")
 Ingredient.create(name: "flour", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "butter", stock: random_stock, ingredient_type: "dairy")
@@ -88,6 +91,16 @@ Ingredient.create(name: "peas", stock: random_stock, ingredient_type: "vegetable
 Ingredient.create(name: "green onions", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices")
 
+# Categories
+
+categories = ['Quick and Easy', 'Vegetarian', 'Meat Friendly', 'Salad', 'Vegan', 'Dinner for one', 'Breakfast', 'Snack', 'Side Dish', 'Bakery']
+
+categories.each do |category_name|
+  Category.create(name: category_name)
+end
+
+# Users
+
 user = User.create!(
   email: "max@max.com",
   password: "123456"
@@ -97,6 +110,8 @@ user_alex = User.create!(
   email: "alex@lewagon.com",
   password: "alex@lewagon.com"
 )
+
+# Profile
 
 profile = Profile.new(
   user_name: "Määäx",
@@ -120,6 +135,8 @@ profile_alex = Profile.new(
 file = URI.open("https://res.cloudinary.com/demurhwoo/image/upload/v1710000131/cld-sample-4.jpg")
 profile_alex.photo.attach(io: file, filename: "image", content_type: "image/jpg")
 profile_alex.save
+
+# Recipes
 
 [
   {
@@ -204,6 +221,10 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: 
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+
+
 # Spinach Lasagne
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "butter"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "flour"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
@@ -214,6 +235,9 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "ricotta"), recipe:
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "lasagne"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "parmesan"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+
+RecipeCategory.create(category: Category.find_by(name: "Vegetarian"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+
 
 # Spaghetti Bolognese
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "onion"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
@@ -229,6 +253,10 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "thyme"), recipe: R
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "red wine"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "beef broth"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "spaghetii"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+
 
 # Vegetable Stir Fry
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "olive oil"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
@@ -248,6 +276,10 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "cornstarch"), reci
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "honey"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "sesame oil"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeCategory.create(category: Category.find_by(name: "Vegetarian"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+
+
 # Beef Tacos
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "beef"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "green bell pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
@@ -262,5 +294,8 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "lemon"), recipe: R
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "paprika"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "tortilla"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
+
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Beef Tacos"))
 
 puts "Seed data for ingredients created successfully!"

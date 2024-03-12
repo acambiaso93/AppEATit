@@ -1,3 +1,33 @@
+.recipe-show {
+  background-color: white;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.recipe-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  i {
+    font-size: 40px;
+  }
+}
+
+.recipe-image {
+  height: 600px;
+  width: 600px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
 .user-has-ingredient {
   color: green;
 }

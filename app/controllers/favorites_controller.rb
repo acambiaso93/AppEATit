@@ -4,10 +4,7 @@ class FavoritesController < ApplicationController
   def favorite
     @recipe = Recipe.find(params[:id])
     @favorite = Favorite.create(user: current_user, recipe: @recipe)
-    flash[:notice] = 'Recipe added to favorites'
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-    end
+    redirect_to @recipe, notice: 'Recipe added to favorites'
   end
 
   def unfavorite

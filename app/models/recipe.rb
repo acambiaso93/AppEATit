@@ -5,6 +5,10 @@ class Recipe < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorited_by, through: :favorites, source: :user
   has_one_attached :photo
+  has_many :recipe_categories, dependent: :destroy
+  has_many :categories, through: :recipe_categories
+
+  accepts_nested_attributes_for :recipe_categories, allow_destroy: true
 
   validates :name, presence: true, length: { minimum: 2 }
   validates :instructions, presence: true, length: { minimum: 32, too_short: "Describe your recipe's instructions more

@@ -23,6 +23,7 @@ Ingredient.create(name: "flour", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "butter", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "pepper", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "milk", stock: random_stock, ingredient_type: "dairy")
+Ingredient.create(name: "yogurt", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "nutmeg", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "beef", stock: random_stock, ingredient_type: "meat")
 Ingredient.create(name: "parmigiano", stock: random_stock, ingredient_type: "dairy")
@@ -31,12 +32,14 @@ Ingredient.create(name: "soy milk", stock: random_stock, ingredient_type: "vegan
 Ingredient.create(name: "mozzarella", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "chilli", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "pork", stock: random_stock, ingredient_type: "meat")
+Ingredient.create(name: "pancetta", stock: random_stock, ingredient_type: "meat")
 Ingredient.create(name: "rice", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "cream", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "cumin", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "cheddar", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "curry", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "prawns", stock: random_stock, ingredient_type: "fish")
+Ingredient.create(name: "white fish", stock: random_stock, ingredient_type: "fish")
 Ingredient.create(name: "cousCous", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "feta", stock: random_stock, ingredient_type: "dairy")
 Ingredient.create(name: "garlic", stock: random_stock, ingredient_type: "vegetable")
@@ -89,11 +92,19 @@ Ingredient.create(name: "celery", stock: random_stock, ingredient_type: "vegetab
 Ingredient.create(name: "thyme", stock: random_stock, ingredient_type: "herbs")
 Ingredient.create(name: "peas", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "green onions", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "avocado", stock: random_stock, ingredient_type: "vegetable")
 Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "coriander", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "garam masala", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "chili", stock: random_stock, ingredient_type: "spices")
+Ingredient.create(name: "Worcestershire sauce", stock: random_stock, ingredient_type: "Sauce")
+Ingredient.create(name: "croutons", stock: random_stock, ingredient_type: "grain")
+Ingredient.create(name: "baking powder", stock: random_stock, ingredient_type: "grain")
+Ingredient.create(name: "marinara sauce", stock: random_stock, ingredient_type: "Sauce")
 
 # Categories
 
-categories = ['Quick and Easy', 'Vegetarian', 'Meat Friendly', 'Salad', 'Vegan', 'Dinner for one', 'Breakfast', 'Snack', 'Side Dish', 'Bakery']
+categories = ['Dinner', 'Quick and Easy', 'Vegetarian', 'Meat Friendly', 'Salad', 'Vegan', 'Dinner for one', 'Breakfast', 'Snack', 'Side Dish', 'Bakery']
 
 categories.each do |category_name|
   Category.create(name: category_name)
@@ -207,11 +218,90 @@ profile_alex.save
     cooking_time: 50,
     image: "https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066",
     user_id: user_alex.id
+  },
+  {
+    name: "Chicken Parmesan",
+    instructions: "Preheat the oven to 190°C/375°F/gas 5. Season chicken breasts with salt and pepper. Dip chicken in egg, then in breadcrumbs. Heat oil in a skillet over medium heat and cook chicken until golden. Pour marinara sauce over chicken, top with mozzarella and parmesan. Bake for 20 minutes, or till golden.",
+    category: "italian",
+    difficulty: "moderate",
+    servings: 4,
+    cooking_time: 40,
+    image: "https://hips.hearstapps.com/hmg-prod/images/chicken-parmesan-index-644042afa49de.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*",
+    user_id: user_alex.id
+  },
+  {
+    name: "Pancakes",
+    instructions: "In a large bowl, mix flour, sugar, baking powder, and salt. Make a well in the center, and pour in milk, egg, and melted butter. Mix until smooth. Heat a lightly oiled griddle over medium-high heat. Pour batter onto the griddle. Brown on both sides.",
+    category: "american",
+    difficulty: "easy",
+    servings: 4,
+    cooking_time: 15,
+    image: "https://cafedelites.com/wp-content/uploads/2016/03/3-Ingredient-Pancakes-61.jpg",
+    user_id: user_alex.id
+  },
+  {
+    name: "Spaghetti Carbonara",
+    instructions: "Cook spaghetti in a large pot of boiling salted water until al dente. Meanwhile, whisk eggs and Parmesan together in a bowl. Cook pancetta in a large skillet over medium heat until crispy. Remove from heat. Add hot pasta to the skillet and toss well to coat in pancetta fat. Still off the heat, add the egg mixture to the skillet and toss well to create a creamy sauce. Season with salt and pepper.",
+    category: "italian",
+    difficulty: "moderate",
+    servings: 4,
+    cooking_time: 30,
+    image: "https://images.lecker.de/spaghetti-carbonara-f9163702.jpg,id=f74d3b8f,b=lecker,w=1200,rm=sk.webp",
+    user_id: user_alex.id
+  },
+  {
+    name: "Chicken Tikka Masala",
+    instructions: "Marinate chicken in a mixture of yogurt and tikka masala spice. Heat oil in a large heavy skillet over medium heat. Add chicken, and cook until lightly browned. Stir in tomato sauce and cream. Simmer on low heat until sauce thickens. Serve over hot basmati rice.",
+    category: "indian",
+    difficulty: "hard",
+    servings: 4,
+    cooking_time: 60,
+    image: "https://theforkedspoon.com/wp-content/uploads/2019/02/Chicken-Tikka-Masala-11.jpg",
+    user_id: user_alex.id
+  },
+  {
+    name: "Caesar Salad",
+    instructions: "In a large bowl, mix romaine lettuce, croutons, and Parmesan cheese. In a small bowl, whisk together lemon juice, olive oil, egg, Worcestershire sauce, garlic, and black pepper. Pour dressing over salad and toss well.",
+    category: "american",
+    difficulty: "easy",
+    servings: 4,
+    cooking_time: 10,
+    image: "https://www.allrecipes.com/thmb/H0nufEifTElz_HLuyY0NXFIgn2Y=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/14172-CeasarSaladSupreme-ddmfs-Step4-0912-cca42f7faec7460ea7c83097f3531bcc.jpg",
+    user_id: user_alex.id
+  },
+  {
+    name: "Beef Bourguignon",
+    instructions: "In a large pot, cook bacon over medium heat until crispy. Remove bacon, and set aside. Brown beef in the hot bacon fat. Remove beef, and set aside. In the same pot, cook onions and carrots until tender. Return beef and bacon to the pot, and add red wine, beef broth, and thyme. Cover and simmer for 2 hours.",
+    category: "french",
+    difficulty: "hard",
+    servings: 4,
+    cooking_time: 150,
+    image: "https://somuchfoodblog.com/wp-content/uploads/2022/11/beef-bourguinon7.jpg",
+    user_id: user_alex.id
+  },
+  {
+    name: "Chicken Fried Rice",
+    instructions: "Heat oil in a large skillet over medium heat. Add onion, garlic, peas, and carrots. Cook for 5 minutes. Push vegetables to one side of the skillet. Pour eggs on the other side of skillet and scramble. Mix vegetables and eggs. Stir in rice, cooked chicken, and soy sauce.",
+    category: "chinese",
+    difficulty: "easy",
+    servings: 4,
+    cooking_time: 30,
+    image: "https://www.recipetineats.com/wp-content/uploads/2019/09/Chicken-Fried-Rice_9.jpg",
+    user_id: user_alex.id
+  },
+  {
+    name: "Fish Tacos",
+    instructions: "Season fish with salt and pepper, and grill until cooked through. Warm tortillas in the oven. Fill tortillas with fish, cabbage, salsa, and sour cream.",
+    category: "mexican",
+    difficulty: "easy",
+    servings: 4,
+    cooking_time: 30,
+    image: "https://www.recipetineats.com/wp-content/uploads/2016/05/Fish-Tacos_7.jpg",
+    user_id: user_alex.id
   }
 ].each do |item|
   Recipe.create!(item)
 end
-
 
 # Chicken Fettucine Alfredo
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
@@ -297,5 +387,85 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: 
 
 RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Beef Tacos"))
+
+# Chicken Parmesan
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "salt"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "egg"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "croutons"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "oil"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "marinara sauce"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "mozzarella"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeIngredient.create(ingredient: Ingredient.find_by(name: "parmesan"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+
+# Pancakes
+pancakes = Recipe.find_by(name: "Pancakes")
+["flour", "baking powder", "eggs", "milk", "butter", "sugar", "salt"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: pancakes)
+end
+
+RecipeCategory.create(category: Category.find_by(name: "Breakfast"), recipe: Recipe.find_by(name: "Pancakes"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Pancakes"))
+
+# Fish Taco
+fish_taco = Recipe.find_by(name: "Fish Taco")
+["butter", "lime", "chilli", "garlic", "salt", "white fish", "tortillas", "avocado"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: fish_taco)
+end
+
+RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Fish Taco"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Fish Taco"))
+
+# Spaghetti Carbonara
+spaghetti_carbonara = Recipe.find_by(name: "Spaghetti Carbonara")
+["eggs", "parmesan", "pancetta", "pasta", "garlic", "olive oil"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: spaghetti_carbonara)
+end
+
+RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+
+# Chicken Tikka Masala
+chicken_tikka_masala = Recipe.find_by(name: "Chicken Tikka Masala")
+["rice", "coriander", "yogurt", "lemon", "garam masala", "cumin", "chili", "ginger", "garlic", "onions", "chicken", "butter", "oil", "tomato"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: chicken_tikka_masala)
+end
+RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+
+# Ceasar Salad
+caesar_salad = Recipe.find_by(name: "Caesar Salad")
+["lettuce", "croutons", "parmesan cheese", "lemon", "olive oil", "egg", "Worcestershire sauce", "garlic", "black pepper"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: caesar_salad)
+end
+RecipeCategory.create(category: Category.find_by(name: "Snack"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "Salad"), recipe: Recipe.find_by(name: "Caesar Salad"))
+
+# Beef Bourguignon
+beef_bourguignon = Recipe.find_by(name: "Beef Bourguignon")
+["beef", "bacon", "salt", "pepper", "onions", "carrots", "red wine", "broth", "thyme"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: beef_bourguignon)
+end
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Caesar Salad"))
+
+# Chicken Fried Rice
+chicken_fried_rice = Recipe.find_by(name: "Chicken Fried Rice")
+["oil", "onion", "garlic", "peas", "carrots", "eggs", "rice", "chicken", "soy sauce"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: chicken_fried_rice)
+end
+RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Caesar Salad"))
 
 puts "Seed data for ingredients created successfully!"

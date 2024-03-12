@@ -18,8 +18,8 @@
     </ul>
   </div>
 
-  <div class="search" data-target="matchingCounter">
-    <span>You have <span data-target="count"></span> matching ingredients</span>
+  <div class="search" data-highlight-ingredients-target="matchingCounter">
+    <span>You have <span data-highlight-ingredients-target="count"></span> matching ingredients</span>
   </div>
 
   <div class="cards">
@@ -27,6 +27,6 @@
       <%= render partial: "recipes/recipe-card", library: {recipe: @recipe} %>
     </div>
   </div>
-  
+
   <div class="footer"></div>
 </div>

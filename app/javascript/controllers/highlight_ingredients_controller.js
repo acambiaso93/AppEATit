@@ -51,7 +51,7 @@ export default class extends Controller {
 
   removeIngredients() {
     const ingredientList = this.ingredientUserTarget;
-    ingredientList.innerHTML = "";
+    ingredientList.innerHTML = '<span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching,</span><br> and which ones are <br><span style="color:red">missing.</span></span>';
     this.matchingCounterTarget.classList.add("hidden");
     this.showExplanatoryCaption();
   }

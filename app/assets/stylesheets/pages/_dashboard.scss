@@ -122,6 +122,9 @@
   border-radius: 20px;
   grid-area: Search;
   padding: 20px;
+  &:hover {
+    background-color: $pastel-blue;
+  }
 }
 
 .footer-dash {
@@ -136,5 +139,3 @@
     background-color: $pastel-blue;
   }
  }
-
-

@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @profile = @user.profile
     @user_ingredients = @user.user_ingredients.includes(:ingredient)
+    @user_ingredient = UserIngredient.new
     @ingredients = Ingredient.all
     @recipe = Recipe.new
     @recipes = Recipe.all

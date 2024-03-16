@@ -23,12 +23,16 @@
     <% end %>
   </ul>
 </div>
+
   <div class="search">
-      <%= form_with(model: @user, url: { action: "add_ingredient" }, method: "post") do |form| %>
-    <%= form.collection_select :ingredient_id, @ingredients, :id, :name, { prompt: 'Select an ingredient' } %>
-    <%= form.submit "Add Ingredient" %>
-  <% end %>
+      <%= simple_form_for @user_ingredient do |f| %>
+      <div class="kitchen-search">
+        <%= f.input :ingredient, label: false, collection: @ingredients, input_html: {data: {controller: "tom-select"}, placeholder: 'Type an ingredient here ...'} %>
+        <%= f.submit "Add Ingredient", class: "button-main" %>
+      </div>
+      <% end  %>
   </div>
+
   <div class="cards">
     <div class="recipe-grid">
       <%= render partial: "recipes/matching_recipes", library: {recipe: @recipe} %>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     post :add_ingredient, on: :member
   end
 
-  resources :user_ingredients, only: [:destroy]
+  resources :user_ingredients, only: [:create, :destroy]
 
   resources :recipes do
     post 'add_ingredient', on: :member

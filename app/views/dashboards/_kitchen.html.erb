@@ -1,4 +1,4 @@
-<div class="dashboard-container">
+<div class="kitchen-container">
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
@@ -26,6 +26,10 @@
 
   <%= render "profile_dropdown" %>
 
+<div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
+  <div class="text">take me up</div></div>
+
+
   <div class="search">
       <%= simple_form_for @user_ingredient do |f| %>
       <div class="kitchen-search">
@@ -40,11 +44,10 @@
       <%= render partial: "recipes/matching_recipes", library: {recipe: @recipe} %>
     </div>
   </div>
-  <div class="footer"></div>
 </div>
   <div class="cards">
     <div class="recipe-grid">
     </div>
   </div>
-  <div class="footer"></div>
+  <div class="footer-dash"></div>
 </div>

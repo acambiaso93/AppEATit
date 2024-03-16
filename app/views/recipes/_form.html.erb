@@ -20,7 +20,7 @@
         <%= f.input_field :category, placeholder: "Category", class: "title-input" %>
       </div>
       <div class="d-flex mt-4">
-        <%= f.input :video, as: :file %>
+        <%= f.input :video, placeholder: "YouTube Video URL" %>
       </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <div class="d-flex mt-3 justify-content-between align-items-center">

@@ -3,12 +3,12 @@ class RecipesController < ApplicationController
 
 
   def show
-      @recipe = Recipe.includes(recipe_ingredients: :ingredient).find(params[:id])
-      @ingredients = @recipe.ingredients
-      @user = current_user
-      @user_ingredients = @user.user_ingredients.includes(:ingredient)
-      @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
-      @my_favorites = current_user.favorite_recipes
+    @recipe = Recipe.includes(recipe_ingredients: :ingredient).find(params[:id])
+    @ingredients = @recipe.ingredients
+    @user = current_user
+    @user_ingredients = @user.user_ingredients.includes(:ingredient)
+    @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
+    @my_favorites = current_user.favorite_recipes
   end
 
   def create

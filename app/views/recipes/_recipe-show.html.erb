@@ -13,7 +13,4 @@
     </div>
   </div>
   <p class="recipe-instructions"><%= @recipe.instructions %></p>
-  <button class="button-main-hover">
-    <%= link_to 'Delete Recipe', recipe_path(@recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  </button>
 </div>

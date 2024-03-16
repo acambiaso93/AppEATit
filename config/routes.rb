@@ -28,5 +28,4 @@ Rails.application.routes.draw do
 
   get "favorite", to: "favorites#favorite"
   get "unfavorite", to: "favorites#unfavorite"
-
 end

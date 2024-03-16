@@ -8,7 +8,17 @@ class DashboardsController < ApplicationController
     @user_ingredient = UserIngredient.new
     @ingredients = Ingredient.all
     @recipe = Recipe.new
-    @recipes = Recipe.all
+
+    if params[:query].present?
+      @recipes = Recipe.search_by_name_or_ingredients(params[:query])
+      @tab = "Explore"
+    elsif params[:clear].present?
+      @recipes = Recipe.all
+      @tab = "Explore"
+    else
+      @recipes = Recipe.all
+    end
+
     @my_recipes = current_user.recipes
     @my_favorites = current_user.favorite_recipes
     @target = params[:target]

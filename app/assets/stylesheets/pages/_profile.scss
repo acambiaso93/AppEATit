@@ -1,5 +1,5 @@
-
-.profile-container-closed {  display: grid;
+.profile-container-closed {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
   gap: 2px 2px;
@@ -16,7 +16,8 @@
   margin-bottom: 0px;
 }
 
-.profile-container-open {  display: grid;
+.profile-container-open {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
   gap: 2px 2px;
@@ -34,7 +35,6 @@
 }
 
 .pages {
-  position: relative;
   grid-area: Pages;
   background-color: white;
   border-radius: 20px;
@@ -46,7 +46,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: white;
   border-radius: 20px;
   font-size: 26px;
@@ -63,9 +62,12 @@
 }
 
 .profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: auto;
   padding: 20px;
-  text-align: center;
+  justify-content: center;
   grid-area: Pages;
 
   h2 {
@@ -74,26 +76,41 @@
     font-family: $headers-font;
     font-weight: bold;
   }
-
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background-size: cover;
 }
 
 .profile-attributes {
-  color: #7e7e7e;
-  font-size: 26px;
+  color: #060606;
+  font-size: 22px;
   font-weight: bold;
   font-family: $body-font;
 }
 
 .profile-description {
   margin-top: 20px;
-  color: #7e7e7e;
-  font-size: 20px;
+  align-items: center;
+  color: #000000;
+  font-size: 18px;
   font-family: $body-font;
+}
+
+.profile-fridge {
+  grid-area: Dashboard-fridge;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  min-height: 200px;
+  overflow: auto;
+  height: calc(100vh - 180px);
+  position: sticky;
+  top: 0;
 }

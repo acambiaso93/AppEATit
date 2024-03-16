@@ -1,10 +1,10 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["editProfile", "pages", "container"]
+  static targets = ["editProfile", "pages", "container"];
 
   connect() {
-    // console.log(this.editProfileTarget, this.pagesTarget)
+    console.log(this.editProfileTarget, this.pagesTarget);
   }
 
   revealProfile() {
@@ -16,14 +16,13 @@ export default class extends Controller {
 
   revealPages() {
     this.hideElements();
-    this.pagesTarget.classList.remove('d-none');
-    this.containerTarget.classList.add('profileContainerClosed');
-    this.containerTarget.classList.remove('profileContainerOpen');
+    this.pagesTarget.classList.remove("d-none");
+    this.containerTarget.classList.add("profileContainerClosed");
+    this.containerTarget.classList.remove("profileContainerOpen");
   }
 
   hideElements() {
-    this.editProfileTarget.classList.add('d-none');
-    this.pagesTarget.classList.add('d-none');
+    this.editProfileTarget.classList.add("d-none");
+    this.pagesTarget.classList.add("d-none");
   }
-
 }

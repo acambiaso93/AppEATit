@@ -12,14 +12,17 @@
     Profile
   </div>
 
- <div class="dashboard-fridge">
-  <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
-    <span data-highlight-ingredients-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
-  </ul>
-  <div class="counter" data-highlight-ingredients-target="matchingCounter">
-    <span data-highlight-ingredients-target="count"></span>
+
+  <div class="dashboard-fridge" data-container-target="fridge">
+    <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
+      <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
+    </ul>
+    <div class="counter" data-highlight-ingredients-target="matchingCounter">
+      <span data-highlight-ingredients-target="count"></span>
+    </div>
   </div>
-</div>
+
+  <%= render "profile_dropdown" %>
 
 <div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
   <div class="text">take me up</div></div>

@@ -2,11 +2,13 @@
   <%= link_to recipe_path(recipe) do %>
     <div class="recipe-card">
       <div class="bg-image" style="background-image: url('<%= recipe.image.nil? ? cl_image_path(recipe.photo.key) : image_path(recipe.image) %>');"></div>
+      <div class="recipe-info">
       <div class="recipe-name"><%= recipe.name %></div>
-      <div class="icon-heart">
-        <%= link_to recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-        <i class="fa-solid fa-xmark"></i>
-        <% end %>
+        <div class="icon-heart">
+          <%= button_to data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

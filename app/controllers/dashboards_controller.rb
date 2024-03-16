@@ -15,6 +15,9 @@ class DashboardsController < ApplicationController
     elsif params[:clear].present?
       @recipes = Recipe.all
       @tab = "Explore"
+    elsif params[:source].present?
+      @recipes = Recipe.all
+      @tab = "Cookbook"
     else
       @recipes = Recipe.all
     end

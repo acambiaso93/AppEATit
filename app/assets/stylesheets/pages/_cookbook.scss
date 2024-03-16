@@ -1,6 +1,6 @@
 .cookbook-container-close {  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
+  grid-template-rows: 70px 0.2fr 2.6fr 0.2fr;
   gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -33,7 +33,6 @@
 }
 
 .page {
-  position: relative;
   grid-area: Page;
   background-color: white;
   border-radius: 20px;
@@ -50,7 +49,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: calc(100vh - 27px);
+  height: calc(100vh - 72px);
   position: sticky;
   top: 0;
 }

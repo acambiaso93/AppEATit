@@ -1,1 +1,179 @@
+.kitchen-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 70px 0.2fr 4fr 0.2fr;
+  gap: 2px 2px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Kitchen Cookbook Explore Dashboard-refridgerator"
+    "Search Search Search Dashboard-fridge"
+    "Cards Cards Cards Dashboard-fridge"
+    "Footer Footer Footer Footer";
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
+.kitchen {
+  grid-area: Kitchen;
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none;
+  position: sticky;
+
+
+
+   &:hover {
+     background-color: $pastel-green;
+     cursor: pointer;
+   }
+}
+
+
+.cookbook {
+  grid-area: Cookbook;
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none;
+
+   &:hover {
+     background-color: $pastel-green;
+     cursor: pointer;
+   }
+}
+
+.explore {
+  grid-area: Explore;
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  transition: background-color 0.3s ease;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none;
+
+
+   &:hover {
+     background-color: $pastel-green;
+     cursor: pointer;
+   }
+}
+
+.extra-div {
+  grid-area: Dashboard-fridge;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  height: 70px;
+  display: none;
+  position: sticky;
+  width: 100%;
+  z-index: 999;
+  top: calc(100vh - 70px);
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon {
+  display: inline;
+}
+
+.text {
+  display: inline;
+  margin-left: 10px;
+}
+
+.dashboard-refridgerator {
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 20px;
+
+  grid-area: Dashboard-refridgerator;
+}
+
+.profile {
+  background-color: white;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  grid-area: Dashboard-refridgerator;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none;
+
+
+  &:hover {
+    background-color: $pastel-green;
+    cursor: pointer;
+  }
+}
+
+.dashboard-fridge {
+  grid-area: Dashboard-fridge;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  min-height: 200px;
+  overflow: auto;
+  height: calc(100vh - 73px);
+  position: sticky;
+  top: 1px;
+
+  &:hover {
+    background-color: $pastel-pink;
+  }
+}
+
+.counter {
+  position: absolute;
+  bottom: 2%;
+}
+
+.search {
+  background-color: white;
+  border-radius: 20px;
+  grid-area: Search;
+  padding: 20px;
+  &:hover {
+    background-color: $pastel-blue;
+  }
+}
+
+.footer-dash {
+  background-color: white;
+  grid-area: Footer;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: background-color 0.3s ease;
+  margin-top: 0;
+
+  &:hover {
+    background-color: $pastel-blue;
+  }
+ }

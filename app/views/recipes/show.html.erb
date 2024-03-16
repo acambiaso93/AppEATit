@@ -1,5 +1,5 @@
 
-<div class="dashboard-container" data-controller="container highlight-ingredients">
+<div class="kitchen-container" data-controller="container highlight-ingredients">
   <div class="kitchen">
     <%= link_to "Kitchen", dashboard_path %>
   </div>
@@ -15,6 +15,7 @@
   </div>
 <div class="dashboard-fridge">
   <p class="recipe-ingredients">
+
         <% @ingredients.uniq(&:id).each do |ingredient| %>
           <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
             <span class="matching"><%= ingredient.name %></span><br>
@@ -50,5 +51,5 @@
     <%= render "recipe-show", locals: {recipe: @recipe} %>
  </div>
 
-  <div class="footer"></div>
+  <div class="footer-dash"></div>
 </div>

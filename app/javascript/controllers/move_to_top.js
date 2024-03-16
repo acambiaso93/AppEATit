@@ -23,9 +23,13 @@ window.addEventListener('scroll', debounce(function() {
   }
 }, 50));
 
-document.querySelector('.extra-div').addEventListener('click', function() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+document.addEventListener('click', function(event) {
+  const target = event.target;
+
+  if (target.classList.contains('extra-div') || target.classList.contains('text') || target.classList.contains('icon')) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 });

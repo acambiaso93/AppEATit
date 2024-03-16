@@ -1,4 +1,5 @@
 .recipe-show {
+  position: relative;
   background-color: white;
   height: 100vh;
   margin: 0 1px;
@@ -46,7 +47,7 @@
   font-size: 21px;
   font-weight: lighter;
   font-family: $body-font;
-  padding-top: 20px;
+  padding-top: 90px;
 }
 
 .recipe-icons {
@@ -56,4 +57,19 @@
   i {
     font-size: 24px;
   }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

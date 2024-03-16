@@ -5,11 +5,11 @@
     <div class="recipe-info">
       <div class="recipe-name"><%= recipe.name %></div>
       <div class="icon-heart">
-      <% if @my_favorites.include?(recipe) %>
-      <i class="fa-solid fa-heart pink-heart"></i>
-      <% else %>
-      <i class="fa-regular fa-heart pink-heart"></i>
-      <% end %>
+        <% if @my_favorites.include?(recipe) %>
+          <i class="fa-solid fa-heart pink-heart"></i>
+        <% else %>
+          <i class="fa-regular fa-heart pink-heart"></i>
+        <% end %>
         </div>
     </div>
   </div>

@@ -26,7 +26,18 @@
 
 
   <div class="search">
-      <input type="text" id="recipe-search" placeholder="Search for recipes...">
+    <%= form_with url: dashboard_path, method: :get do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "search__input",
+            placeholder: "Search for recipes or any ingredient...",
+            autocomplete: "off"
+      %>
+    <% end %>
+
+    <%= link_to dashboard_path(clear: true), data: { turbo_method: :get } do %>
+      <i class="fa-solid fa-xmark"></i>
+    <% end unless params[:query].blank? %>
   </div>
 
 

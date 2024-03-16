@@ -17,4 +17,14 @@ class Recipe < ApplicationRecord
   validates :difficulty, presence: true, inclusion: { in: %(easy, moderate, hard) }
   validates :servings, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :cooking_time, presence: true, numericality: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_or_ingredients,
+                  against: [:name],
+                  associated_against: {
+                    ingredients: [:name]
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

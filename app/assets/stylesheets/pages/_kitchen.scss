@@ -83,7 +83,7 @@
   width: 100%;
   z-index: 999;
   top: calc(100vh - 70px);
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
   padding: 20px;
   opacity: 0;
@@ -109,7 +109,6 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   padding: 20px;
-
   grid-area: Dashboard-refridgerator;
 }
 
@@ -138,7 +137,7 @@
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
   min-height: 200px;
   overflow: auto;
   height: calc(100vh - 73px);
@@ -147,13 +146,27 @@
 
   &:hover {
     background-color: $pastel-pink;
+      .highlight-explanation {
+      display: block;
+    }
   }
+}
+
+.highlight-explanation {
+  display: none;
+//   position: absolute;
+//   bottom: 2%;
+//   span {
+//     transition: color 1s ease;
+
+//   }
 }
 
 .counter {
   position: absolute;
   bottom: 2%;
 }
+
 
 .search {
   background-color: white;

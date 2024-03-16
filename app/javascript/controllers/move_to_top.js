@@ -8,17 +8,25 @@ function debounce(func, delay) {
 
 window.addEventListener('scroll', debounce(function() {
   const scrollPosition = window.scrollY;
-  const extraDiv = document.querySelector('.extra-div');
+  const extraDiv = document.querySelectorAll('.extra-div');
 
   if (scrollPosition >= 70) {
-    extraDiv.style.display = 'block';
+    extraDiv.forEach((el) => {
+      el.style.display = 'block';
+    })
     setTimeout(() => {
-      extraDiv.style.opacity = '1';
+      extraDiv.forEach((el) => {
+        el.style.opacity = '1';
+      })
     }, 300);
   } else {
-    extraDiv.style.opacity = '0';
+    extraDiv.forEach((el) => {
+      el.style.opacity = '0';
+    })
     setTimeout(() => {
-      extraDiv.style.display = 'none';
+      extraDiv.forEach((el) => {
+        el.style.disply = 'none';
+      })
     }, 200);
   }
 }, 50));

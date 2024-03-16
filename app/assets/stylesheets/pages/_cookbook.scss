@@ -50,6 +50,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  height: calc(100vh - 27px);
+  position: sticky;
+  top: 0;
 }
 
 #new-recipe-front > .button-main:hover {

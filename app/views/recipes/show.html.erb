@@ -26,19 +26,6 @@
 </div>
 <div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
   <div class="text">take me up</div></div>
-
-  <div class="search">
-    <div class="recipe-title">
-      <span><%= @recipe.name %></span>
-      <div>
-        <% if @my_favorites.include?(@recipe) %>
-          <%= link_to unfavorite_path(id: @recipe), remote: true do %>
-            <i class="fa-solid fa-heart"></i>
-          <% end %>
-        <% else %>
-          <%= link_to favorite_path(id: @recipe) do %>
-          <i class="fa-regular fa-heart"></i>
-          <% end %>
   <div class="dashboard-fridge">
     <ul>
       <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
@@ -67,7 +54,6 @@
         </div>
       </div>
     </div>
-  </div>
   <div class="cards">
     <%= render "recipe-show", locals: {recipe: @recipe} %>
  </div>

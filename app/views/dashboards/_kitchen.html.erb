@@ -11,18 +11,20 @@
   <div class="profile" data-action="click->container#revealProfile">
     Profile
   </div>
-<div class="dashboard-fridge">
-  <ul>
-    <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
-      <div class="ingredient">
-        <%= ui.ingredient.name %>
-        <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete } do %>
-          <i class="fa-solid fa-xmark"></i>
-        <% end %>
-      </div>
-    <% end %>
-  </ul>
-</div>
+  <div class="dashboard-fridge" data-container-target="fridge">
+    <ul>
+      <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
+        <div class="ingredient">
+          <%= ui.ingredient.name %>
+          <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete } do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= render "profile_dropdown" %>
 
   <div class="search">
       <%= simple_form_for @user_ingredient do |f| %>

@@ -12,14 +12,16 @@
     Profile
   </div>
 
- <div class="dashboard-fridge">
-  <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
-    <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
-  </ul>
-  <div class="counter" data-highlight-ingredients-target="matchingCounter">
-    <span data-highlight-ingredients-target="count"></span>
+  <div class="dashboard-fridge" data-container-target="fridge">
+    <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
+      <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
+    </ul>
+    <div class="counter" data-highlight-ingredients-target="matchingCounter">
+      <span data-highlight-ingredients-target="count"></span>
+    </div>
   </div>
-</div>
+
+  <%= render "profile_dropdown" %>
 
   <div class="search">
     <%= form_with url: dashboard_path, method: :get do %>

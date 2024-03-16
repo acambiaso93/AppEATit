@@ -1,52 +1,63 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["kitchen", "cookbook", "explore", "profile"]
+  static targets = [
+    "kitchen",
+    "cookbook",
+    "explore",
+    "profile",
+    "fridge",
+    "showProfile",
+  ];
 
   connect() {
     // console.log(this.kitchenTarget, this.cookbookTarget, this.exploreTarget)
   }
 
-  revealCookbook () {
+  revealCookbook() {
     if (!this.cookbookTarget.classList.contains("d-none")) {
       return;
     }
-    this.kitchenTarget.classList.add("d-none")
-    this.exploreTarget.classList.add("d-none")
-    this.profileTarget.classList.add("d-none")
-    this.cookbookTarget.classList.remove("d-none")
+    this.kitchenTarget.classList.add("d-none");
+    this.exploreTarget.classList.add("d-none");
+    this.profileTarget.classList.add("d-none");
+    this.cookbookTarget.classList.remove("d-none");
   }
 
-  revealExplore () {
+  revealExplore() {
     if (!this.exploreTarget.classList.contains("d-none")) {
       return;
     }
-    this.kitchenTarget.classList.add("d-none")
-    this.cookbookTarget.classList.add("d-none")
-    this.profileTarget.classList.add("d-none")
-    this.exploreTarget.classList.remove("d-none")
+    this.kitchenTarget.classList.add("d-none");
+    this.cookbookTarget.classList.add("d-none");
+    this.profileTarget.classList.add("d-none");
+    this.exploreTarget.classList.remove("d-none");
   }
 
-  revealKitchen () {
+  revealKitchen() {
     if (!this.kitchenTarget.classList.contains("d-none")) {
       return;
     }
-    this.exploreTarget.classList.add("d-none")
-    this.cookbookTarget.classList.add("d-none")
-    this.profileTarget.classList.add("d-none")
-    this.kitchenTarget.classList.remove("d-none")
+    this.exploreTarget.classList.add("d-none");
+    this.cookbookTarget.classList.add("d-none");
+    this.profileTarget.classList.add("d-none");
+    this.kitchenTarget.classList.remove("d-none");
   }
 
-  revealProfile () {
-    if (!this.profileTarget.classList.contains("d-none")) {
-      return;
-    }
-    this.exploreTarget.classList.add("d-none")
-    this.cookbookTarget.classList.add("d-none")
-    this.kitchenTarget.classList.add("d-none")
-    this.profileTarget.classList.remove("d-none")
+  revealProfile() {
+    // if (!this.profileTarget.classList.contains("d-none")) {
+    //   return;
+    // }
+    // // this.exploreTarget.classList.add("d-none");
+    // // this.cookbookTarget.classList.add("d-none");
+    // // this.kitchenTarget.classList.add("d-none");
+    // this.profileTarget.classList.remove("d-none");
 
-
+    this.showProfileTargets.forEach((showProfile) => {
+       showProfile.classList.remove("d-none");
+    });
+    this.fridgeTargets.forEach((fridge) => {
+      fridge.classList.add("d-none");
+    })
   }
-
 }

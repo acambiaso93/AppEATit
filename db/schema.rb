@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_134835) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cookbooks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_cookbooks_on_recipe_id"
+    t.index ["user_id"], name: "index_cookbooks_on_user_id"
+  end
+
   create_table "dashboards", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -152,6 +161,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_134835) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cookbooks", "recipes"
+  add_foreign_key "cookbooks", "users"
   add_foreign_key "dashboards", "users"
   add_foreign_key "favorites", "recipes"
   add_foreign_key "favorites", "users"

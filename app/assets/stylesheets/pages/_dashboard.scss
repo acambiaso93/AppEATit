@@ -1,6 +1,6 @@
 .dashboard-container {  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 90px 0.2fr 2.6fr 0.2fr;
+  grid-template-rows: 70px 0.2fr 4fr 0.2fr;
   gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -8,7 +8,6 @@
     "Search Search Search Dashboard-fridge"
     "Cards Cards Cards Dashboard-fridge"
     "Footer Footer Footer Footer";
-  //height: 100vh;
   margin-left: 1px;
   margin-right: 1px;
   margin-top: 0px;
@@ -25,8 +24,9 @@
   font-size: 26px;
   font-weight: bold;
   padding: 20px;
-  padding-top: 30px;
   text-decoration: none;
+  position: sticky;
+
 
 
    &:hover {
@@ -34,6 +34,7 @@
      cursor: pointer;
    }
 }
+
 
 .cookbook {
   grid-area: Cookbook;
@@ -45,9 +46,7 @@
   font-size: 26px;
   font-weight: bold;
   padding: 20px;
-  padding-top: 30px;
   text-decoration: none;
-
 
    &:hover {
      background-color: $pastel-green;
@@ -65,7 +64,6 @@
   font-size: 26px;
   font-weight: bold;
   padding: 20px;
-  padding-top: 30px;
   text-decoration: none;
 
 
@@ -75,12 +73,43 @@
    }
 }
 
+.extra-div {
+  grid-area: Dashboard-fridge;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  height: 70px;
+  display: none;
+  position: sticky;
+  width: 100%;
+  z-index: 999;
+  top: calc(100vh - 70px);
+  font-size: 26px;
+  font-weight: bold;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; 
+}
+
+.icon {
+  display: inline;
+}
+
+.text {
+  display: inline;
+  margin-left: 10px;
+}
+
 .dashboard-refridgerator {
   background-color: white;
   border-radius: 20px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   padding: 20px;
+
   grid-area: Dashboard-refridgerator;
 }
 
@@ -93,8 +122,9 @@
   font-size: 26px;
   font-weight: bold;
   padding: 20px;
-  padding-top: 30px;
   text-decoration: none;
+
+
   &:hover {
     background-color: $pastel-green;
     cursor: pointer;
@@ -111,9 +141,9 @@
   transition: background-color 0.3s ease;
   min-height: 200px;
   overflow: auto;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 73px);
   position: sticky;
-  top: 0;
+  top: 1px;
 
   &:hover {
     background-color: $pastel-pink;

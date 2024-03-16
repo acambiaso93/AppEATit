@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
     @user_ingredients = @user.user_ingredients.includes(:ingredient)
     @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
     @my_favorites = current_user.favorite_recipes
+    @profile = @user.profile
   end
 
   def create

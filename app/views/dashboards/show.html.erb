@@ -1,6 +1,6 @@
 <div data-controller="container highlight-ingredients">
   <div>
-    <div id="kitchen-container" data-container-target="kitchen">
+    <div id="kitchen-container" data-container-target="kitchen" class=" <%= 'd-none' if @tab == "Explore" %> ">
       <%= render "kitchen" %>
     </div>
 
@@ -8,7 +8,7 @@
       <%= render "cookbook" %>
     </div>
 
-    <div id="explore-container" data-container-target="explore" class="<%= 'd-none' unless @target == "Explore" %>">
+    <div id="explore-container" data-container-target="explore" class="<%= 'd-none' unless @target == "Explore" || @tab == "Explore" %>">
       <%= render "explore" %>
     </div>
 

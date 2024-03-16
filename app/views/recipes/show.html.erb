@@ -33,7 +33,7 @@
             <%= link_to unfavorite_path(id: @recipe), remote: true do %>
               <i class="fa-solid fa-heart"></i>
             <% end %>
-          <% else %>
+            <% else %>
             <%= link_to favorite_path(id: @recipe) do %>
             <i class="fa-regular fa-heart"></i>
             <% end %>

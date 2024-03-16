@@ -1,4 +1,4 @@
-<div class="cookbook-container-close" data-controller="flip" data-flip-target="container">
+<div class="cookbook-container-close" data-controller="flip toggle" data-flip-target="container">
   <div class="kitchen" data-action="click->container#revealKitchen">
       <a>Kitchen</a>
   </div>
@@ -15,7 +15,14 @@
   </div>
 
   <div class="search">
-
+    <div class="toogle">
+      <span>My favorites</span>
+      <label class="switch">
+        <input type="checkbox" data-action="change->toggle#toggle">
+        <span class="slider round"></span>
+      </label>
+      <span>My recipes</span>
+    </div>
   </div>
 
   <div class="page" id="new-recipe-front" data-flip-target="newRecipeFront">
@@ -27,12 +34,18 @@
       <%= render "recipes/form", recipe: @recipe %>
     </div>
 
-    
+  <div class="cards" data-toggle-target="favorites">
+    <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="favorites">
+      <%= render partial: "recipes/favorites", library: {recipe: @recipe} %>
+    </div>
+  </div>
 
-  <div class="cards">
-    <div class="recipe-grid" data-flip-target="recipesGrid">
+  <div class="cards d-none" data-toggle-target="recipes">
+    <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="my_recipes">
+
       <%= render partial: "recipes/my_recipes", library: {recipe: @recipe} %>
     </div>
   </div>
+
 
 </div>

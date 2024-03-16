@@ -39,7 +39,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to dashboard_path, notice: 'My Cat ate the recipe.'
+    redirect_to dashboard_path(source: 'delete'), notice: 'My Cat ate the recipe.'
   end
 
   private

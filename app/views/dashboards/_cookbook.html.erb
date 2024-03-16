@@ -39,9 +39,10 @@
       <%= render partial: "recipes/favorites", library: {recipe: @recipe} %>
     </div>
   </div>
-  
+
   <div class="cards d-none" data-toggle-target="recipes">
     <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="my_recipes">
+
       <%= render partial: "recipes/my_recipes", library: {recipe: @recipe} %>
     </div>
   </div>

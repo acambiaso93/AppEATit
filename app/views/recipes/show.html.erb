@@ -1,18 +1,34 @@
-<div class="dashboard-container">
-  <div class="kitchen" data-action="click->container#revealKitchen">
-      <a>Kitchen</a>
-  </div>
-  <div class="cookbook" data-action="click->container#revealCookbook">
-      <a>Cookbook</a>
-  </div>
-  <div class="explore" data-action="click->container#revealExplore">
-      <a>Explore</a>
-  </div>
-  <div class="profile" data-action="click->container#revealProfile">
-    Profile
-  </div>
+<div class="kitchen-container" data-controller="container highlight-ingredients">
+  <div class="kitchen">
+    <%= link_to "Kitchen", dashboard_path %>
 
-  <div class="dashboard-fridge">
+  </div>
+  <div class="cookbook">
+    <%= link_to "Cookbook", dashboard_path(target: "Cookbook") %>
+  </div>
+  <div class="explore">
+    <%= link_to "Explore", dashboard_path(target: "Explore") %>
+  </div>
+  <div class="dashboard-refridgerator"></div>
+  <div class="profile">
+    <%= link_to "Profile", dashboard_path(target: "Profile") %>
+  </div>
+<div class="dashboard-fridge">
+
+        <% @ingredients.uniq(&:id).each do |ingredient| %>
+          <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
+            <span class="matching"><%= ingredient.name %></span><br>
+          <% else %>
+            <%= ingredient.name %><br>
+          <% end %>
+        <% end %>
+      <div class="highlight-explanation"><br><span>You have ingredients<br>marked in <span style='color:green;'>green</span> available.</span></div>
+</div>
+<div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
+  <div class="text">take me up</div></div>
+
+
+  <div class="dashboard-fridge" data-container-target="fridge"%>
     <ul>
       <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
         <div class="ingredient <%= user_has_ingredient_class(ui.ingredient_id) %>">
@@ -21,6 +37,7 @@
       <% end %>
     </ul>
   </div>
+  <%= render "dashboards/profile_dropdown" %>
     <div class="search">
       <div class="recipe-icons">
         <%= link_to dashboard_path(@dashboard) do %>
@@ -40,8 +57,9 @@
         </div>
       </div>
     </div>
-    <div class="cards">
-      <%= render "recipe-show", locals: {recipe: @recipe} %>
-    </div>
-  <div class="footer"></div>
+  <div class="cards">
+    <%= render "recipe-show", locals: {recipe: @recipe} %>
+ </div>
+
+  <div class="footer-dash"></div>
 </div>

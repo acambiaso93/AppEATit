@@ -1,8 +1,6 @@
 <div class="profile-fridge d-none" data-container-target="showProfile">
   <div data-profile-target="editProfile">
-      <%= link_to dashboard_path do %>
-      <i class="fa-solid fa-xmark float-end"></i>
-      <% end %>
+      <i class="fa-solid fa-xmark float-end" data-action="click->container#hideProfile"></i>
     <div class="profile-card">
       <h2><%= @profile.user_name %></h2>
       <div class="profile-image" style="background-image: url('<%= @profile.profile_picture_url.nil? ? cl_image_path(@profile.photo.key) : image_path(@profile.image) %>');"></div>

@@ -1,12 +1,12 @@
-<div class="kitchen-container">
-  <div class="kitchen" data-action="click->container#revealKitchen">
-      <a>Kitchen</a>
+<div class="kitchen-container" data-controller="container highlight-ingredients">
+  <div class="kitchen">
+    <%= link_to "Kitchen", kitchen_path %>
   </div>
-  <div class="cookbook" data-action="click->container#revealCookbook">
-      <a>Cookbook</a>
+  <div class="cookbook">
+    <%= link_to "Cookbook", cookbook_path %>
   </div>
-  <div class="explore" data-action="click->container#revealExplore">
-      Explore
+  <div class="explore">
+    <%= link_to "Explore", explore_path %>
   </div>
   <div class="profile" data-action="click->container#revealProfile">
     Profile
@@ -41,7 +41,7 @@
 
   <div class="cards">
     <div class="recipe-grid">
-      <%= render partial: "recipes/matching_recipes", library: {recipe: @recipe} %>
+      <%= render partial: "kitchens/matching_recipes", library: {recipe: @recipe} %>
     </div>
   </div>
 </div>

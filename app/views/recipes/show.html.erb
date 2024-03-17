@@ -1,14 +1,14 @@
 <div class="kitchen-container" data-controller="container highlight-ingredients">
   <div class="kitchen">
     <%= link_to "Kitchen", dashboard_path %>
-
   </div>
   <div class="cookbook">
-    <%= link_to "Cookbook", dashboard_path(target: "Cookbook") %>
+    <%= link_to "Cookbook", cookbook_path %>
   </div>
   <div class="explore">
-    <%= link_to "Explore", dashboard_path(target: "Explore") %>
+    <%= link_to "Explore", explore_path %>
   </div>
+
   <div class="dashboard-refridgerator"></div>
   <div class="profile">
     <%= link_to "Profile", dashboard_path(target: "Profile") %>
@@ -37,10 +37,10 @@
       <% end %>
     </ul>
   </div>
-  <%= render "dashboards/profile_dropdown" %>
+  <%= render "shared/profile_dropdown" %>
     <div class="search">
       <div class="recipe-icons">
-        <%= link_to dashboard_path(@dashboard) do %>
+        <%= link_to explore_path do %>
           <i class="fa-solid fa-arrow-left-long">
           </i>
         <% end %>

@@ -60,4 +60,9 @@ export default class extends Controller {
       fridge.classList.add("d-none");
     })
   }
+
+  hideProfile() {
+    this.showProfileTarget.classList.add("d-none");
+    this.fridgeTarget.classList.remove("d-none")
+  }
 }

@@ -1,14 +1,15 @@
-<div class="cookbook-container-close" data-controller="flip toggle" data-flip-target="container">
-  <div class="kitchen" data-action="click->container#revealKitchen">
-      <a>Kitchen</a>
+<div class="cookbook-container-close" data-controller="container flip toggle" data-flip-target="container">
+  <div class="kitchen">
+    <%= link_to "Kitchen", kitchen_path %>
   </div>
-  <div class="cookbook" data-action="click->container#revealCookbook">
-      <a>Cookbook</a>
+  <div class="cookbook">
+    <%= link_to "Cookbook", cookbook_path %>
   </div>
-  <div class="explore" data-action="click->container#revealExplore">
-      <a>Explore</a>
+  <div class="explore">
+    <%= link_to "Explore", explore_path %>
   </div>
 
+<%# Check %>
   <div class="dashboard-refridgerator"></div>
   <div class="profile" data-action="click->container#revealProfile">
     Profile
@@ -31,21 +32,19 @@
 
 
     <div class="page d-none" data-flip-target="newRecipeForm">
-      <%= render "cookbooks/form_new", recipe: @recipe %>
+      <%= render "form_new", recipe: @recipe %>
     </div>
 
   <div class="cards" data-toggle-target="favorites">
     <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="favorites">
-      <%= render partial: "cookbooks/favorites", library: {recipe: @recipe} %>
+      <%= render partial: "favorites", library: {recipe: @recipe} %>
     </div>
   </div>
 
   <div class="cards d-none" data-toggle-target="recipes">
     <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="my_recipes">
 
-      <%= render partial: "cookbooks/my_recipes", library: {recipe: @recipe} %>
+      <%= render partial: "my_recipes", library: {recipe: @recipe} %>
     </div>
   </div>
-
-
 </div>

@@ -5,8 +5,8 @@
   grid-auto-flow: row;
   grid-template-areas:
     "Kitchen Cookbook Explore Dashboard-refridgerator"
-    "Search Search Search Page"
-    "Cards Cards Cards Page"
+    "Search Search Search Dashboard-fridge"
+    "Cards Cards Cards Dashboard-fridge"
     "Footer Footer Footer Footer";
   height: 100vh;
   margin-left: 1px;
@@ -22,8 +22,8 @@
   grid-auto-flow: row;
   grid-template-areas:
     "Kitchen Cookbook Explore Dashboard-refridgerator"
-    "Search Search Page Page"
-    "Cards Cards Page Page"
+    "Search Search Dashboard-fridge Dashboard-fridge"
+    "Cards Cards Dashboard-fridge Dashboard-fridge"
     "Footer Footer Footer Footer";
   height: 100vh;
   margin-left: 1px;
@@ -33,11 +33,16 @@
 }
 
 .page {
-  grid-area: Page;
+  grid-area: Dashboard-fridge;
   background-color: white;
   border-radius: 20px;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
+  min-height: 200px;
+  overflow: auto;
+  height: calc(100vh - 72px);
+  position: sticky;
+  top: 0;
 }
 
 #new-recipe-front {
@@ -49,9 +54,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: calc(100vh - 72px);
-  position: sticky;
-  top: 0;
 }
 
 #new-recipe-front > .button-main:hover {

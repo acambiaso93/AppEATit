@@ -1,19 +1,19 @@
-<div class="explore-container" data-controller="container highlight-ingredients">
+<div class="explore-container" data-controller="profile highlight-ingredients">
   <div class="kitchen">
     <%= link_to "Kitchen", kitchen_path %>
   </div>
   <div class="cookbook">
     <%= link_to "Cookbook", cookbook_path %>
   </div>
-  <div class="explore">
+  <div class="explore" style="<%= current_page?(explore_path) ? 'background-color: #DDEFD2;' : '' %>">
     <%= link_to "Explore", explore_path %>
   </div>
-  <div class="profile" data-action="click->container#revealProfile">
+  <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
     <span>Profile</span>
   </div>
 
 
-  <div class="dashboard-fridge" data-container-target="fridge">
+  <div class="dashboard-fridge" data-profile-target="fridge">
     <ul data-user-ingredients="<%= current_user.ingredients.pluck(:name) %>" data-highlight-ingredients-target="ingredientUser">
       <span data-target="explanatoryCaption">Hover on a recipe<br>to see which ingredients are <br><span style="color:green">matching</span>,<br> and which ones are <br><span style="color:red">missing</span></span>
     </ul>
@@ -29,18 +29,21 @@
 
 
   <div class="search">
-    <%= form_with url: explore_path, method: :get do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "search__input",
-            placeholder: "Search for recipes or any ingredient...",
-            autocomplete: "off"
-      %>
-    <% end %>
-
-    <%= link_to explore_path, data: { turbo_method: :get } do %>
-      <i class="fa-solid fa-xmark"></i>
-    <% end unless params[:query].blank? %>
+    <div>
+      <%= form_with url: explore_path, method: :get do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search__input",
+              placeholder: "Search for recipes or any ingredient...",
+              autocomplete: "off"
+        %>
+      <% end %>
+    </div>
+    <div>
+      <%= link_to explore_path, data: { turbo_method: :get } do %>
+        <i class="fa-solid fa-xmark"></i>
+      <% end unless params[:query].blank? %>
+    </div>
   </div>
 
 

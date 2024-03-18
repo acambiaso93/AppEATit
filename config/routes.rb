@@ -11,20 +11,23 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  resource :dashboard, only: [:show], path: '/dashboard' do
+  resource :kitchen, only: [:show], path: '/kitchen' do
     post :add_ingredient, on: :member
   end
+
+  resource :cookbook, only: [:show], path: '/cookbook'
+
+  resource :explore, only: [:show], path: '/explore'
 
   resources :user_ingredients, only: [:create, :destroy]
 
   resources :recipes do
-    post 'add_ingredient', on: :member
     delete :unfavorite, on: :member
   end
 
   resources :ingredients, only: [:show]
 
-  resources :profiles
+  resources :profiles, only: [:create, :update, :destroy]
 
   get "favorite", to: "favorites#favorite"
   get "unfavorite", to: "favorites#unfavorite"

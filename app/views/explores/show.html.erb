@@ -1,15 +1,15 @@
-<div class="explore-container">
+<div class="explore-container" data-controller="container highlight-ingredients">
   <div class="kitchen">
-      <a>Kitchen</a>
+    <%= link_to "Kitchen", kitchen_path %>
   </div>
   <div class="cookbook">
-      <a>Cookbook</a>
+    <%= link_to "Cookbook", cookbook_path %>
   </div>
   <div class="explore">
-      <a>Explore</a>
+    <%= link_to "Explore", explore_path %>
   </div>
-  <div class="profile">
-    Profile
+  <div class="profile" data-action="click->container#revealProfile">
+    <span>Profile</span>
   </div>
 
 
@@ -22,14 +22,14 @@
     </div>
   </div>
 
-  <%= render "profile_dropdown" %>
+  <%= render "shared/profile_dropdown" %>
 
 <div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
   <div class="text">take me up</div></div>
 
 
   <div class="search">
-    <%= form_with url: dashboard_path, method: :get do %>
+    <%= form_with url: explore_path, method: :get do %>
       <%= text_field_tag :query,
             params[:query],
             class: "search__input",
@@ -38,7 +38,7 @@
       %>
     <% end %>
 
-    <%= link_to dashboard_path(clear: true), data: { turbo_method: :get } do %>
+    <%= link_to explore_path, data: { turbo_method: :get } do %>
       <i class="fa-solid fa-xmark"></i>
     <% end unless params[:query].blank? %>
   </div>
@@ -46,7 +46,7 @@
 
   <div class="cards">
     <div class="recipe-grid">
-      <%= render partial: "recipes/recipe-card", library: {recipe: @recipe} %>
+      <%= render partial: "explores/recipe-card", library: {recipe: @recipe} %>
     </div>
   </div>
 </div>

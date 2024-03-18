@@ -1,23 +1,21 @@
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="profile-form">
-      <%= simple_form_for(@profile, url: profile_path(@profile), html: { method: :put }) do |f| %>
-          <%= f.error_notification %>
-
-          <%= f.input :user_name %>
-          <%= f.input :description, placeholder: "min. 100 characters" %>
-          <%= f.input :diet %>
-          <%= f.input :photo, as: :file %>
-          <%= f.input :location %>
-          <%= f.hidden_field :user_id, value: current_user.id %>
-          <div class="d-flex mt-3 justify-content-between align-items-center">
-            <div class="button-main-hover form-actions">
-              <%= f.button :submit, "Update", data: { action: 'click->profile#revealProfile' } %>
-            </div>
-            <i class="fa-solid fa-xmark justify-content-center" data-action="click->profile#revealProfile"></i>
-          </div>
-      <% end %>
+<span>Edit your profile</span>
+<div class="icon-x"><i class="fa-solid fa-xmark float-end" data-action="click->profile#hideEditProfile"></i></div>
+<%= simple_form_for(@profile, url: profile_path(@profile), html: { method: :put }) do |f| %>
+  <div class="input-profile mt-4">
+    <%= f.error_notification %>
+    <%= f.input :user_name %>
+    <div>
+      <%= f.input :description, placeholder: "min. 100 characters" %>
     </div>
-  </div>
-</div>
+    <%= f.input :diet %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :location %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+
+      <div class="form-actions mt-4 d-flex">
+        <%= f.button :submit, "Update", class: "button-small flex-fill", data: { action: 'click->profile#revealProfile' } %>
+      </div>
+    </div>
+
+<% end %>

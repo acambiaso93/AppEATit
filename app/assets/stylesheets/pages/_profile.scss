@@ -1,116 +1,77 @@
-.profile-container-closed {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
-  gap: 2px 2px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Kitchen Cookbook Explore Dashboard-refridgerator"
-    "Profile Profile Profile Pages"
-    "Profile Profile Profile Pages"
-    "Footer Footer Footer Footer";
-  height: 100vh;
-  margin-left: 1px;
-  margin-right: 1px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.profile-container-open {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
-  gap: 2px 2px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Kitchen Cookbook Explore Dashboard-refridgerator"
-    "Profile Profile Pages Pages"
-    "Profile Profile Pages Pages"
-    "Footer Footer Footer Footer";
-  height: 100vh;
-  margin-left: 1px;
-  margin-right: 1px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.pages {
-  grid-area: Pages;
-  background-color: white;
-  border-radius: 20px;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-#profile-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  border-radius: 20px;
-  font-size: 26px;
-  font-weight: bold;
-  font-family: $body-font;
-  scroll-behavior: smooth;
-  overflow: auto;
-}
-
-#profile-button > .button-main:hover {
-  transform: scale(1.1);
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: auto;
-  padding: 20px;
-  justify-content: center;
-  grid-area: Pages;
-
-  h2 {
-    margin-top: 20px;
-    color: #1d1d1d;
-    font-family: $headers-font;
-    font-weight: bold;
-  }
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-size: cover;
-}
-
-.profile-attributes {
-  color: #060606;
-  font-size: 22px;
-  font-weight: bold;
-  font-family: $body-font;
-}
-
-.profile-description {
-  margin-top: 20px;
-  align-items: center;
-  color: #000000;
-  font-size: 18px;
-  font-family: $body-font;
-}
-
 .profile-fridge {
   grid-area: Dashboard-fridge;
   background-color: white;
   border-radius: 20px;
-  padding: 20px;
   font-size: 26px;
   font-weight: bold;
   transition: background-color 0.3s ease;
   min-height: 200px;
   overflow: auto;
-  height: calc(100vh - 180px);
+  height: calc(100vh - 72px);
   position: sticky;
   top: 0;
 }
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 10px;
+
+  .icon-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
+.profile-image {
+  border-bottom: 2px solid black;
+  width: 100%;
+  height: 320px;
+  border-radius: 0 0 20px 20px;
+  background-size: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 0 20px;
+
+  .profile-attributes {
+    color: #060606;
+    font-size: 18px;
+    font-family: $body-font;
+    font-weight: normal;
+  }
+  .profile-description {
+    align-items: center;
+    color: #000000;
+    font-size: 18px;
+    font-family: $body-font;
+  }
+}
+
+#edit-btn {
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile-btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 20px 20px;
+  font-size: 18px;
+  font-weight: bold;
+
+  .profile-btn > .button-main:hover {
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+}
+

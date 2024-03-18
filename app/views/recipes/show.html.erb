@@ -1,4 +1,4 @@
-<div class="kitchen-container" data-controller="container highlight-ingredients">
+<div class="kitchen-container" data-controller="profile highlight-ingredients">
   <div class="kitchen">
     <%= link_to "Kitchen", kitchen_path %>
   </div>
@@ -8,11 +8,11 @@
   <div class="explore">
     <%= link_to "Explore", explore_path %>
   </div>
-  <div class="profile" data-action="click->container#revealProfile">
+  <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
     <span>Profile</span>
   </div>
 
-  <div class="dashboard-fridge" data-container-target="fridge">
+  <div class="dashboard-fridge" data-profile-target="fridge">
     <% @ingredients.uniq(&:id).each do |ingredient| %>
       <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
         <span class="matching"><%= ingredient.name %></span><br>

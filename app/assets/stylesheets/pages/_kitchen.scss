@@ -1,4 +1,5 @@
-.kitchen-container {  display: grid;
+.kitchen-container {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 70px 0.2fr 4fr 0.2fr;
   gap: 2px 2px;
@@ -32,8 +33,8 @@
    &:hover {
      background-color: $pastel-green;
      cursor: pointer;
-   }
-}
+    }
+  }
 
 
 .cookbook {
@@ -48,10 +49,10 @@
   padding: 20px;
   text-decoration: none;
 
-   &:hover {
-     background-color: $pastel-green;
-     cursor: pointer;
-   }
+  &:hover {
+    background-color: $pastel-green;
+    cursor: pointer;
+  }
 }
 
 .explore {
@@ -67,11 +68,12 @@
   text-decoration: none;
 
 
-   &:hover {
-     background-color: $pastel-green;
-     cursor: pointer;
-   }
+  &:hover {
+    background-color: $pastel-green;
+    cursor: pointer;
+  }
 }
+
 
 .extra-div {
   grid-area: Dashboard-fridge;
@@ -146,7 +148,7 @@
 
   &:hover {
     background-color: $pastel-pink;
-      .highlight-explanation {
+    .highlight-explanation {
       display: block;
     }
   }
@@ -154,39 +156,69 @@
 
 .highlight-explanation {
   display: none;
-//   position: absolute;
-//   bottom: 2%;
-//   span {
-//     transition: color 1s ease;
+  //   position: absolute;
+  //   bottom: 2%;
+  //   span {
+    //     transition: color 1s ease;
 
-//   }
-}
-
-.counter {
-  position: absolute;
-  bottom: 2%;
-}
-
-
-.search {
-  background-color: white;
-  border-radius: 20px;
-  grid-area: Search;
-  padding: 20px;
-  &:hover {
-    background-color: $pastel-blue;
+    //   }
   }
-}
 
-.footer-dash {
-  background-color: white;
-  grid-area: Footer;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  transition: background-color 0.3s ease;
-  margin-top: 0;
-
-  &:hover {
-    background-color: $pastel-blue;
+  .counter {
+    position: absolute;
+    bottom: 2%;
   }
- }
+
+
+  .search {
+    background-color: white;
+    border-radius: 20px;
+    grid-area: Search;
+    padding: 20px;
+    &:hover {
+      background-color: $pastel-blue;
+    }
+  }
+
+  .footer-dash {
+    background-color: white;
+    grid-area: Footer;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: background-color 0.3s ease;
+    margin-top: 0;
+
+    &:hover {
+      background-color: $pastel-blue;
+    }
+  }
+
+  .no-ingredients {
+    grid-area: Cards;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    padding-top: 30px;
+    background-image: url('imagethree.svg');
+    background-size: cover;
+  }
+
+
+  .kitchen-image {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    filter: invert(100%);
+    background-image: url("imagethree.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+.no-ingredient-cards {
+  grid-area: Cards;
+  position: relative;
+}

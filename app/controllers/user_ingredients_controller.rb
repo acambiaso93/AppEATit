@@ -6,15 +6,15 @@ class UserIngredientsController < ApplicationController
     @user_ingredient.ingredient_id = params[:user_ingredient][:ingredient]
 
     if @user_ingredient.save
-      redirect_to dashboard_path, notice: "Ingredient added successfully."
+      redirect_to kitchen_path, notice: "Ingredient added successfully."
     else
-      redirect_to dashboard_path, alert: "Failed to add ingredient."
+      redirect_to kitchen_path, alert: "Failed to add ingredient."
     end
   end
 
   def destroy
     @user_ingredient = UserIngredient.find(params[:id])
     @user_ingredient.destroy
-    redirect_to dashboard_path, status: :see_other
+    redirect_to kitchen_path, status: :see_other
   end
 end

@@ -1,0 +1,55 @@
+.cookbook-container-close > .search {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0;
+  font-size: 18px;
+
+  .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .radio input {
+    display: none;
+  }
+
+  .radio .name-left {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: left;
+    border-radius: 20px;
+    border: none;
+    padding: 20px;
+    color: black;
+    transition: all .15s ease-in-out;
+  }
+
+  .radio .name-right {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: right;
+    border-radius: 20px;
+    border: none;
+    padding: 20px;
+    color: black;
+    transition: all .15s ease-in-out;
+  }
+
+  .radio input:checked + .name-right {
+    background-color: $pastel-blue;
+    font-weight: bold;
+  }
+
+  .radio input:checked + .name-left {
+    background-color: $pastel-blue;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: white;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="cookbook-container-close" data-controller="profile flip toggle" data-flip-target="container">
+  <div class="kitchen">
+    <%= link_to "Kitchen", kitchen_path %>
+  </div>
+  <div class="cookbook" style="<%= current_page?(cookbook_path) ? 'background-color: #DDEFD2;' : '' %>">
+    <%= link_to "Cookbook", cookbook_path %>
+  </div>
+  <div class="explore">
+    <%= link_to "Explore", explore_path %>
+  </div>
+  <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
+    Profile
+  </div>
+
+  <div class="search">
+    <label class="radio">
+      <input type="radio" name="toggle" value="favorites" checked data-action="change->toggle#toggle">
+      <span class="name-left">My Favorites</span>
+    </label>
+    <label class="radio">
+      <input type="radio" name="toggle" value="my_recipes" data-action="change->toggle#toggle">
+      <span class="name-right">My Recipes</span>
+    </label>
+  </div>
+
+  <div class="page" id="new-recipe-front" data-flip-target="newRecipeFront" data-profile-target="fridge">
+    <div class="button-main" data-action="click->flip#revealRecipeForm">New Recipe</div>
+  </div>
+
+
+  <div class="page d-none" data-flip-target="newRecipeForm">
+    <%= render "form_new", recipe: @recipe %>
+  </div>
+
+  <%= render "shared/profile_dropdown" %>
+
+  <div class="cards" data-toggle-target="favorites">
+    <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="favorites">
+      <%= render partial: "favorites", library: {recipe: @recipe} %>
+    </div>
+  </div>
+
+  <div class="cards d-none" data-toggle-target="recipes">
+    <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="my_recipes">
+      <%= render partial: "my_recipes", library: {recipe: @recipe} %>
+    </div>
+  </div>
+
+</div>

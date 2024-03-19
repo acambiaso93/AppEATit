@@ -1,53 +1,55 @@
-<div class="kitchen-container" data-controller="container highlight-ingredients">
+<div class="kitchen-container" data-controller="profile highlight-ingredients">
   <div class="kitchen">
-    <%= link_to "Kitchen", dashboard_path %>
+    <%= link_to "Kitchen", kitchen_path %>
   </div>
   <div class="cookbook">
-    <%= link_to "Cookbook", dashboard_path(target: "Cookbook") %>
+    <%= link_to "Cookbook", cookbook_path %>
   </div>
   <div class="explore">
-    <%= link_to "Explore", dashboard_path(target: "Explore") %>
+    <%= link_to "Explore", explore_path %>
   </div>
-  <div class="dashboard-refridgerator"></div>
-  <div class="profile">
-    <%= link_to "Profile", dashboard_path(target: "Profile") %>
+  <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
+    <span>Profile</span>
   </div>
-<div class="dashboard-fridge">
 
-        <% @ingredients.uniq(&:id).each do |ingredient| %>
-          <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
-            <span class="matching"><%= ingredient.name %></span><br>
-          <% else %>
-            <%= ingredient.name %><br>
-          <% end %>
-        <% end %>
-      <div class="highlight-explanation"><br><span>You have ingredients<br>marked in <span style='color:green;'>green</span> available.</span></div>
-</div>
-<div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
+  <div class="dashboard-fridge" data-profile-target="fridge">
+    <% @ingredients.uniq(&:id).each do |ingredient| %>
+      <% if @user_ingredients.map(&:ingredient_id).include?(ingredient.id) %>
+        <span class="matching"><%= ingredient.name %></span><br>
+      <% else %>
+        <%= ingredient.name %><br>
+      <% end %>
+    <% end %>
+    <div class="highlight-explanation"><br><span>You have ingredients<br>marked in <span style='color:green;'>green</span> available.</span></div>
+  </div>
+
+  <div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
   <div class="text">take me up</div></div>
 
-    <div class="search">
-      <div class="recipe-icons">
-        <%= link_to dashboard_path(@dashboard) do %>
-          <i class="fa-solid fa-arrow-left-long">
-          </i>
-        <% end %>
-        <div>
-          <% if @my_favorites.include?(@recipe) %>
-            <%= link_to unfavorite_path(id: @recipe), remote: true do %>
-              <i class="fa-solid fa-heart"></i>
-            <% end %>
-            <% else %>
-            <%= link_to favorite_path(id: @recipe) do %>
-            <i class="fa-regular fa-heart"></i>
-            <% end %>
+  <%= render "shared/profile_dropdown" %>
+
+  <div class="search">
+    <div class="recipe-icons">
+      <%= link_to explore_path do %>
+        <i class="fa-solid fa-arrow-left-long"></i>
+      <% end %>
+      <div>
+        <% if @my_favorites.include?(@recipe) %>
+          <%= link_to unfavorite_path(id: @recipe), remote: true do %>
+            <i class="fa-solid fa-heart"></i>
           <% end %>
+        <% else %>
+          <%= link_to favorite_path(id: @recipe) do %>
+            <i class="fa-regular fa-heart"></i>
+          <% end %>
+        <% end %>
         </div>
       </div>
     </div>
+
   <div class="cards">
     <%= render "recipe-show", locals: {recipe: @recipe} %>
- </div>
+  </div>
 
   <div class="footer-dash"></div>
 </div>

@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: %i[update destroy]
 
   def create
     @profile = Profile.new(profile_params)
 
     if @profile.save
-      redirect_to profile_path(@profile)
+      redirect_to root_path
     else
       render :new
     end
@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to profile_path(@profile), notice: 'Shining bright like a diamond.'
+      redirect_to kitchen_path, notice: 'Shining bright like a diamond.'
     else
       render :edit
     end

@@ -1,18 +1,36 @@
 .profile-form {
-  grid-area: pages;
-  background-color: white;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+  font-size: 20px;
   padding: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  margin-top: 2px;
-  box-shadow: 1px 1px 2px rgba(109, 109, 109, 0.1);
-  font: $body-font;
-  scroll-behavior: smooth;
-  overflow: auto;
-  height: 82vh;
+
+  .icon-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .text {
+    margin-left: 0;
+  }
 
   &:hover {
   background-color: $pastel-green; transition: all .4s ease;
+  }
+
+}
+
+.input-profile {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+
+  .button-small {
+    font-size: 18px;
+    font-family: $body-font;
+    font-weight: bold;
   }
 }

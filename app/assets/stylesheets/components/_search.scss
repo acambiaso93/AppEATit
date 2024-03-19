@@ -1,0 +1,22 @@
+.search {
+    &__input {
+      width: 80%;
+      background-color: transparent;
+      font-size: 18px;
+      color: #575756;
+      background-color: transparent;
+      border: none;
+
+      &::placeholder {
+        color: color(#575756 a(0.8));
+      }
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        border: none;
+        border-radius: 0;
+      }
+    }
+}
+

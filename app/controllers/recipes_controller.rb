@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
     @user_ingredients = @user.user_ingredients.includes(:ingredient)
     @recipe_ingredient_ids = @recipe.ingredients.pluck(:id)
     @my_favorites = current_user.favorite_recipes
+    @profile = @user.profile
   end
 
   def create
@@ -15,9 +16,9 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
 
     if @recipe.save
-      redirect_to recipe_path(@recipe)
+      redirect_to cookbook_path
     else
-      redirect_to dashboard_path, notice: "Error"
+      redirect_to cookbook_path, notice: "Error"
     end
   end
 
@@ -38,7 +39,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to dashboard_path, notice: 'My Cat ate the recipe.'
+    redirect_to cookbook_path, notice: 'My Cat ate the recipe.'
   end
 
   private

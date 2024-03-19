@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_)
-    dashboard_path # your path
+    kitchen_path # your path
   end
 end

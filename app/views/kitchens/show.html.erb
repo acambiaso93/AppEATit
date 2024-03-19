@@ -1,0 +1,53 @@
+<div class="kitchen-container" data-controller="profile highlight-ingredients">
+  <div class="kitchen" style="<%= current_page?(kitchen_path) ? 'background-color: #DDEFD2;' : '' unless @tab == "Profile" %>">
+    <%= link_to "Kitchen", kitchen_path %>
+  </div>
+  <div class="cookbook">
+    <%= link_to "Cookbook", cookbook_path %>
+  </div>
+  <div class="explore">
+    <%= link_to "Explore", explore_path %>
+  </div>
+  <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
+    Profile
+  </div>
+  <div class="dashboard-fridge" data-profile-target="fridge">
+    <ul>
+      <% @user_ingredients.uniq(&:ingredient_id).each do |ui| %>
+        <div class="ingredient">
+          <%= ui.ingredient.name %>
+          <%= link_to user_ingredient_path(ui), data: { turbo_method: :delete } do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= render "shared/profile_dropdown" %>
+
+<div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
+  <div class="text">take me up</div></div>
+
+
+  <div class="search">
+      <%= simple_form_for @user_ingredient do |f| %>
+      <div class="kitchen-search">
+        <%= f.input :ingredient, label: false, collection: @ingredients, input_html: {data: {controller: "tom-select"}, placeholder: 'Type an ingredient here ...'} %>
+        <%= f.submit "Add Ingredient", class: "button-main" %>
+      </div>
+      <% end  %>
+  </div>
+
+  <div class="cards">
+    <div class="recipe-grid">
+      <%= render partial: "kitchens/matching_recipes", library: {recipe: @recipe} %>
+    </div>
+  </div>
+</div>
+  <div class="cards">
+    <div class="recipe-grid">
+    </div>
+  </div>
+  <div class="footer-dash"></div>
+</div>

@@ -1,0 +1,25 @@
+<div class="profile-fridge d-none" data-profile-target="showProfile">
+
+  <div class="profile-card" data-profile-target="profile">
+    <div class="icon-x"><i class="fa-solid fa-xmark float-end" data-action="click->profile#hideProfile"></i></div>
+    <div class="profile-image" style="background-image: url('<%= @profile.profile_picture_url.nil? ? cl_image_path(@profile.photo.key) : image_path(@profile.image) %>');"></div>
+
+    <div class="profile-info">
+      <span><%= @profile.user_name %></span>
+      <div class="profile-attributes"><%= @profile.diet %> | <%= @profile.location %></div>
+      <div class="profile-description"><p><%= @profile.description %></p></div>
+    </div>
+
+    <div id="edit-btn" class="button-small" data-action="click->profile#revealEditProfile">Edit</div>
+
+    <div class="profile-btn">
+      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+      <%= link_to "Delete", profile_path(@profile), data: {turbo_method: :delete, confirm: 'Are you sure?'} %>
+    </div>
+  </div>
+
+  <div class="profile-form d-none" data-profile-target="editProfile">
+      <%= render 'profiles/form', profile: @profile %>
+  </div>
+
+</div>

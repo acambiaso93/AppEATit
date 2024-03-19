@@ -1,29 +1,37 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["editProfile", "pages", "container"]
-
-  connect() {
-    // console.log(this.editProfileTarget, this.pagesTarget)
-  }
+  static targets = [
+    "fridge",
+    "showProfile",
+    "profileTab",
+    "editProfile",
+    "profile"
+  ];
 
   revealProfile() {
-    this.hideElements();
-    this.editProfileTarget.classList.remove('d-none');
-    this.containerTarget.classList.remove('profileContainerClosed');
-    this.containerTarget.classList.add('profileContainerOpen');
+    this.profileTabTarget.style.backgroundColor = "#DDEFD2";
+    this.showProfileTargets.forEach((showProfile) => {
+       showProfile.classList.remove("d-none");
+    });
+    this.fridgeTargets.forEach((fridge) => {
+      fridge.classList.add("d-none");
+    })
   }
 
-  revealPages() {
-    this.hideElements();
-    this.pagesTarget.classList.remove('d-none');
-    this.containerTarget.classList.add('profileContainerClosed');
-    this.containerTarget.classList.remove('profileContainerOpen');
+  hideProfile() {
+    this.showProfileTarget.classList.add("d-none");
+    this.fridgeTarget.classList.remove("d-none");
+    this.profileTabTarget.style.backgroundColor = "";
   }
 
-  hideElements() {
-    this.editProfileTarget.classList.add('d-none');
-    this.pagesTarget.classList.add('d-none');
+  revealEditProfile() {
+    this.editProfileTarget.classList.remove("d-none");
+    this.profileTarget.classList.add("d-none");
   }
 
+  hideEditProfile(){
+    this.editProfileTarget.classList.add("d-none");
+    this.profileTarget.classList.remove("d-none");
+  }
 }

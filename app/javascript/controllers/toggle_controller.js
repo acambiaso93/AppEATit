@@ -5,22 +5,22 @@ export default class extends Controller {
   static targets = ["recipes", "favorites"];
 
   connect() {
-    console.log(this.recipesTarget, this.favoritesTarget);
+    this.recipesTarget.classList.add("d-none");
   }
 
   toggle() {
-    const isChecked = this.inputTarget.checked;
+    const selectedValue = this.inputTarget.value;
 
-    if (isChecked) {
-      this.favoritesTarget.classList.add("d-none"); // Issue might be here
-      this.recipesTarget.classList.remove("d-none");
-    } else {
+    if (selectedValue === "favorites") {
+      this.favoritesTarget.classList.remove("d-none");
       this.recipesTarget.classList.add("d-none");
-      this.favoritesTarget.classList.remove("d-none"); // Issue might be here
+    } else if (selectedValue === "my_recipes") {
+      this.recipesTarget.classList.remove("d-none");
+      this.favoritesTarget.classList.add("d-none");
     }
   }
 
   get inputTarget() {
-    return this.element.querySelector("input[type='checkbox']");
+    return this.element.querySelector("input[type='radio']:checked");
   }
 }

@@ -13,14 +13,14 @@
   </div>
 
   <div class="search">
-    <div class="toogle">
-      <span>My favorites</span>
-      <label class="switch">
-        <input type="checkbox" data-action="change->toggle#toggle">
-        <span class="slider round"></span>
-      </label>
-      <span>My recipes</span>
-    </div>
+    <label class="radio">
+      <input type="radio" name="toggle" value="favorites" checked data-action="change->toggle#toggle">
+      <span class="name-left">My Favorites</span>
+    </label>
+    <label class="radio">
+      <input type="radio" name="toggle" value="my_recipes" data-action="change->toggle#toggle">
+      <span class="name-right">My Recipes</span>
+    </label>
   </div>
 
   <div class="page" id="new-recipe-front" data-flip-target="newRecipeFront" data-profile-target="fridge">
@@ -42,8 +42,8 @@
 
   <div class="cards d-none" data-toggle-target="recipes">
     <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="my_recipes">
-
       <%= render partial: "my_recipes", library: {recipe: @recipe} %>
     </div>
   </div>
+
 </div>

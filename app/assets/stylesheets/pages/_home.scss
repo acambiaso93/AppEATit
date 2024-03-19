@@ -51,18 +51,19 @@ body {
    }
  }
 
-//  .fridge {
-//    grid-area: fridge;
-//    background-color: white;
-//    border-radius: 20px;
-//  }
+
 
 .fridge {
   grid-area: fridge;
   position: relative;
   background-color: white;
   border-radius: 20px;
-  overflow: hidden; /* Ensure the handle does not overflow */
+  overflow: hidden;
+  padding: 20px;
+  padding-top: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .handle-fridge {
@@ -70,7 +71,7 @@ body {
   top: 5%;
   left: 5%;
   width: 20%;
-  height: 5px;
+  height: 2px;
   background-color: black;
 }
 
@@ -89,7 +90,7 @@ body {
   top: 87%;
   left: 5%;
   width: 20%;
-  height: 5px;
+  height: 2px;
   background-color: black;
  }
 
@@ -153,4 +154,3 @@ body {
     background-color: $pastel-pink;
   }
 }
-

@@ -23,5 +23,14 @@
 }
 
 .checkbox-label {
+  padding-right: 10px;
   vertical-align: middle;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.kitchen-container {
+  .container input {
+    display: none;
+  }
 }

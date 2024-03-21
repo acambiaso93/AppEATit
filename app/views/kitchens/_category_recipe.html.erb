@@ -1,10 +1,20 @@
-<%= form_tag({controller: "kitchens", action: "show"}, method: "get") do %>
+<%= form_tag({controller: "kitchens", action: "show"}, method: "get", id: "filter-form") do %>
   <label class="container">
-    <%= check_box_tag :vegetarian, 1, params[:vegetarian] %>
+    <%= check_box_tag :vegetarian, 1, params[:vegetarian], id: "vegetarian-checkbox" %>
     <%= content_tag :span, "Vegetarian", class: "checkbox-label" %>
     <svg viewBox="0 0 64 64" height="2em" width="2em">
       <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
     </svg>
   </label>
-  <%= submit_tag "Filter" %>
 <% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('vegetarian-checkbox');
+    const form = document.getElementById('filter-form');
+
+    checkbox.addEventListener('change', function() {
+      form.submit();
+    });
+  });
+</script>

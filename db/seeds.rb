@@ -104,7 +104,7 @@ Ingredient.create(name: "marinara sauce", stock: random_stock, ingredient_type: 
 
 # Categories
 
-categories = ['Dinner', 'Quick and Easy', 'Vegetarian', 'Meat Friendly', 'Salad', 'Vegan', 'Dinner for one', 'Breakfast', 'Snack', 'Side Dish', 'Bakery']
+categories = ['Dinner', 'Quick and Easy', 'vegetarian', 'Meat Friendly', 'Salad', 'Vegan', 'Dinner for one', 'Breakfast', 'Snack', 'Side Dish', 'Bakery']
 
 categories.each do |category_name|
   Category.create(name: category_name)
@@ -128,7 +128,7 @@ profile = Profile.new(
   user_name: "Määäx",
   description: "I wen't shopping on an empty stomach and now my fridge
   is exploding! I need help, what can I cook???",
-  diet: "Vegetarian",
+  diet: "vegetarian",
   location: "Berlin",
   user: user
 )
@@ -139,7 +139,7 @@ profile.save
 profile_alex = Profile.new(
   user_name: "Alex",
   description: "Looking for something to cook and not trying to repeat myself. I have a lot of things at home.",
-  diet: "Vegetarian",
+  diet: "vegetarian",
   location: "Berlin",
   user: user_alex
 )
@@ -152,8 +152,21 @@ profile_alex.save
 [
   {
     name: "Spaghetti Bolognese",
-    instructions: "Peel onion and garlic and chop finely. Peel carrots and dice finely. Clean and wash the celery and cut it into fine cubes. Heat butter and 1 tablespoon oil in a pan. First fry the carrots in it for two minutes. Then add the onions and celery and fry the vegetables for about 10 minutes over low to medium heat. Add garlic and sauté for 2 minutes. Remove vegetables and set aside.
-    Put 1 tablespoon of oil in a large pot and fry the mince until crumbly. Season with paprika, sugar, salt and pepper. Add bay leaf, thyme and the fried vegetables. With wine extinguish. Add tomatoes and stock and simmer over low heat for about 2 hours. Season with salt and pepper. Remove the bay leaf and thyme.
+    instructions: "Peel onion and garlic and chop finely.<br>
+    <br>
+    Peel carrots and dice finely.<br>
+    <br>
+    Clean and wash the celery and cut it into fine cubes.<br>
+    <br>
+    Heat butter and 1 tablespoon oil in a pan.<br>
+    First fry the carrots in it for two minutes. Then add the onions and celery and fry the vegetables for about 10 minutes over low to medium heat. Add garlic and sauté for 2 minutes.<br>
+    <br>
+    Remove vegetables and set aside.<br>
+    <br>
+    Put 1 tablespoon of oil in a large pot and fry the mince until crumbly. Season with paprika, sugar, salt and pepper. Add bay leaf, thyme and the fried vegetables.<br>
+    <br>
+    With wine extinguish. Add tomatoes and stock and simmer over low heat for about 2 hours. Season with salt and pepper. Remove the bay leaf and thyme.<br>
+    <br>
     Cook spaghetti according to package instructions. Drain and serve with the sauce.",
     category: "Italian",
     difficulty: "moderate",
@@ -165,11 +178,16 @@ profile_alex.save
   },
   {
     name: "Chicken Fettuccine Alfredo",
-    instructions: "Cook fettuccini in a large pot of salted water (4 qts water with 1 Tbsp salt,) according to package instructions then drain and set aside.
-    Meanwhile, thinly slice chicken breast into strips and season all over with salt and pepper. In a large, deep skillet, heat 2 Tbsp olive oil over medium/high heat and saute chicken until light golden and cooked through (5 min). Remove chicken from the pan and cover to keep warm.
-    In the same pan over medium/high, add 1 Tbsp olive oil and 1 Tbsp butter. Add onion and sauté 3 minutes until soft. Add sliced mushrooms and sauté until soft (5-7 min), stirring frequently. Add garlic and sauté another 30 seconds until fragrant, stirring constantly.
-    Add half-n-half and simmer over medium/high heat 8-10 min, or until just beginning to thicken. Add chicken back to pan, along with 1/4 cup parsley and season sauce to taste (1/2 to 1 tsp salt and 1/4 tsp pepper).
-    Add cooked pasta and stir to combine. Heat another minute until warmed through then turn off the heat, cover and let pasta rest 10-15 minutes then stir to combine and serve garnished with more parsley.
+    instructions: "Cook fettuccini in a large pot of salted water (4 qts water with 1 Tbsp salt,) according to package instructions then drain and set aside.<br>
+    <br>
+    Meanwhile, thinly slice chicken breast into strips and season all over with salt and pepper. In a large, deep skillet, heat 2 Tbsp olive oil over medium/high heat and saute chicken until light golden and cooked through (5 min). Remove chicken from the pan and cover to keep warm.<br>
+    <br>
+    In the same pan over medium/high, add 1 Tbsp olive oil and 1 Tbsp butter. Add onion and sauté 3 minutes until soft. Add sliced mushrooms and sauté until soft (5-7 min), stirring frequently. Add garlic and sauté another 30 seconds until fragrant, stirring constantly.<br>
+    <br>
+    Add half-n-half and simmer over medium/high heat 8-10 min, or until just beginning to thicken. Add chicken back to pan, along with 1/4 cup parsley and season sauce to taste (1/2 to 1 tsp salt and 1/4 tsp pepper).<br>
+    <br>
+    Add cooked pasta and stir to combine. Heat another minute until warmed through then turn off the heat, cover and let pasta rest 10-15 minutes then stir to combine and serve garnished with more parsley.<br>
+    <br>
     After the pasta rests, you will have a creamy but light Alfredo sauce that coats the noodles perfectly.",
     category: "Italian",
     difficulty: "moderate",
@@ -181,9 +199,12 @@ profile_alex.save
   },
   {
     name: "Vegetable Stir Fry",
-    instructions: "Boil the noodles: Cook the Fettuccine al dente, according to package instructions.
-    Cook the chicken: Season the chicken, then pan-fry in oil and butter, for 6 minutes a side, or until an internal temperature reaches 165 degrees F. Transfer to a cutting board and let rest for a few minutes, then cut into 1/2-inch thick slices. Tent with foil, while you prepare the sauce.
-    Make the Alfredo sauce: Using the same pan you used to cook the chicken, the cream, butter, and seasonings are incorporated and simmered on medium-low heat until thickened, then the Parmesan is added in until melted and smooth.
+    instructions: "Boil the noodles: Cook the Fettuccine al dente, according to package instructions.<br>
+    <br>
+    Cook the chicken: Season the chicken, then pan-fry in oil and butter, for 6 minutes a side, or until an internal temperature reaches 165 degrees F. Transfer to a cutting board and let rest for a few minutes, then cut into 1/2-inch thick slices. Tent with foil, while you prepare the sauce.<br>
+    <br>
+    Make the Alfredo sauce: Using the same pan you used to cook the chicken, the cream, butter, and seasonings are incorporated and simmered on medium-low heat until thickened, then the Parmesan is added in until melted and smooth.<br>
+    <br>
     Assemble: Drain the pasta, reserving some of the liquid to loosen the sauce (only if necessary.) Toss immediately with the Alfredo sauce. Divide the pasta among serving bowls and top with a few slices of cooked chicken. Garnish with parsley, more Parmesan, and black pepper if desired.",
     category: "Chinese",
     difficulty: "easy",
@@ -206,11 +227,16 @@ profile_alex.save
   },
   {
     name: "Spinach Lasagne",
-    instructions: "Preheat the oven to 190°C/375°F/gas 5.
-    Melt 50g of the butter in a pan and whisk in the flour. Cook for 1 to 2 minutes, then whisk in the milk till smooth. Season with sea salt and freshly ground black pepper, add the bay leaf and simmer for 5 minutes. Turn off the heat.
-    Remove the stalks from the spinach, then wilt with the remaining 20g butter in a covered pan. When wilted, drain, then, when cool enough to handle, squeeze out the liquid.
-    Chop the spinach and mix with the ricotta, a ladleful of the white sauce and a good grating of nutmeg. Season.
-    In a baking dish, layer the lasagne sheets, white sauce, spinach mixture and a grating of Parmesan. Finish with a layer of pasta topped with sauce and more Parmesan.
+    instructions: "Preheat the oven to 190°C/375°F/gas 5.<br>
+    <br>
+    Melt 50g of the butter in a pan and whisk in the flour. Cook for 1 to 2 minutes, then whisk in the milk till smooth. Season with sea salt and freshly ground black pepper, add the bay leaf and simmer for 5 minutes. Turn off the heat.<br>
+    <br>
+    Remove the stalks from the spinach, then wilt with the remaining 20g butter in a covered pan. When wilted, drain, then, when cool enough to handle, squeeze out the liquid.<br>
+    <br>
+    Chop the spinach and mix with the ricotta, a ladleful of the white sauce and a good grating of nutmeg. Season.<br>
+    <br>
+    In a baking dish, layer the lasagne sheets, white sauce, spinach mixture and a grating of Parmesan. Finish with a layer of pasta topped with sauce and more Parmesan.<br>
+    <br>
     Bake for 30 minutes, or till golden.",
     category: "italian",
     difficulty: "easy",
@@ -326,7 +352,7 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: 
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "lasagne"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "parmesan"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 
-RecipeCategory.create(category: Category.find_by(name: "Vegetarian"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
+RecipeCategory.create(category: Category.find_by(name: "vegetarian"), recipe: Recipe.find_by(name: "Spinach Lasagne"))
 
 
 # Spaghetti Bolognese
@@ -366,7 +392,7 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "honey"), recipe: R
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "sesame oil"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 
 RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
-RecipeCategory.create(category: Category.find_by(name: "Vegetarian"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeCategory.create(category: Category.find_by(name: "vegetarian"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 
 
 # Beef Tacos

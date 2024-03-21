@@ -1,5 +1,4 @@
 <% if @matching_recipes.any? %>
-  <div class="cards">
     <% @matching_recipes.each do |recipe| %>
       <%= link_to recipe_path(recipe) do %>
         <div class="recipe-card">
@@ -8,7 +7,6 @@
         </div>
       <% end %>
     <% end %>
-  </div>
 <% else %>
   <div class="no-ingredient-cards no-ingredients">
     <div class="kitchen-image">

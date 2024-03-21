@@ -3,4 +3,13 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  --bs-alert-border: black;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.alert-info {
+  --bs-alert-bg: white;
+  --bs-alert-color: black;
+  font-weight: bold;
 }

@@ -1,4 +1,5 @@
-.cookbook-container-close {  display: grid;
+.cookbook-container-close {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 70px 0.2fr 2.6fr 0.2fr;
   gap: 2px 2px;
@@ -15,7 +16,8 @@
   margin-bottom: 0px;
 }
 
-.cookbook-container-open {  display: grid;
+.cookbook-container-open {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 0.2fr 2.6fr 0.2fr;
   gap: 2px 2px;
@@ -50,10 +52,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("lemon.png");
+  background-image: asset-url("image1.svg");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-size: 130% auto;
+  background-position: bottom;
+  padding-bottom: 400px;
+  position: sticky;
+  top: 0;
 }
 
 #new-recipe-front > .button-main:hover {

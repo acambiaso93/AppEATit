@@ -61,7 +61,7 @@ ul {
   transition: background-color 0.3s;
   background-image: asset-url("image4.svg");
   background-size: contain;
-  background-position: left 130px bottom -5px;
+  background-position: left 140px bottom -5px;
   background-repeat: no-repeat;
 
   &:hover {
@@ -120,7 +120,7 @@ ul {
   font-weight: bold;
 
   &:hover {
-    background-color: $pastel-blue;
+    background-color: $pastel-pink;
   }
 }
 
@@ -135,7 +135,7 @@ ul {
   font-weight: bold;
 
   &:hover {
-    background-color: $pastel-pink;
+    background-color: $pastel-blue;
   }
 }
 
@@ -156,6 +156,15 @@ ul {
     background-position: bottom -10px right -10px;
     background-repeat: no-repeat;
   }
+
+  .background-image {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .background-image {
+    opacity: 0.8;
+  }
 }
 
 .card-four {
@@ -169,7 +178,7 @@ ul {
   font-weight: bold;
 
   &:hover {
-    background-color: $pastel-blue;
+    background-color: $pastel-yellow;
   }
 }
 

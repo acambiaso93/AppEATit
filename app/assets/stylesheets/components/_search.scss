@@ -1,9 +1,6 @@
 .kitchen-container {
   .search {
-    &:hover {
-      background-color: white;
-    }
-    padding-top: 17px;
+    padding-top: 14px;
     padding-bottom: 0px;
     .kitchen-search {
       display: flex;
@@ -13,18 +10,43 @@
         margin-bottom: 1px;
         padding: 0;
         border: none;
+        --bs-body-bg: rgba(255, 255, 255, 0);
+        --bs-form-select-bg-img: none;
         .ts-control {
           padding-left: 0;
           border: none;
           font-size: 20px;
+          background: none;
           input {
             color: black;
             font-size: 20px;
             font-family: $body-font;
             min-width: 25rem;
-            background-color: transparent;
+            font-weight: bold;
+          }
+          .item {
+            color: black;
+            font-size: 20px;
+            font-family: $body-font;
+          }
+          ::placeholder {
+            font-weight: bold;
+            margin-bottom: 0;
+            font-size: 20px;
+            font-family: $body-font;
+            color: black;
           }
         }
+      }
+      .ts-dropdown {
+        border-radius: 20px;
+        grid-area: Search;
+        padding: 20px;
+        font-size: 18px;
+        font-family: $body-font;
+        color: black;
+        border: 2px solid black;
+        font-weight: bold;
       }
     }
   }
@@ -39,29 +61,35 @@
   background-color: transparent;
   font-family: $body-font;
   font-weight: bold;
-  padding-top: 4px;
+  padding-top: 8px;
 }
 
+.explore-container {
+  .search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-
-.search {
-    &__input {
-      width: 80%;
-      background-color: transparent;
-      font-size: 18px;
-      color: #575756;
-      background-color: transparent;
-      border: none;
-
-      &::placeholder {
-        color: color(#575756 a(0.8));
-      }
-
-      &:hover,
-      &:focus {
-        outline: 0;
+      &__input {
+        background-color: transparent;
+        font-size: 20px;
+        color: black;
+        background-color: transparent;
         border: none;
-        border-radius: 0;
+        width: 25rem;
+        font-weight: bold;
+
+        &::placeholder {
+          font-weight: bold;
+          color: black;
+        }
+
+        &:hover,
+        &:focus {
+          outline: 0;
+          border: none;
+          border-radius: 0;
+        }
       }
-    }
+  }
 }

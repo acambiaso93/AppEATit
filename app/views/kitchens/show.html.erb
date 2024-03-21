@@ -1,15 +1,23 @@
 <div class="kitchen-container" data-controller="profile highlight-ingredients">
-  <div class="kitchen" style="<%= current_page?(kitchen_path) ? 'background-color: #DDEFD2;' : '' unless @tab == "Profile" %>">
-    <%= link_to "Kitchen", kitchen_path %>
-  </div>
-  <div class="cookbook">
-    <%= link_to "Cookbook", cookbook_path %>
-  </div>
-  <div class="explore">
-    <%= link_to "Explore", explore_path %>
-  </div>
+  <%= link_to kitchen_path do %>
+    <div class="kitchen" style="<%= current_page?(kitchen_path) ? 'background-color: #DDEFD2;' : '' %>">
+      Kitchen
+    </div>
+  <% end %>
+  <%= link_to cookbook_path do %>
+    <div class="cookbook">
+      Cookbook
+    </div>
+  <% end %>
+
+  <%= link_to explore_path do %>
+    <div class="explore">
+      Explore
+    </div>
+  <% end %>
+
   <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
-    Profile
+    <span>Profile</span>
   </div>
   <div class="dashboard-fridge" data-profile-target="fridge">
     <ul>

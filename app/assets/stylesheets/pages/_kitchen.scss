@@ -23,7 +23,7 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
   position: sticky;
 
@@ -45,7 +45,7 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
 
    &:hover {
@@ -63,7 +63,7 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
 
 
@@ -121,7 +121,7 @@
   grid-area: Dashboard-refridgerator;
   font-size: 20px;
   font-weight: bold;
-  padding: 10px;
+  padding: 20px;
   text-decoration: none;
 
 
@@ -135,8 +135,7 @@
   grid-area: Dashboard-fridge;
   background-color: white;
   border-radius: 20px;
-  padding: 10px;
-  padding-top: 14px;
+  padding: 20px;
   font-size: 20px;
   font-weight: bold;
   transition: background-color 0.3s;

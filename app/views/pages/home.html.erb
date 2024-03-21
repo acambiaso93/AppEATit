@@ -1,10 +1,12 @@
 <div class="container-landing-page">
-  <div class="caption">
-    <span data-controller="typed"></span>
+  <div class="caption" style="display: inline-block;"><span>Discover the best recipes<br> that your fridge has to offer</span>
+
   </div>
-  <div class="fridge"><div class="handle-fridge"></div></div>
+  <div class="fridge">
+  <span data-controller="typed"></span>
+  </div>
   <div class="refrigerator">
-    <div id="login">
+    <div id="login" style="display: inline-block;">
       <% if user_signed_in? %>
         <%= link_to "Dashboard", kitchen_path, class: "button-main" %>
         <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "button-main" %>
@@ -13,12 +15,20 @@
         <%= link_to "Register", new_user_registration_path, class: "button-main" %>
       <% end  %>
     </div>
-
-      <div class="handle-redrigerator"></div>
   </div>
-  <div class="card card-one"></div>
-  <div class="card card-two"></div>
-  <div class="card card-three"></div>
-  <div class="card card-four"></div>
+  <div class="card card-one">
+    <span>
+    Simply add your ingredients, the app<br>
+    will serve up the best recipes for you
+  </div>
+  <div class="card card-two"><span>
+    You can save favourite recipes<br>
+    & create your personal cookbook<br></span>
+  </div>
+  <div class="card card-three">
+</div>
+  <div class="card card-four"><span>Explore hundrends of ideas<br>
+  & see which ingredients you need<br>
+  at the same time</div>
   <div class="footer"></div>
 </div>

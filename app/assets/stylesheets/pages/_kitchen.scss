@@ -7,7 +7,7 @@
     "Kitchen Cookbook Explore Dashboard-refridgerator"
     "Search Search Search Dashboard-fridge"
     "Cards Cards Cards Dashboard-fridge"
-    "Footer Footer Footer Footer";
+    "Footer Footer Footer Dashboard-fridge";
   margin-left: 1px;
   margin-right: 1px;
   margin-top: 0px;
@@ -23,7 +23,7 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
   position: sticky;
 
@@ -45,7 +45,7 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
 
    &:hover {
@@ -63,7 +63,7 @@
   transition: background-color 0.3s ease;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
 
 
@@ -76,16 +76,17 @@
 .extra-div {
   grid-area: Dashboard-fridge;
   background-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  height: 70px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 50px;
   display: none;
   position: sticky;
   width: 100%;
   z-index: 999;
-  top: calc(100vh - 70px);
+  top: calc(100vh - 50px);
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
@@ -120,7 +121,7 @@
   grid-area: Dashboard-refridgerator;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
 
 
@@ -134,13 +135,14 @@
   grid-area: Dashboard-fridge;
   background-color: white;
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
+  padding-top: 14px;
   font-size: 20px;
   font-weight: bold;
   transition: background-color 0.3s;
   min-height: 200px;
   overflow: auto;
-  height: calc(100vh - 73px);
+  height: calc(100vh - 53px);
   position: sticky;
   top: 1px;
 
@@ -179,12 +181,14 @@
 }
 
 .footer-dash {
-  background-color: white;
   grid-area: Footer;
+  background-color: white;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   transition: background-color 0.3s ease;
-  margin-top: 0;
+  padding: 10px;
+  font-size: 20px;
+
 
   &:hover {
     background-color: $pastel-blue;

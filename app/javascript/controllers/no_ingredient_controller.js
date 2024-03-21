@@ -8,6 +8,7 @@ export default class extends Controller {
     new Typed(this.element, {
       strings: ["Add three ingredients to see what your fridge has to offer."],
       typeSpeed: 60,
+      
     })
   }
 }

@@ -1,15 +1,23 @@
 <div class="cookbook-container-close" data-controller="profile flip toggle" data-flip-target="container">
-  <div class="kitchen">
-    <%= link_to "Kitchen", kitchen_path %>
-  </div>
-  <div class="cookbook" style="<%= current_page?(cookbook_path) ? 'background-color: #DDEFD2;' : '' %>">
-    <%= link_to "Cookbook", cookbook_path %>
-  </div>
-  <div class="explore">
-    <%= link_to "Explore", explore_path %>
-  </div>
+  <%= link_to kitchen_path do %>
+    <div class="kitchen">
+      Kitchen
+    </div>
+  <% end %>
+  <%= link_to cookbook_path do %>
+    <div class="cookbook"  style="<%= current_page?(cookbook_path) ? 'background-color: #DDEFD2;' : '' %>">
+      Cookbook
+    </div>
+  <% end %>
+
+  <%= link_to explore_path do %>
+    <div class="explore">
+      Explore
+    </div>
+  <% end %>
+
   <div class="profile" data-profile-target="profileTab" data-action="click->profile#revealProfile">
-    Profile
+    <span>Profile</span>
   </div>
 
   <div class="search">

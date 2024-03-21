@@ -9,7 +9,10 @@ export default class extends Controller {
           strings: [
             '<span style="color:green;">tofu<br>chestnuts<br>eggplant<br>miso paste<br>cucumber<br>mushrooms<br>carrot<br>rice</span><br>',
           ],
-          typeSpeed: [10] // Array of typeSpeed values for each part of the string
+          typeSpeed: 100, // Array of typeSpeed values for each part of the string
+          backSpeed: 50,
+          loop: true,
+          loopDelay: 2000
         });
       }, 2000); // 2000 milliseconds = 2 seconds
     }

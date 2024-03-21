@@ -4,13 +4,6 @@
     <div class="bg-image" style="background-image: url('<%= recipe.image.nil? ? cl_image_path(recipe.photo.key) : image_path(recipe.image) %>');"></div>
     <div class="recipe-info">
       <div class="recipe-name"><%= recipe.name %></div>
-      <div class="icon-heart">
-        <% if @my_favorites.include?(recipe) %>
-          <i class="fa-solid fa-heart pink-heart"></i>
-        <% else %>
-          <i class="fa-regular fa-heart pink-heart"></i>
-        <% end %>
-        </div>
     </div>
   </div>
   <% end %>

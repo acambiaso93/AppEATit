@@ -29,7 +29,6 @@
 
 
   <div class="search">
-    <div>
       <%= form_with url: explore_path, method: :get do %>
         <%= text_field_tag :query,
               params[:query],
@@ -38,12 +37,10 @@
               autocomplete: "off"
         %>
       <% end %>
-    </div>
-    <div>
+
       <%= link_to explore_path, data: { turbo_method: :get } do %>
         <i class="fa-solid fa-xmark"></i>
       <% end unless params[:query].blank? %>
-    </div>
   </div>
 
 

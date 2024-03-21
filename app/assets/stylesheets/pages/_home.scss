@@ -148,13 +148,13 @@ ul {
   padding-top: 14px;
   font-size: 20px;
   font-weight: bold;
+  background-image: asset-url("image3.svg");
+  background-size: 70%;
+  background-position: bottom -10px right -10px;
+  background-repeat: no-repeat;
 
   &:hover {
     background-color: $pastel-green;
-    background-image: asset-url("image3.svg");
-    background-size: 70%;
-    background-position: bottom -10px right -10px;
-    background-repeat: no-repeat;
   }
 }
 
@@ -176,18 +176,75 @@ ul {
 .card-one span,
 .card-two span,
 .card-four span {
-  visibility: hidden;
-  opacity: 0;
+  visibility: visible;
+  opacity: 1;
   transition: opacity 0.3s ease;
   position: absolute;
   font-size: 20px;
   font-weight: bold;
   color: black;
 }
+// .card-one:hover span,
+// .card-two:hover span,
+// .card-three:hover span,
+// .card-four:hover span {
+//   visibility: visible;
+//   opacity: 1;
+// }
 
-.card-one:hover span,
-.card-two:hover span,
-.card-four:hover span {
-  visibility: visible;
-  opacity: 1;
+@keyframes showCardOne {
+  10% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showCardTwo {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showCardFour {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.card-one span {
+  animation: showCardOne 15s infinite;
+}
+
+.card-two span {
+  animation: showCardTwo 15s infinite;
+}
+
+.card-four span {
+  animation: showCardFour 15s infinite;
 }

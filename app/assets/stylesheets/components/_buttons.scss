@@ -1,9 +1,9 @@
 .button-main {
   border-radius: 30px;
   border: 2px solid black;
-  padding: 12px;
+  padding: 10px;
   text-decoration: none;
-  font-size: 21px;
+  font-size: 19px;
   color: black;
   background-color: white;
   font-family: $body-font;
@@ -17,7 +17,7 @@
   font-size: 21px;
   color: black;
   font-family: $body-font;
-  
+
   &:hover {
     background-color: $pastel-green-hover;
   }

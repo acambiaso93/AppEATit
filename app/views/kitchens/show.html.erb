@@ -33,8 +33,7 @@
   <div class="search">
       <%= simple_form_for @user_ingredient do |f| %>
         <div class="kitchen-search">
-          <%= f.input :ingredient, label: false, collection: @ingredients, input_html: {data: {controller: "tom-select"}, placeholder: 'Type an ingredient and add it to the fridge...'} %>
-          <%= f.submit "Add", class: "search-btn" %>
+          <%= f.input :ingredient, label: false, collection: @ingredients, input_html: {data: {controller: "tom-select"}, placeholder: 'Type an ingredient to add it to the fridge...'} %>
         </div>
       <% end  %>
       <%= render "category_recipe" %>

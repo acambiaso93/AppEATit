@@ -187,3 +187,17 @@
     background-color: $pastel-blue;
   }
 }
+
+.no-ingredients {
+  grid-area: Cards;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.no-ingredient-cards {
+  grid-area: Cards;
+  position: relative;
+}

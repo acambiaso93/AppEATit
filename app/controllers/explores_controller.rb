@@ -13,6 +13,14 @@ class ExploresController < ApplicationController
                  Recipe.all
                end
 
+    @recipes = @recipes.map do |recipe|
+      matching_count = recipe.ingredients.where(name: @user_ingredients.pluck(:name)).count
+      { recipe: recipe, matching_count: matching_count }
+    end
+
+    # Sort recipes based on the matching count in descending order
+    @recipes = @recipes.sort_by { |r| -r[:matching_count] }.map { |r| r[:recipe] }
+
     @my_favorites = current_user.favorite_recipes
   end
 end

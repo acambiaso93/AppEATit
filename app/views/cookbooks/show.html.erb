@@ -42,6 +42,9 @@
 
   <%= render "shared/profile_dropdown" %>
 
+  <div class="extra-div">  <div class="icon"><i class="fa-solid fa-arrow-up"></i></div>
+  <div class="text">take me up</div></div>
+
   <div class="cards" data-toggle-target="favorites">
     <div class="recipe-grid" data-flip-target="recipesGrid" data-toggle-value="favorites">
       <%= render partial: "favorites", library: {recipe: @recipe} %>
@@ -54,4 +57,5 @@
     </div>
   </div>
 
+  <div class="footer-dash"></div>
 </div>

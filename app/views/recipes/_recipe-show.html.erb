@@ -1,16 +1,23 @@
 <div class="recipe-show">
-  <div class="left">
+  <div class="Image">
+    <div class="recipe-image" style="background-image: url('<%= @recipe.image.nil? ? cl_image_path(@recipe.photo.key) : image_path(@recipe.image) %>');"></div>
+  </div>
+
+  <div class="info">
     <div class="recipe-titel">
       <%= @recipe.name %>
+      <p class="recipe-category"><%= @recipe.category %></p>
     </div>
+
     <div class="recipe-points">
-      <p class="recipe-category"><i class="fa-solid fa-globe"> </i> <%= @recipe.category %></p>
-      <p class="recipe-difficulty"><i class="fa-solid fa-dumbbell"> </i> <%= @recipe.difficulty %></p>
-      <p class="recipe-servings"><i class="fa-solid fa-utensils"> </i> <%= @recipe.servings %></p>
-      <p class="recipe-cook-time"><i class="fa-solid fa-hourglass-half"></i> <%= @recipe.cooking_time %> mins</p>
+      <div class="recipe-general-info"><i class="fa-solid fa-utensils"> </i><p>Serves&nbsp;</p> <%= @recipe.servings %></div>
+      <div class="recipe-general-info"><i class="fa-solid fa-hourglass-half"></i><p>Cooks in&nbsp;</p> <%= @recipe.cooking_time %> mins</div>
+      <div class="recipe-general-info"><p>Difficulty&nbsp;</p> <%= @recipe.difficulty %></div>
     </div>
-    <div class="recipe-image" style="background-image: url('<%= @recipe.image.nil? ? cl_image_path(@recipe.photo.key) : image_path(@recipe.image) %>');">
-    </div>
+
+    <div class="recipe-instructions">
+    <span class="recipe-sub">Instructions:</span><br>
+    <br>
+    <%= @recipe.instructions.html_safe %></div>
   </div>
-  <p class="recipe-instructions"><%= @recipe.instructions.html_safe %></p>
 </div>

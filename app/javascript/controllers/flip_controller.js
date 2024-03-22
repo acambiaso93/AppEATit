@@ -8,26 +8,20 @@ export default class extends Controller {
   }
 
   revealRecipeFront() {
-    this.hideElements();
-    this.newRecipeFrontTarget.classList.remove('d-none');
+    this.containerTarget.classList.remove('cookbook-container-open');
     this.containerTarget.classList.add('cookbook-container-close')
+    this.newRecipeFrontTarget.classList.remove('d-none');
+    this.newRecipeFormTarget.classList.add('d-none');
     this.recipesGridTarget.classList.add('recipe-grid');
+    this.recipesGridTarget.classList.remove('recipe-grid-open');
   }
 
   revealRecipeForm() {
-    this.hideElements();
-    this.newRecipeFormTarget.classList.remove('d-none');
+    this.containerTarget.classList.remove('cookbook-container-close');
     this.containerTarget.classList.add('cookbook-container-open');
+    this.newRecipeFrontTarget.classList.add('d-none');
+    this.newRecipeFormTarget.classList.remove('d-none');
+    this.recipesGridTarget.classList.remove('recipe-grid');
     this.recipesGridTarget.classList.add('recipe-grid-open');
   }
-
-  hideElements() {
-    this.newRecipeFrontTarget.classList.add('d-none');
-    this.newRecipeFormTarget.classList.add('d-none');
-    this.containerTarget.classList.remove('cookbook-container-open');
-    this.recipesGridTarget.classList.remove('recipe-grid-open');
-    this.containerTarget.classList.remove('cookbook-container-close');
-    this.recipesGridTarget.classList.remove('recipe-grid');
-  }
-
 }

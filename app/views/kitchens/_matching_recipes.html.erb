@@ -12,6 +12,6 @@
     <div class="kitchen-image">
       <img src="assets/images/imagethree.svg" alt="">
     </div>
-    <span data-controller="no-ingredient"></span>
+    <span data-controller="no-ingredient" data-no-ingredient-count-value="<%= current_user.user_ingredients.count %>"></span>
   </div>
 <% end %>

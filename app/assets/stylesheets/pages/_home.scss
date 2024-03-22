@@ -185,75 +185,34 @@ ul {
 .card-one span,
 .card-two span,
 .card-four span {
-  visibility: visible;
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.3s ease;
   position: absolute;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: black;
 }
-// .card-one:hover span,
-// .card-two:hover span,
-// .card-three:hover span,
-// .card-four:hover span {
-//   visibility: visible;
-//   opacity: 1;
-// }
 
-@keyframes showCardOne {
-  10% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 0;
-  }
-  66% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+.card-one span, .card-two span, .card-four span {
+  opacity: 0;
 }
 
-@keyframes showCardTwo {
-  0% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 1;
-  }
-  66% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes showCardFour {
-  0% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 0;
-  }
-  66% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+@keyframes showCard {
+  0%, 100% { opacity: 0; }
+  5%, 20% { opacity: 1; }
+  23%, 30% { opacity: 0; }
 }
 
 .card-one span {
-  animation: showCardOne 15s infinite;
+  animation: showCard 12s infinite;
 }
 
 .card-two span {
-  animation: showCardTwo 15s infinite;
+  animation: showCard 12s infinite;
+  animation-delay: 4s;
 }
 
 .card-four span {
-  animation: showCardFour 15s infinite;
+  animation: showCard 12s infinite;
+  animation-delay: 8s;
 }

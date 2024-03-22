@@ -97,14 +97,20 @@ Ingredient.create(name: "oregano", stock: random_stock, ingredient_type: "spices
 Ingredient.create(name: "coriander", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "garam masala", stock: random_stock, ingredient_type: "spices")
 Ingredient.create(name: "chili", stock: random_stock, ingredient_type: "spices")
-Ingredient.create(name: "worcestershire sauce", stock: random_stock, ingredient_type: "Sauce")
+Ingredient.create(name: "worcestershire sauce", stock: random_stock, ingredient_type: "sauce")
 Ingredient.create(name: "croutons", stock: random_stock, ingredient_type: "grain")
 Ingredient.create(name: "baking powder", stock: random_stock, ingredient_type: "grain")
-Ingredient.create(name: "marinara sauce", stock: random_stock, ingredient_type: "Sauce")
+Ingredient.create(name: "marinara sauce", stock: random_stock, ingredient_type: "sauce")
+Ingredient.create(name: "rice paper", stock: random_stock, ingredient_type: "asian")
+Ingredient.create(name: "cucumber", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "red cabbage", stock: random_stock, ingredient_type: "vegetable")
+Ingredient.create(name: "rice noodles", stock: random_stock, ingredient_type: "pasta")
+Ingredient.create(name: "peanut butter", stock: random_stock, ingredient_type: "nuts")
+Ingredient.create(name: "sriracha", stock: random_stock, ingredient_type: "sauce")
 
 # Categories
 
-categories = ['Dinner', 'Quick and Easy', 'vegetarian', 'Meat Friendly', 'Salad', 'Vegan', 'Dinner for one', 'Breakfast', 'Snack', 'Side Dish', 'Bakery']
+categories = ['dinner', 'quick and easy', 'vegetarian', 'meat friendly', 'salad', 'vegan', 'dinner for one', 'breakfast', 'snack', 'side dish', 'backery']
 
 categories.each do |category_name|
   Category.create(name: category_name)
@@ -216,7 +222,27 @@ profile_alex.save
   },
   {
     name: "Beef Tacos",
-    instructions: "All the instructios you need is on my Youtube Video",
+    instructions: "Heat vegetable oil in a large skillet over medium heat.<br>
+    <br>
+    Add chopped onions and minced garlic to the skillet. Cook until onions are translucent and garlic is fragrant, about 2-3 minutes.<br>
+    <br>
+    Add ground beef to the skillet. Cook, breaking it apart with a spoon, until it's browned and cooked through, about 5-7 minutes.<br>
+    <br>
+    Drain excess fat from the skillet if necessary.<br>
+    <br>
+    Sprinkle taco seasoning mix over the beef. Stir well to combine.<br>
+    <br>
+    Pour water into the skillet. Stir until the seasoning is evenly distributed and the mixture has thickened slightly, about 2-3 minutes.<br>
+    <br>
+    Season with salt and pepper to taste.<br>
+    <br>
+    Warm up taco shells according to package instructions.<br>
+    <br>
+    Spoon the beef mixture into the taco shells.<br>
+    <br>
+    Serve tacos with your favorite toppings such as shredded lettuce, diced tomatoes, shredded cheese, sour cream, sliced jalapeños, salsa, chopped cilantro, and lime wedges.<br>
+    <br>
+    Enjoy your delicious Beef Tacos!",
     category: "Mexican",
     difficulty: "easy",
     servings: 4,
@@ -229,9 +255,9 @@ profile_alex.save
     name: "Spinach Lasagne",
     instructions: "Preheat the oven to 190°C/375°F/gas 5.<br>
     <br>
-    Melt 50g of the butter in a pan and whisk in the flour. Cook for 1 to 2 minutes, then whisk in the milk till smooth. Season with sea salt and freshly ground black pepper, add the bay leaf and simmer for 5 minutes. Turn off the heat.<br>
+    Melt a bit of the butter in a pan and whisk in the flour. Cook for 1 to 2 minutes, then whisk in the milk till smooth. Season with sea salt and freshly ground black pepper, add the bay leaf and simmer for 5 minutes. Turn off the heat.<br>
     <br>
-    Remove the stalks from the spinach, then wilt with the remaining 20g butter in a covered pan. When wilted, drain, then, when cool enough to handle, squeeze out the liquid.<br>
+    Remove the stalks from the spinach, then wilt with the more butter in a covered pan. When wilted, drain, then, when cool enough to handle, squeeze out the liquid.<br>
     <br>
     Chop the spinach and mix with the ricotta, a ladleful of the white sauce and a good grating of nutmeg. Season.<br>
     <br>
@@ -247,7 +273,29 @@ profile_alex.save
   },
   {
     name: "Chicken Parmesan",
-    instructions: "Preheat the oven to 190°C/375°F/gas 5. Season chicken breasts with salt and pepper. Dip chicken in egg, then in breadcrumbs. Heat oil in a skillet over medium heat and cook chicken until golden. Pour marinara sauce over chicken, top with mozzarella and parmesan. Bake for 20 minutes, or till golden.",
+    instructions: "Preheat your oven to 375°F (190°C).<br>
+    <br>
+    Place the croutons in a resealable plastic bag and crush them into coarse crumbs using a rolling pin or the bottom of a heavy pan.<br>
+    <br>
+    Season both sides of the chicken breasts with pepper to taste.<br>
+    <br>
+    Coat each chicken breast in the crushed crouton crumbs, pressing gently to adhere the crumbs to the chicken.<br>
+    <br>
+    Place the breaded chicken breasts in a baking dish.<br>
+    <br>
+    Spread marinara sauce evenly over the top of each chicken breast.<br>
+    <br>
+    Sprinkle shredded mozzarella cheese over the marinara sauce, covering the chicken completely.<br>
+    <br>
+    Sprinkle grated Parmesan cheese over the mozzarella cheese.<br>
+    <br>
+    Bake in the preheated oven for 25-30 minutes, or until the chicken is cooked through and the cheese is melted and bubbly.<br>
+    <br>
+    Remove from the oven and let it rest for a few minutes before serving.<br>
+    <br>
+    Serve the Chicken Parmesan hot, with additional marinara sauce on the side if desired.<br>
+    <br>
+    Enjoy your simple and delicious Chicken Parmesan!",
     category: "italian",
     difficulty: "moderate",
     servings: 4,
@@ -257,7 +305,17 @@ profile_alex.save
   },
   {
     name: "Pancakes",
-    instructions: "In a large bowl, mix flour, sugar, baking powder, and salt. Make a well in the center, and pour in milk, egg, and melted butter. Mix until smooth. Heat a lightly oiled griddle over medium-high heat. Pour batter onto the griddle. Brown on both sides.",
+    instructions: "First separate the eggs, putting the whites into one bowl and the yolks into another.<br>
+    <br>
+    Add the flour, baking powder and milk to the yolks and mix to a smooth thick batter.<br>
+    <br>
+    Whisk the whites with 1 pinch of sea salt until they form stiff peaks, then fold into the batter, it is now ready to use.<br>
+    <br>
+    Heat a non-stick pan over a medium heat, pour some of the batter into the pan and cook for a couple of minutes, or until it starts to look golden and firm.<br>
+    <br>
+    At this point sprinkle your chosen flavouring (see below) onto the uncooked side before loosening with a spatula and flipping the pancake over. Continue frying until both sides are golden.<br>
+    <br>
+    You can make these pancakes large or small, depending on what you prefer. Serve them with a drizzle of maple syrup, or even with some butter or crème fraîche. If you choose to sprinkle with a flavouring, try one of these... fresh corn from the cob, crispy bacon or pancetta, blueberries, banana, stewed apple, grated chocolate – anything else you can imagine...",
     category: "american",
     difficulty: "easy",
     servings: 4,
@@ -267,7 +325,27 @@ profile_alex.save
   },
   {
     name: "Spaghetti Carbonara",
-    instructions: "Cook spaghetti in a large pot of boiling salted water until al dente. Meanwhile, whisk eggs and Parmesan together in a bowl. Cook pancetta in a large skillet over medium heat until crispy. Remove from heat. Add hot pasta to the skillet and toss well to coat in pancetta fat. Still off the heat, add the egg mixture to the skillet and toss well to create a creamy sauce. Season with salt and pepper.",
+    instructions: "Cook the spaghetti pasta in a large pot of boiling salted water according to package instructions until al dente. Reserve about 1/2 cup of pasta water before draining.<br>
+    <br>
+    While the pasta is cooking, heat olive oil in a skillet over medium heat.<br>
+    <br>
+    Add diced pancetta to the skillet and cook until it's crispy and golden brown, about 5-6 minutes.<br>
+    <br>
+    Add minced garlic to the skillet and cook for another minute until it's fragrant.<br>
+    <br>
+    In a bowl, whisk together the eggs and grated Parmesan cheese until well combined.<br>
+    <br>
+    Once the pasta is cooked, drain it and immediately add it to the skillet with the pancetta and garlic.<br>
+    <br>
+    Remove the skillet from the heat. Pour the egg and Parmesan mixture over the hot pasta, quickly stirring to coat the pasta evenly. The residual heat will cook the eggs, creating a creamy sauce.<br>
+    <br>
+    If the sauce is too thick, gradually add a little bit of the reserved pasta water until you reach your desired consistency.<br>
+    <br>
+    Season the Spaghetti Carbonara with salt and black pepper to taste.<br>
+    <br>
+    Serve immediately, garnished with additional grated Parmesan cheese if desired.<br>
+    <br>
+    Enjoy!",
     category: "italian",
     difficulty: "moderate",
     servings: 4,
@@ -277,13 +355,31 @@ profile_alex.save
   },
   {
     name: "Chicken Tikka Masala",
-    instructions: "Marinate chicken in a mixture of yogurt and tikka masala spice. Heat oil in a large heavy skillet over medium heat. Add chicken, and cook until lightly browned. Stir in tomato sauce and cream. Simmer on low heat until sauce thickens. Serve over hot basmati rice.",
+    instructions: "Cook the rice according to package instructions. Set aside.<br>
+    <br>
+    In a bowl, mix together yogurt, lemon juice, garam masala, ground cumin, chopped chili, grated ginger, and minced garlic to create the marinade.<br>
+    <br>
+    Add the chicken pieces to the marinade, ensuring they are evenly coated. Let it marinate for at least 30 minutes, or overnight in the refrigerator for more flavor.<br>
+    <br>
+    In a large skillet, heat butter and oil over medium heat.<br>
+    <br>
+    Add chopped onions to the skillet and cook until they are soft and translucent.<br>
+    <br>
+    Add the marinated chicken (along with the marinade) to the skillet. Cook until the chicken is browned and cooked through, about 8-10 minutes.<br>
+    <br>
+    Add chopped tomatoes to the skillet and cook for an additional 2-3 minutes until they are softened.<br>
+    <br>
+    Serve the Chicken Tikka Masala over the cooked rice.<br>
+    <br>
+    Garnish with fresh coriander leaves.<br>
+    <br>
+    It's ready to eat. Enjoy!",
     category: "indian",
     difficulty: "hard",
     servings: 4,
     cooking_time: 60,
     image: "https://theforkedspoon.com/wp-content/uploads/2019/02/Chicken-Tikka-Masala-11.jpg",
-    user_id: user_alex.id
+    user_id: user.id
   },
   {
     name: "Caesar Salad",
@@ -303,7 +399,7 @@ profile_alex.save
     servings: 4,
     cooking_time: 150,
     image: "https://somuchfoodblog.com/wp-content/uploads/2022/11/beef-bourguinon7.jpg",
-    user_id: user_alex.id
+    user_id: user.id
   },
   {
     name: "Chicken Fried Rice",
@@ -313,16 +409,54 @@ profile_alex.save
     servings: 4,
     cooking_time: 30,
     image: "https://www.recipetineats.com/wp-content/uploads/2019/09/Chicken-Fried-Rice_9.jpg",
-    user_id: user_alex.id
+    user_id: user.id
   },
   {
     name: "Fish Tacos",
-    instructions: "Season fish with salt and pepper, and grill until cooked through. Warm tortillas in the oven. Fill tortillas with fish, cabbage, salsa, and sour cream.",
+    instructions: "In a small saucepan, melt the butter over medium heat.<br>
+    <br>
+    Add minced garlic and chopped chili to the melted butter. Cook for 1-2 minutes until fragrant.<br>
+    <br>
+    Add the white fish fillets to the saucepan. Squeeze the juice of half a lime over the fish. Sprinkle with salt to taste.<br>
+    <br>
+    Cook the fish for 3-4 minutes on each side, or until it is cooked through and flakes easily with a fork.<br>
+    <br>
+    While the fish is cooking, warm the tortillas in a dry skillet or on the grill for about 30 seconds on each side until they are soft and pliable.<br>
+    <br>
+    Once the fish is cooked, remove it from the skillet and break it into smaller pieces using a fork.<br>
+    <br>
+    To assemble the tacos, place a few pieces of fish onto each tortilla.<br>
+    <br>
+    Top the fish with sliced avocado.<br>
+    <br>
+    Squeeze a little extra lime juice over the tacos if desired.<br>
+    <br>
+    Serve immediately and enjoy your delicious Fish Tacos!",
     category: "mexican",
     difficulty: "easy",
     servings: 4,
     cooking_time: 30,
     image: "https://www.recipetineats.com/wp-content/uploads/2016/05/Fish-Tacos_7.jpg",
+    user_id: user_alex.id
+  },
+  {
+    name: "Summer Rolls",
+    instructions: "This is a super easy recipe to do and I am sure you have this ingredients at home.<br>
+    <br>
+    Prep Your Ingredients: cook the rice noodles according to the package directions and thinly slice all of your vegetables and tofu. Arrange all of the fillings on a large plate or tray for easy access, and set by a bowl of warm water and your rice paper.<br>
+    <br>
+    Soften the Rice Paper: by soaking it in the bowl of warm (but not too hot) water for 5-10 seconds. I find it easiest to rotate the paper in the bowl in a circular direction, and press the center of the rice paper into the bowl to completely soak it. Carefully remove the rice paper from the water and place onto a plastic or polished wood cutting board.<br>
+    <br>
+    Fill Your Roll: place any and all of the fillings that you prepared into the center of the rice paper. It’s best to move quickly here, as the rice paper becomes very sticky over time.<br>
+    <br>
+    Roll it Up: fold each side of the rice paper in towards the center, then fold the bottom portion over the filling, towards the top. Use both hands to compress the roll as you roll it towards the top of the rice paper to completely seal it. Tip: move slowly and carefully lift each side of the rice paper so it does not rip.<br>
+    <br>
+    Serve and Enjoy: serve as desired. I prefer to serve my summer rolls with peanut sauce or sweet chili sauce. The rolls are best consumed immediately, as they will start to stick together with time. To avoid this you can spray them with a bit of nonstick cooking spray, or sandwich them between salad greens or other veggies so they do not touch each other.<br>",
+    category: "asian",
+    difficulty: "easy",
+    servings: 4,
+    cooking_time: 35,
+    image: "https://frommybowl.com/wp-content/uploads/2019/07/Vegan_Summer_Rolls_Braised_Tofu_FromMyBowl-14.jpg",
     user_id: user_alex.id
   }
 ].each do |item|
@@ -337,8 +471,8 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: 
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "nutmeg"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "milk"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Chicken Fettuccine Alfredo"))
 
 
 # Spinach Lasagne
@@ -369,8 +503,8 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "red wine"), recipe
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "beef broth"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "spaghetii"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Spaghetti Bolognese"))
 
 
 # Vegetable Stir Fry
@@ -391,7 +525,7 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "cornstarch"), reci
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "honey"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "sesame oil"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 RecipeCategory.create(category: Category.find_by(name: "vegetarian"), recipe: Recipe.find_by(name: "Vegetable Stir Fry"))
 
 
@@ -410,8 +544,8 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "paprika"), recipe:
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "tortilla"), recipe: Recipe.find_by(name: "Beef Tacos"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "pepper"), recipe: Recipe.find_by(name: "Beef Tacos"))
 
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Beef Tacos"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Beef Tacos"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Beef Tacos"))
 
 # Chicken Parmesan
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "chicken"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
@@ -424,18 +558,20 @@ RecipeIngredient.create(ingredient: Ingredient.find_by(name: "marinara sauce"), 
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "mozzarella"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
 RecipeIngredient.create(ingredient: Ingredient.find_by(name: "parmesan"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
 
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Chicken Parmesan"))
 
 # Pancakes
 pancakes = Recipe.find_by(name: "Pancakes")
-["flour", "baking powder", "eggs", "milk", "butter", "sugar", "salt"].each do |ingredient_name|
+["flour", "baking powder", "egg", "milk"].each do |ingredient_name|
   ingredient = Ingredient.find_by(name: ingredient_name)
   RecipeIngredient.create(ingredient: ingredient, recipe: pancakes)
 end
 
-RecipeCategory.create(category: Category.find_by(name: "Breakfast"), recipe: Recipe.find_by(name: "Pancakes"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Pancakes"))
+RecipeCategory.create(category: Category.find_by(name: "breakfast"), recipe: Recipe.find_by(name: "Pancakes"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Pancakes"))
+RecipeCategory.create(category: Category.find_by(name: "vegetarian"), recipe: Recipe.find_by(name: "Pancakes"))
+
 
 # Fish Taco
 fish_taco = Recipe.find_by(name: "Fish Taco")
@@ -444,8 +580,9 @@ fish_taco = Recipe.find_by(name: "Fish Taco")
   RecipeIngredient.create(ingredient: ingredient, recipe: fish_taco)
 end
 
-RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Fish Taco"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Fish Taco"))
+RecipeCategory.create(category: Category.find_by(name: "dinner"), recipe: Recipe.find_by(name: "Fish Taco"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Fish Taco"))
+RecipeCategory.create(category: Category.find_by(name: "vegetarian"), recipe: Recipe.find_by(name: "Fish Taco"))
 
 # Spaghetti Carbonara
 spaghetti_carbonara = Recipe.find_by(name: "Spaghetti Carbonara")
@@ -454,8 +591,8 @@ spaghetti_carbonara = Recipe.find_by(name: "Spaghetti Carbonara")
   RecipeIngredient.create(ingredient: ingredient, recipe: spaghetti_carbonara)
 end
 
-RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
-RecipeCategory.create(category: Category.find_by(name: "Quick and Easy"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+RecipeCategory.create(category: Category.find_by(name: "dinner"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+RecipeCategory.create(category: Category.find_by(name: "quick and easy"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
 
 # Chicken Tikka Masala
 chicken_tikka_masala = Recipe.find_by(name: "Chicken Tikka Masala")
@@ -463,8 +600,8 @@ chicken_tikka_masala = Recipe.find_by(name: "Chicken Tikka Masala")
   ingredient = Ingredient.find_by(name: ingredient_name)
   RecipeIngredient.create(ingredient: ingredient, recipe: chicken_tikka_masala)
 end
-RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+RecipeCategory.create(category: Category.find_by(name: "dinner"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Spaghetti Carbonara"))
 
 # Ceasar Salad
 caesar_salad = Recipe.find_by(name: "Caesar Salad")
@@ -472,8 +609,8 @@ caesar_salad = Recipe.find_by(name: "Caesar Salad")
   ingredient = Ingredient.find_by(name: ingredient_name)
   RecipeIngredient.create(ingredient: ingredient, recipe: caesar_salad)
 end
-RecipeCategory.create(category: Category.find_by(name: "Snack"), recipe: Recipe.find_by(name: "Caesar Salad"))
-RecipeCategory.create(category: Category.find_by(name: "Salad"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "snack"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "salad"), recipe: Recipe.find_by(name: "Caesar Salad"))
 
 # Beef Bourguignon
 beef_bourguignon = Recipe.find_by(name: "Beef Bourguignon")
@@ -481,8 +618,8 @@ beef_bourguignon = Recipe.find_by(name: "Beef Bourguignon")
   ingredient = Ingredient.find_by(name: ingredient_name)
   RecipeIngredient.create(ingredient: ingredient, recipe: beef_bourguignon)
 end
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Caesar Salad"))
-RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "dinner"), recipe: Recipe.find_by(name: "Caesar Salad"))
 
 # Chicken Fried Rice
 chicken_fried_rice = Recipe.find_by(name: "Chicken Fried Rice")
@@ -490,7 +627,16 @@ chicken_fried_rice = Recipe.find_by(name: "Chicken Fried Rice")
   ingredient = Ingredient.find_by(name: ingredient_name)
   RecipeIngredient.create(ingredient: ingredient, recipe: chicken_fried_rice)
 end
-RecipeCategory.create(category: Category.find_by(name: "Meat Friendly"), recipe: Recipe.find_by(name: "Caesar Salad"))
-RecipeCategory.create(category: Category.find_by(name: "Dinner"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "meat friendly"), recipe: Recipe.find_by(name: "Caesar Salad"))
+RecipeCategory.create(category: Category.find_by(name: "dinner"), recipe: Recipe.find_by(name: "Caesar Salad"))
+
+# Summer Rolls
+summer_rolls = Recipe.find_by(name: "Summer Rolls")
+["rice paper", "carrot", "cucumber", "red cabbage", "avocado", "coriander", "rice noodles", "tofu", "soy sauce", "peanut butter", "sriracha"].each do |ingredient_name|
+  ingredient = Ingredient.find_by(name: ingredient_name)
+  RecipeIngredient.create(ingredient: ingredient, recipe: summer_rolls)
+end
+RecipeCategory.create(category: Category.find_by(name: "vegetarian"), recipe: Recipe.find_by(name: "Summer Rolls"))
+RecipeCategory.create(category: Category.find_by(name: "vegan"), recipe: Recipe.find_by(name: "Summer Rolls"))
 
 puts "Seed data for ingredients created successfully!"

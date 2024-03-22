@@ -1,10 +1,15 @@
 .new-recipe-card {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96%;
+
   #recipe-form-title{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    font-size: 23px;
+    font-size: 20px;
   }
 }
 #recipe-form {

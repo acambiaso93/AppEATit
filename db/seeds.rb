@@ -149,7 +149,7 @@ profile_alex = Profile.new(
   location: "Berlin",
   user: user_alex
 )
-file = URI.open("https://res.cloudinary.com/dooz1tena/image/upload/v1710773200/avocado_profile_i6rguk.jpg")
+file = URI.open("https://res.cloudinary.com/dooz1tena/image/upload/v1711197410/development/7ct6h21wm20gb03iva1kus7y27xx.jpg")
 profile_alex.photo.attach(io: file, filename: "image", content_type: "image/jpg")
 profile_alex.save
 

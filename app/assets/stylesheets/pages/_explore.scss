@@ -1,5 +1,7 @@
-.explore-container {  display: grid;
+.explore-container {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 70px 0.2fr 2.6fr auto;
   gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -11,4 +13,10 @@
   margin-right: 1px;
   margin-top: 0px;
   margin-bottom: 0px;
+  min-width: 100vh;
+  position: relative;
+
+  .footer-dash {
+    position: static;
+  }
 }

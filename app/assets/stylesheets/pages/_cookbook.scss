@@ -8,13 +8,12 @@
     "Kitchen Cookbook Explore Dashboard-refridgerator"
     "Search Search Search Dashboard-fridge"
     "Cards Cards Cards Dashboard-fridge"
-    "Footer Footer Footer Dashboard-fridge";
+    "Footer Footer Footer Footer";
   margin-left: 1px;
   margin-right: 1px;
   margin-top: 0px;
   margin-bottom: 0px;
   min-width: 100vh;
-  position: relative;
 }
 
 .cookbook-container-open {
@@ -26,14 +25,11 @@
   grid-template-areas:
     "Kitchen Cookbook Explore Dashboard-refridgerator"
     "Search Search Dashboard-fridge Dashboard-fridge"
-    "Cards Cards Dashboard-fridge Dashboard-fridge"
-    "Footer Footer Footer Dashboard-fridge";
+    "Cards Cards Dashboard-fridge Dashboard-fridge";
   margin-left: 1px;
   margin-right: 1px;
   margin-top: 0px;
   margin-bottom: 0px;
-  min-width: 100vh;
-  position: relative;
 }
 
 .page {
@@ -44,7 +40,7 @@
   font-weight: bold;
   min-height: 200px;
   overflow: auto;
-  height: calc(100vh - 52px);
+  height: calc(100vh - 73px);
   position: sticky;
   top: 0;
 }

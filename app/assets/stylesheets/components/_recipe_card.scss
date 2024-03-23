@@ -22,6 +22,28 @@
   height: 400px;
 }
 
+.recipe-card {
+  .icon-heart  {
+    i {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      font-size: 20px;
+      padding: 4px 6px;
+      background-color: white;
+      border: solid 2px black;
+      border-radius: 6px;
+    }
+  }
+  a {
+    color: $pastel-pink;
+  }
+  button {
+    height: 10px;
+    width: 10px;
+  }
+}
+
 .pink-heart {
   color: $pastel-pink;
 }

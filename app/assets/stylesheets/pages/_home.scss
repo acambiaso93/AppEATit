@@ -182,37 +182,93 @@ ul {
   }
 }
 
+.card-one,
+.card-two,
+.card-four {
+  position: relative;
+}
+
 .card-one span,
 .card-two span,
 .card-four span {
-  opacity: 0;
-  transition: opacity 0.3s ease;
   position: absolute;
-  font-size: 24px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-family: $body-font;
+  font-size: 20px;
   font-weight: bold;
-  color: black;
 }
 
-.card-one span, .card-two span, .card-four span {
-  opacity: 0;
-}
-
-@keyframes showCard {
-  0%, 100% { opacity: 0; }
-  5%, 20% { opacity: 1; }
-  23%, 30% { opacity: 0; }
+@keyframes showCardOne {
+  0%,
+  100% {
+    opacity: 0;
+    background-color: white;
+  }
+  5%,
+  20% {
+    opacity: 1;
+    background-color: $pastel-pink;
+  }
+  23%,
+  30% {
+    opacity: 0;
+    background-color: white;
+  }
 }
 
 .card-one span {
-  animation: showCard 12s infinite;
+  animation: showCardOne 12s infinite;
+}
+
+@keyframes showCardTwo {
+  0%,
+  100% {
+    opacity: 0;
+    background-color: white;
+  }
+  5%,
+  20% {
+    opacity: 1;
+    background-color: $pastel-blue;
+  }
+  23%,
+  30% {
+    opacity: 0;
+    background-color: white;
+  }
 }
 
 .card-two span {
-  animation: showCard 12s infinite;
+  animation: showCardTwo 12s infinite;
   animation-delay: 4s;
 }
 
+@keyframes showCardFour {
+  0%,
+  100% {
+    opacity: 0;
+    background-color: white;
+  }
+  5%,
+  20% {
+    opacity: 1;
+    background-color: $pastel-yellow;
+  }
+  23%,
+  30% {
+    opacity: 0;
+    background-color: white;
+  }
+}
+
 .card-four span {
-  animation: showCard 12s infinite;
+  animation: showCardFour 12s infinite;
   animation-delay: 8s;
 }

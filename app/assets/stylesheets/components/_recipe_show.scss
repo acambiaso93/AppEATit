@@ -54,7 +54,7 @@
 
 .recipe-points {
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   align-items: center;
   padding-right: 250px;
   margin: 5px;
@@ -67,6 +67,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  margin-right: 20px;
   p {
     color: #518f9d;
     margin: 0;

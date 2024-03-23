@@ -49,6 +49,7 @@
   background-color: white;
 
   &:hover {
-    background-color: $pastel-green-hover;
+    background-color: $pastel-green;
+    border: 2px solid black;
   }
 }

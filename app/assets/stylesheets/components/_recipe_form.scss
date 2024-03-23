@@ -1,11 +1,11 @@
 .new-recipe-card {
   padding: 20px;
-  display: flex;
+  // display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 96%;
 
-  #recipe-form-title{
+  #recipe-form-title {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -41,6 +41,37 @@
   padding-left: 10px;
 }
 
+.recipe-input {
+  font-family: $body-font;
+  border: none;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 18px;
+  height: 80%;
+  margin: 0px !important;
+
+  // .required {
+  //   .text {
+  //     margin-left: 0px;
+  //   }
+  // }
+
+  .title-input {
+    border: 2px solid black;
+  }
+  .text.required {
+    padding-left: 0px;
+  }
+}
+
+.create-recipe-btn {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .form-servings {
   display: flex;
   margin-top: 20px;
@@ -59,18 +90,15 @@
   }
 }
 
-.recipe-input {
-  font-family: $body-font;
-  border: none;
-  border-bottom: 2px solid black;
-  padding: 10px 20px;
-  font-size: 18px;
-  flex-grow: 1;
+.new-recipe-card input[type="file"],
+.new-recipe-card input#recipe_video,
+.new-recipe-card select#recipe_difficulty {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-bottom: 33px;
 }
 
-.create-recipe-btn {
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-    font-weight: bold;
+.new-recipe-card .mt-4 input[type="file"]::-webkit-file-upload-button {
+  background-color: $pastel-pink;
 }

@@ -13,7 +13,8 @@
           <%= f.input :photo, as: :file, label: false %>
         </div>
         <div class="mt-4">
-          <%= f.input :video, placeholder: "YouTube Video URL" %>
+                    <p>Video / optional</p>
+           <%= f.input :video, label: false, placeholder: "YouTube Video URL" %>
         </div>
         <div class="mt-4">
           <%= f.input_field :category, placeholder: "Category", class: "title-input" %>

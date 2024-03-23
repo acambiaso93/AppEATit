@@ -14,7 +14,6 @@
   margin-top: 0px;
   margin-bottom: 0px;
   min-width: 100vh;
-  position: relative;
 }
 
 .cookbook-container-open {
@@ -26,14 +25,12 @@
   grid-template-areas:
     "Kitchen Cookbook Explore Dashboard-refridgerator"
     "Search Search Dashboard-fridge Dashboard-fridge"
-    "Cards Cards Dashboard-fridge Dashboard-fridge"
-    "Footer Footer Footer Dashboard-fridge";
+    "Cards Cards Dashboard-fridge Dashboard-fridge";
   margin-left: 1px;
   margin-right: 1px;
   margin-top: 0px;
   margin-bottom: 0px;
-  min-width: 100vh;
-  position: relative;
+  height: 100vh;
 }
 
 .page {

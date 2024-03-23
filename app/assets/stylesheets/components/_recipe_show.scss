@@ -34,6 +34,7 @@
   justify-content: space-between;
   align-items: baseline;
   font-size: 30px;
+  padding-bottom: 10px;
 }
 
 .recipe-sub {
@@ -46,23 +47,28 @@
   border: 1px solid #c6dee4;
   padding: 7px 20px;
   border-radius: 12px;
+  margin-bottom: 0;
   p {
-    margin-bottom: 0;
   }
 }
 
 .recipe-points {
   display: flex;
-  flex-direction: column;
-  font-size: 18px;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 250px;
+  margin: 5px;
+  color: #518f9d;
+  i {
+    font-size: 18px;
+  }
 }
-
 .recipe-general-info {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
   p {
-    color:#518F9D;
+    color: #518f9d;
     margin: 0;
   }
   i {
